@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,13 +28,28 @@
     <li><a href="faq.html#contact" class="nav-cta"><span>Talk to Us</span></a></li>
   </ul>
   <div class="nav-actions">
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
-      <svg id="themeIcon" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="5"/>
-        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-      </svg>
-      <span id="themeLabel">Light</span>
-    </button>
+    <div class="theme-dropdown" id="themeDropdown">
+      <button class="theme-toggle" id="themeToggle" aria-label="Theme" aria-haspopup="true" aria-expanded="false">
+        <svg id="themeIcon" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="5"/>
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+        <span id="themeLabel">Light</span>
+        <svg class="theme-chevron" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="theme-menu" id="themeMenu" role="menu">
+        <button class="theme-option" data-value="light" role="menuitem">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          Light
+          <svg class="theme-check" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        </button>
+        <button class="theme-option" data-value="dark" role="menuitem">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+          Dark
+          <svg class="theme-check" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        </button>
+      </div>
+    </div>
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
       <span class="ham-bar"></span>
       <span class="ham-bar"></span>
@@ -123,9 +138,10 @@
   }, { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  // Light / dark theme toggle
+  // Theme dropdown
   (function() {
     const html = document.documentElement;
+    const dropdown = document.getElementById('themeDropdown');
     const btn = document.getElementById('themeToggle');
     const label = document.getElementById('themeLabel');
     const icon = document.getElementById('themeIcon');
@@ -133,8 +149,11 @@
     const sunPath = '<circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>';
     const saved = localStorage.getItem('theme') || 'light';
     apply(saved);
-    btn.addEventListener('click', () => apply(html.dataset.theme === 'light' ? 'dark' : 'light'));
-    function apply(theme) { html.dataset.theme = theme; localStorage.setItem('theme', theme); if (theme === 'light') { label.textContent = 'Dark'; icon.innerHTML = moonPath; } else { label.textContent = 'Light'; icon.innerHTML = sunPath; } }
+    btn.addEventListener('click', function(e) { e.stopPropagation(); var open = dropdown.classList.toggle('open'); btn.setAttribute('aria-expanded', open); });
+    document.querySelectorAll('.theme-option').forEach(function(opt) { opt.addEventListener('click', function() { apply(opt.dataset.value); dropdown.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }); });
+    document.addEventListener('click', function(e) { if (!dropdown.contains(e.target)) { dropdown.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); } });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { dropdown.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); } });
+    function apply(theme) { html.dataset.theme = theme; localStorage.setItem('theme', theme); label.textContent = theme === 'light' ? 'Light' : 'Dark'; icon.innerHTML = theme === 'light' ? sunPath : moonPath; document.querySelectorAll('.theme-option').forEach(function(o) { o.classList.toggle('active', o.dataset.value === theme); }); }
   })();
 </script>
 </body>

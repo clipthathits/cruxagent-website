@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,13 +28,28 @@
     <li><a href="faq.html#contact" class="nav-cta"><span>Talk to Us</span></a></li>
   </ul>
   <div class="nav-actions">
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
-      <svg id="themeIcon" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="5"/>
-        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-      </svg>
-      <span id="themeLabel">Light</span>
-    </button>
+    <div class="theme-dropdown" id="themeDropdown">
+      <button class="theme-toggle" id="themeToggle" aria-label="Theme" aria-haspopup="true" aria-expanded="false">
+        <svg id="themeIcon" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="5"/>
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+        <span id="themeLabel">Light</span>
+        <svg class="theme-chevron" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="theme-menu" id="themeMenu" role="menu">
+        <button class="theme-option" data-value="light" role="menuitem">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          Light
+          <svg class="theme-check" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        </button>
+        <button class="theme-option" data-value="dark" role="menuitem">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+          Dark
+          <svg class="theme-check" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        </button>
+      </div>
+    </div>
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
       <span class="ham-bar"></span>
       <span class="ham-bar"></span>
@@ -124,7 +139,7 @@
 
         <div class="mockup-bar">
           <div class="mockup-dots"><span></span><span></span><span></span></div>
-          <div class="mockup-url">app.kairo.com / automation-dashboard</div>
+          <div class="mockup-url">app.cruxagent.com / automation-dashboard</div>
           <div class="dash-live"><span class="live-pulse"></span>LIVE</div>
           <div class="dash-clock" id="dashTime">--:--:--</div>
         </div>
@@ -170,7 +185,7 @@
                   <polyline class="spark-line sk4" points="0,6 10,5 20,6 30,5 40,6 50,5 60,5"/>
                 </svg>
               </div>
-              <div class="m-delta" style="color:var(--green)">● Running 24/7</div>
+              <div class="m-delta" style="color:#6ee7b7">● Running 24/7</div>
             </div>
           </div>
 
@@ -354,6 +369,21 @@
   </div>
 </section>
 
+<!-- NOT SURE WHERE TO START CTA -->
+<section id="home-cta" style="padding: 80px 24px; text-align: center;">
+  <div class="inner">
+    <div class="reveal">
+      <span class="stag">Get Started</span>
+      <h2 class="sh" style="margin-top: 12px;">Not Sure Where to Start?</h2>
+      <p class="ss" style="max-width: 520px; margin: 16px auto 32px;">Schedule a free consultation with our AI experts to discuss your specific needs.</p>
+      <a href="faq.html#contact" class="btn-p">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+        Book a Free Consultation
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <p class="f-copy">© 2026 Crux Agent. All rights reserved.</p>
@@ -402,9 +432,10 @@
   }, { threshold: 0.5 });
   statsObs.observe(document.getElementById('stats'));
 
-  // Light / dark theme toggle
+  // Theme dropdown
   (function() {
     const html = document.documentElement;
+    const dropdown = document.getElementById('themeDropdown');
     const btn = document.getElementById('themeToggle');
     const label = document.getElementById('themeLabel');
     const icon = document.getElementById('themeIcon');
@@ -412,8 +443,11 @@
     const sunPath = '<circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>';
     const saved = localStorage.getItem('theme') || 'light';
     apply(saved);
-    btn.addEventListener('click', () => apply(html.dataset.theme === 'light' ? 'dark' : 'light'));
-    function apply(theme) { html.dataset.theme = theme; localStorage.setItem('theme', theme); if (theme === 'light') { label.textContent = 'Dark'; icon.innerHTML = moonPath; } else { label.textContent = 'Light'; icon.innerHTML = sunPath; } }
+    btn.addEventListener('click', function(e) { e.stopPropagation(); var open = dropdown.classList.toggle('open'); btn.setAttribute('aria-expanded', open); });
+    document.querySelectorAll('.theme-option').forEach(function(opt) { opt.addEventListener('click', function() { apply(opt.dataset.value); dropdown.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }); });
+    document.addEventListener('click', function(e) { if (!dropdown.contains(e.target)) { dropdown.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); } });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { dropdown.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); } });
+    function apply(theme) { html.dataset.theme = theme; localStorage.setItem('theme', theme); label.textContent = theme === 'light' ? 'Light' : 'Dark'; icon.innerHTML = theme === 'light' ? sunPath : moonPath; document.querySelectorAll('.theme-option').forEach(function(o) { o.classList.toggle('active', o.dataset.value === theme); }); }
   })();
 
   // Cursor spotlight
@@ -422,38 +456,182 @@
     card.addEventListener('pointerleave', function() { this.style.setProperty('--mx', '-9999px'); this.style.setProperty('--my', '-9999px'); });
   });
 
-  // Hero shader background
+  // Hero interactive AI chip background
   (function initHeroShader() {
     const canvas = document.getElementById('heroShader');
     if (!canvas) return;
-    const gl = canvas.getContext('webgl2', { antialias: false, premultipliedAlpha: false });
-    if (!gl) { canvas.style.display = 'none'; return; }
-    const vertSrc = `#version 300 es\nprecision highp float;\nin vec4 position;\nvoid main(){ gl_Position = position; }`;
-    const fragSrc = `#version 300 es\nprecision highp float;\nout vec4 O;\nuniform vec2 resolution;\nuniform float time;\n#define FC gl_FragCoord.xy\n#define T time\n#define R resolution\n#define MN min(R.x,R.y)\nfloat rnd(vec2 p){ p=fract(p*vec2(12.9898,78.233)); p+=dot(p,p+34.56); return fract(p.x*p.y); }\nfloat noise(in vec2 p){\n  vec2 i=floor(p), f=fract(p), u=f*f*(3.-2.*f);\n  float a=rnd(i), b=rnd(i+vec2(1,0)), c=rnd(i+vec2(0,1)), d=rnd(i+1.);\n  return mix(mix(a,b,u.x), mix(c,d,u.x), u.y);\n}\nfloat fbm(vec2 p){\n  float t=.0, a=1.; mat2 m=mat2(1.,-.5,.2,1.2);\n  for (int i=0; i<5; i++){ t+=a*noise(p); p*=2.*m; a*=.5; }\n  return t;\n}\nfloat clouds(vec2 p){\n  float d=1., t=.0;\n  for (float i=.0; i<3.; i++){\n    float a=d*fbm(i*10.+p.x*.2+.2*(1.+i)*p.y+d+i*i+p);\n    t=mix(t,d,a); d=a; p*=2./(i+1.);\n  }\n  return t;\n}\nvoid main(void){\n  vec2 uv=(FC-.5*R)/MN, st=uv*vec2(2,1);\n  vec3 col=vec3(0);\n  float bg=clouds(vec2(st.x+T*.35,-st.y));\n  uv*=1.-.3*(sin(T*.2)*.5+.5);\n  for (float i=1.; i<12.; i++){\n    uv+=.1*cos(i*vec2(.1+.01*i,.8)+i*i+T*.5+.1*uv.x);\n    vec2 p=uv;\n    float d=length(p);\n    col+=.00125/d*(cos(sin(i)*vec3(1,2,3)+vec3(3.5,2.5,1.0))+1.);\n    float b=noise(i+p+bg*1.731);\n    col+=.002*b/length(max(p,vec2(b*p.x*.02,p.y)));\n    col=mix(col, vec3(bg*0.32, bg*0.22, bg*0.05), d);\n  }\n  col = col * vec3(1.20, 1.05, 0.60);\n  O=vec4(col,1);\n}`;
-    function compile(type, src){ const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) { gl.deleteShader(s); return null; } return s; }
-    const vs = compile(gl.VERTEX_SHADER, vertSrc);
-    const fs = compile(gl.FRAGMENT_SHADER, fragSrc);
-    if (!vs || !fs) { canvas.style.display='none'; return; }
-    const prog = gl.createProgram();
-    gl.attachShader(prog, vs); gl.attachShader(prog, fs); gl.linkProgram(prog);
-    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) { canvas.style.display='none'; return; }
-    const buf = gl.createBuffer();
-    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,1,-1,-1,1,1,1,-1]), gl.STATIC_DRAW);
-    const loc = gl.getAttribLocation(prog, 'position');
-    gl.enableVertexAttribArray(loc);
-    gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
-    const uRes = gl.getUniformLocation(prog, 'resolution');
-    const uTime = gl.getUniformLocation(prog, 'time');
-    let dpr = Math.max(1, 0.5 * (window.devicePixelRatio || 1));
-    function resize(){ const rect = canvas.getBoundingClientRect(); canvas.width = Math.max(1, Math.floor(rect.width * dpr)); canvas.height = Math.max(1, Math.floor(rect.height * dpr)); gl.viewport(0, 0, canvas.width, canvas.height); }
+    const ctx = canvas.getContext('2d');
+    if (!ctx) { canvas.style.display = 'none'; return; }
+
+    let W = 0, H = 0;
+    const getDpr = () => Math.min(window.devicePixelRatio || 1, 2);
+    let mx = 0.5, my = 0.45;
+    let chipX = 0, chipY = 0, chipReady = false;
+
+    function resize() {
+      const d = getDpr(), r = canvas.getBoundingClientRect();
+      W = canvas.width  = Math.max(1, Math.floor(r.width  * d));
+      H = canvas.height = Math.max(1, Math.floor(r.height * d));
+      if (!chipReady) { chipX = W * mx; chipY = H * my; chipReady = true; }
+    }
     resize();
     window.addEventListener('resize', resize);
+
+    function updatePointer(clientX, clientY) {
+      const r = canvas.getBoundingClientRect();
+      mx = Math.max(0.05, Math.min(0.95, (clientX - r.left) / r.width));
+      my = Math.max(0.05, Math.min(0.95, (clientY - r.top)  / r.height));
+    }
+    document.addEventListener('mousemove', e => updatePointer(e.clientX, e.clientY));
+    document.addEventListener('touchmove', e => { if (e.touches[0]) updatePointer(e.touches[0].clientX, e.touches[0].clientY); }, { passive: true });
+    document.addEventListener('touchstart', e => { if (e.touches[0]) updatePointer(e.touches[0].clientX, e.touches[0].clientY); }, { passive: true });
+
     let visible = true;
     const io = new IntersectionObserver(e => { visible = e[0].isIntersecting; }, { threshold: 0 });
     io.observe(canvas);
-    const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    function render(now){ if (visible) { gl.clearColor(0,0,0,1); gl.clear(gl.COLOR_BUFFER_BIT); gl.useProgram(prog); gl.bindBuffer(gl.ARRAY_BUFFER, buf); gl.uniform2f(uRes, canvas.width, canvas.height); gl.uniform1f(uTime, (prefersReduced ? 0 : now) * 1e-3); gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); } requestAnimationFrame(render); }
+    const noMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+    function rrect(x, y, w, h, r) {
+      r = Math.min(r, w / 2, h / 2);
+      ctx.moveTo(x + r, y);
+      ctx.lineTo(x + w - r, y);     ctx.arcTo(x + w, y,     x + w, y + r,     r);
+      ctx.lineTo(x + w, y + h - r); ctx.arcTo(x + w, y + h, x + w - r, y + h, r);
+      ctx.lineTo(x + r, y + h);     ctx.arcTo(x,     y + h, x,     y + h - r, r);
+      ctx.lineTo(x, y + r);         ctx.arcTo(x,     y,     x + r, y,         r);
+      ctx.closePath();
+    }
+
+    function drawIcon(sym, px, py, s) {
+      ctx.strokeStyle = '#c9a84c'; ctx.fillStyle = '#c9a84c';
+      ctx.lineWidth = Math.max(1, s * 0.14); ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      switch (sym) {
+        case 'cloud':
+          ctx.beginPath();
+          ctx.arc(px - s*.28, py + s*.08, s*.36, Math.PI * .85, Math.PI * 2.15);
+          ctx.arc(px + s*.18, py - s*.08, s*.30, Math.PI * .8,  Math.PI * 2.2);
+          ctx.stroke(); break;
+        case 'shield':
+          ctx.beginPath();
+          ctx.moveTo(px, py - s*.75); ctx.lineTo(px+s*.62, py-s*.35); ctx.lineTo(px+s*.62, py+s*.12);
+          ctx.quadraticCurveTo(px+s*.62, py+s*.75, px, py+s*.82);
+          ctx.quadraticCurveTo(px-s*.62, py+s*.75, px-s*.62, py+s*.12);
+          ctx.lineTo(px-s*.62, py-s*.35); ctx.closePath(); ctx.stroke();
+          ctx.beginPath(); ctx.moveTo(px-s*.25, py+s*.08); ctx.lineTo(px, py+s*.32); ctx.lineTo(px+s*.32, py-s*.22); ctx.stroke(); break;
+        case 'db':
+          ctx.beginPath(); ctx.ellipse(px, py-s*.38, s*.52, s*.18, 0, 0, Math.PI*2); ctx.stroke();
+          ctx.beginPath(); ctx.moveTo(px-s*.52, py-s*.38); ctx.lineTo(px-s*.52, py+s*.38);
+          ctx.ellipse(px, py+s*.38, s*.52, s*.18, 0, 0, Math.PI); ctx.lineTo(px+s*.52, py-s*.38); ctx.stroke();
+          ctx.beginPath(); ctx.ellipse(px, py, s*.52, s*.18, 0, 0, Math.PI*2); ctx.stroke(); break;
+        case 'chart':
+          ctx.beginPath();
+          ctx.moveTo(px-s*.55, py+s*.5); ctx.lineTo(px-s*.55, py-s*.55);
+          ctx.moveTo(px-s*.55, py+s*.5); ctx.lineTo(px+s*.62, py+s*.5); ctx.stroke();
+          ctx.beginPath();
+          ctx.moveTo(px-s*.3, py+s*.12); ctx.lineTo(px, py-s*.32); ctx.lineTo(px+s*.22, py+s*.05); ctx.lineTo(px+s*.55, py-s*.45); ctx.stroke(); break;
+        case 'gear':
+          ctx.beginPath(); ctx.arc(px, py, s*.34, 0, Math.PI*2); ctx.stroke();
+          for (let k = 0; k < 8; k++) { const a = (k/8)*Math.PI*2; ctx.beginPath(); ctx.moveTo(px+Math.cos(a)*s*.44, py+Math.sin(a)*s*.44); ctx.lineTo(px+Math.cos(a)*s*.72, py+Math.sin(a)*s*.72); ctx.stroke(); } break;
+        case 'globe':
+          ctx.beginPath(); ctx.arc(px, py, s*.62, 0, Math.PI*2); ctx.stroke();
+          ctx.beginPath(); ctx.moveTo(px-s*.62, py); ctx.lineTo(px+s*.62, py); ctx.stroke();
+          ctx.beginPath(); ctx.ellipse(px, py, s*.27, s*.62, 0, 0, Math.PI*2); ctx.stroke(); break;
+        case 'lock':
+          ctx.beginPath(); ctx.arc(px, py-s*.14, s*.36, Math.PI, 0, false); ctx.stroke();
+          ctx.beginPath(); rrect(px-s*.44, py-s*.04, s*.88, s*.66, s*.12); ctx.stroke();
+          ctx.beginPath(); ctx.arc(px, py+s*.2, s*.1, 0, Math.PI*2); ctx.fill(); break;
+        case 'brain':
+          ctx.beginPath(); ctx.arc(px-s*.22, py-s*.05, s*.45, -Math.PI*.12, Math.PI*1.12); ctx.stroke();
+          ctx.beginPath(); ctx.arc(px+s*.22, py-s*.05, s*.45, -Math.PI*.12, Math.PI*1.12, true); ctx.stroke();
+          ctx.beginPath(); ctx.moveTo(px, py-s*.5); ctx.lineTo(px, py+s*.32); ctx.stroke(); break;
+        case 'api':
+          ctx.font = "bold " + (s*.75) + "px 'Space Grotesk',monospace";
+          ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('API', px, py); break;
+        case 'bot':
+          ctx.beginPath(); rrect(px-s*.55, py-s*.22, s*1.1, s*.72, s*.14); ctx.stroke();
+          ctx.beginPath(); ctx.arc(px-s*.22, py+s*.07, s*.1, 0, Math.PI*2); ctx.arc(px+s*.22, py+s*.07, s*.1, 0, Math.PI*2); ctx.fill();
+          ctx.beginPath(); ctx.moveTo(px, py-s*.22); ctx.lineTo(px, py-s*.6); ctx.arc(px, py-s*.6, s*.09, 0, Math.PI*2); ctx.stroke(); break;
+      }
+    }
+
+    function drawChip(px, py, sz, t) {
+      const pulse = Math.sin(t * 1.8) * 0.3 + 0.7;
+      const half = sz * 0.5, pin = sz * 0.17, pinSp = sz * 0.2;
+      const grd = ctx.createRadialGradient(px, py, 0, px, py, sz * 1.6);
+      grd.addColorStop(0,   'rgba(201,168,76,' + (0.22 * pulse).toFixed(3) + ')');
+      grd.addColorStop(0.5, 'rgba(201,168,76,' + (0.07 * pulse).toFixed(3) + ')');
+      grd.addColorStop(1,   'rgba(201,168,76,0)');
+      ctx.fillStyle = grd; ctx.beginPath(); ctx.arc(px, py, sz * 1.6, 0, Math.PI*2); ctx.fill();
+      ctx.save(); ctx.shadowBlur = 26 * pulse; ctx.shadowColor = '#c9a84c'; ctx.strokeStyle = '#c9a84c'; ctx.lineWidth = sz * 0.068;
+      ctx.beginPath(); rrect(px - half, py - half, sz, sz, sz * 0.14); ctx.stroke(); ctx.restore();
+      const inn = sz * 0.3;
+      ctx.save(); ctx.shadowBlur = 10; ctx.shadowColor = '#c9a84c'; ctx.strokeStyle = 'rgba(201,168,76,0.5)'; ctx.lineWidth = sz * 0.042;
+      ctx.beginPath(); rrect(px - inn, py - inn, inn*2, inn*2, inn*0.2); ctx.stroke(); ctx.restore();
+      ctx.strokeStyle = 'rgba(201,168,76,0.75)'; ctx.lineWidth = sz * 0.04;
+      for (let i = -1; i <= 1; i++) {
+        ctx.beginPath(); ctx.moveTo(px+i*pinSp, py-half);    ctx.lineTo(px+i*pinSp, py-half-pin); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(px+i*pinSp, py+half);    ctx.lineTo(px+i*pinSp, py+half+pin); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(px-half,    py+i*pinSp); ctx.lineTo(px-half-pin, py+i*pinSp); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(px+half,    py+i*pinSp); ctx.lineTo(px+half+pin, py+i*pinSp); ctx.stroke();
+      }
+      ctx.save(); ctx.shadowBlur = 15 * pulse; ctx.shadowColor = '#c9a84c'; ctx.fillStyle = '#c9a84c';
+      ctx.font = "bold " + (sz * 0.33) + "px 'Space Grotesk', sans-serif";
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('AI', px, py); ctx.restore();
+    }
+
+    function drawLine(x1, y1, x2, y2, alpha, t, idx) {
+      ctx.save(); ctx.globalAlpha = alpha * 0.55; ctx.strokeStyle = '#c9a84c'; ctx.lineWidth = 1.2;
+      ctx.shadowBlur = 5; ctx.shadowColor = '#c9a84c'; ctx.setLineDash([5, 12]);
+      ctx.lineDashOffset = -(t * 35) + idx * 15;
+      const bx = (x1+x2)/2 + (y2-y1)*0.08, by = (y1+y2)/2 - (x2-x1)*0.08;
+      ctx.beginPath(); ctx.moveTo(x1, y1); ctx.quadraticCurveTo(bx, by, x2, y2); ctx.stroke(); ctx.restore();
+    }
+
+    const NODES = ['cloud','shield','db','chart','gear','globe','lock','brain','api','bot']
+      .map(function(sym, i, a) { return { sym: sym, x: 0, y: 0, angle: (i / a.length) * Math.PI * 2, speed: noMotion ? 0 : 0.20 + (i % 4) * 0.025 }; });
+
+    const PARTS = Array.from({ length: 50 }, function() { return {
+      x: Math.random(), y: Math.random(), r: Math.random() * 1.5 + 0.4,
+      a: Math.random() * 0.32 + 0.06, v: Math.random() * 0.00013 + 0.00007, ph: Math.random() * Math.PI * 2
+    }; });
+
+    let lastNow = 0;
+    function render(now) {
+      requestAnimationFrame(render);
+      if (!visible) return;
+      const dt = Math.min((now - lastNow) * 0.001, 0.05); lastNow = now;
+      const t = noMotion ? 0 : now * 0.001;
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = '#050811'; ctx.fillRect(0, 0, W, H);
+      ctx.save(); ctx.strokeStyle = 'rgba(201,168,76,0.035)'; ctx.lineWidth = 1;
+      const gs = Math.max(30, Math.floor(W / 20));
+      for (let x = 0; x < W; x += gs) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); }
+      for (let y = 0; y < H; y += gs) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); }
+      ctx.restore();
+      PARTS.forEach(function(p) {
+        p.y = (p.y - p.v + 1) % 1;
+        ctx.save(); ctx.globalAlpha = p.a * (0.5 + 0.5 * Math.sin(t * 1.5 + p.ph)); ctx.fillStyle = '#c9a84c';
+        ctx.beginPath(); ctx.arc(p.x * W, p.y * H, p.r, 0, Math.PI*2); ctx.fill(); ctx.restore();
+      });
+      chipX += (mx * W - chipX) * 0.07;
+      chipY += (my * H - chipY) * 0.07;
+      const chipSz = Math.min(W, H) * 0.10, orbit = Math.min(W, H) * 0.30;
+      const nodeSz = chipSz * 0.72, edgeMgn = nodeSz * 0.9;
+      NODES.forEach(function(nd, i) {
+        nd.angle += nd.speed * dt;
+        nd.x = chipX + Math.cos(nd.angle) * orbit;
+        nd.y = chipY + Math.sin(nd.angle) * orbit;
+        const fade = Math.min(nd.x/edgeMgn, (W-nd.x)/edgeMgn, nd.y/edgeMgn, (H-nd.y)/edgeMgn, 1);
+        const alpha = Math.max(0, Math.min(1, fade));
+        if (alpha < 0.01) return;
+        drawLine(chipX, chipY, nd.x, nd.y, alpha, t, i);
+        const nh = nodeSz * 0.5;
+        ctx.save(); ctx.globalAlpha = alpha; ctx.fillStyle = 'rgba(5,8,17,0.82)';
+        ctx.shadowBlur = 14; ctx.shadowColor = '#c9a84c'; ctx.strokeStyle = 'rgba(201,168,76,0.8)'; ctx.lineWidth = 1.4;
+        ctx.beginPath(); rrect(nd.x-nh, nd.y-nh, nodeSz, nodeSz, nodeSz*0.22); ctx.fill(); ctx.stroke();
+        drawIcon(nd.sym, nd.x, nd.y, nodeSz * 0.38); ctx.restore();
+      });
+      drawChip(chipX, chipY, chipSz, t);
+    }
     requestAnimationFrame(render);
   })();
 
@@ -508,7 +686,10 @@
       card.style.transition = 'transform 0.9s cubic-bezier(0.22,1,0.36,1)';
       var mObs = new IntersectionObserver(function(entries) {
         entries.forEach(function(e) {
-          if (e.isIntersecting) { card.style.transform = 'rotateX(0deg) scale(0.92)'; mObs.unobserve(showcase); }
+          if (e.isIntersecting) {
+            card.style.transform = 'rotateX(0deg) scale(1)';
+            mObs.disconnect();
+          }
         });
       }, { threshold: 0.2 });
       mObs.observe(showcase);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script src="https://web3forms.com/client/script.js" async defer></script>
 </head>
 <body>
 
@@ -28,13 +29,28 @@
     <li><a href="faq.html#contact" class="nav-cta"><span>Talk to Us</span></a></li>
   </ul>
   <div class="nav-actions">
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
-      <svg id="themeIcon" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="5"/>
-        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-      </svg>
-      <span id="themeLabel">Light</span>
-    </button>
+    <div class="theme-dropdown" id="themeDropdown">
+      <button class="theme-toggle" id="themeToggle" aria-label="Theme" aria-haspopup="true" aria-expanded="false">
+        <svg id="themeIcon" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="5"/>
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+        <span id="themeLabel">Light</span>
+        <svg class="theme-chevron" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="theme-menu" id="themeMenu" role="menu">
+        <button class="theme-option" data-value="light" role="menuitem">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          Light
+          <svg class="theme-check" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        </button>
+        <button class="theme-option" data-value="dark" role="menuitem">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+          Dark
+          <svg class="theme-check" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        </button>
+      </div>
+    </div>
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
       <span class="ham-bar"></span>
       <span class="ham-bar"></span>
@@ -88,14 +104,6 @@
 
         <div class="faq-item">
           <div class="faq-q">
-            What does it actually cost?
-            <span class="faq-icon">+</span>
-          </div>
-          <div class="faq-a">It depends on scope —but we always frame it against ROI. If we're saving you $5,000/month in operational time, the build fee pays for itself in weeks. We'll give you a clear, fixed quote after the free discovery call. No hourly billing. No surprise invoices.</div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-q">
             What if the system breaks after you've delivered it?
             <span class="faq-icon">+</span>
           </div>
@@ -142,10 +150,9 @@
           </div>
         </div>
         <div class="c-items">
-          <div class="c-item"><div class="c-ico">📧</div><span>brian@kairo.com</span></div>
-          <div class="c-item"><div class="c-ico">📞</div><span>+886 0909 294 788</span></div>
+          <div class="c-item"><div class="c-ico">📧</div><a href="mailto:sales@crux-agent.com" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.4);transition:border-color 0.2s;" onmouseover="this.style.borderColor='rgba(201,168,76,1)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.4)'">sales@crux-agent.com</a></div>
+          <div class="c-item"><div class="c-ico">📞</div><a href="tel:+886909294788" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.4);transition:border-color 0.2s;" onmouseover="this.style.borderColor='rgba(201,168,76,1)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.4)'">+886 0909 294 788</a></div>
           <div class="c-item"><div class="c-ico">⚡</div><span>Response within 24 hours</span></div>
-          <div class="c-item"><div class="c-ico">🌍</div><span>Working with clients worldwide</span></div>
         </div>
       </div>
       <form id="contactForm" class="reveal" onsubmit="handleSubmit(event)">
@@ -206,9 +213,10 @@
           </select>
         </div>
         <div class="fg">
-          <label for="f-desc">Describe the problem in your own words</label>
-          <textarea id="f-desc" name="description" placeholder="E.g. 'We have 3 people manually entering the same customer data into 3 different systems every day. Takes about 4 hours total.'"></textarea>
+          <label for="f-desc">Describe the problem and what you'd like to achieve</label>
+          <textarea id="f-desc" name="description" placeholder="E.g. 'We have 3 people manually entering the same customer data into 3 different systems every day — takes about 4 hours total. Ideally, we'd love this to run automatically so our team can focus on higher-value work.'"></textarea>
         </div>
+        <div class="h-captcha" data-captcha="true"></div>
         <button type="submit" class="btn-sub" id="submitBtn">Send — I want a free consultation →</button>
       </form>
     </div>
@@ -221,7 +229,7 @@
   <p class="f-copy"><a href="privacy-policy.html" style="color:inherit;opacity:0.6;text-decoration:none;">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms-of-service.html" style="color:inherit;opacity:0.6;text-decoration:none;">Terms of Service</a></p>
 </footer>
 
-<div class="toast" id="toast">✅ Message sent! Brian will be in touch within 24 hours.</div>
+<div class="toast" id="toast">✅ Message received! Our team will be in touch within 24 hours.</div>
 
 <script>
   // Navbar scroll
@@ -254,9 +262,10 @@
   }, { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  // Light / dark theme toggle
+  // Theme dropdown
   (function() {
     const html = document.documentElement;
+    const dropdown = document.getElementById('themeDropdown');
     const btn = document.getElementById('themeToggle');
     const label = document.getElementById('themeLabel');
     const icon = document.getElementById('themeIcon');
@@ -264,8 +273,11 @@
     const sunPath = '<circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>';
     const saved = localStorage.getItem('theme') || 'light';
     apply(saved);
-    btn.addEventListener('click', () => apply(html.dataset.theme === 'light' ? 'dark' : 'light'));
-    function apply(theme) { html.dataset.theme = theme; localStorage.setItem('theme', theme); if (theme === 'light') { label.textContent = 'Dark'; icon.innerHTML = moonPath; } else { label.textContent = 'Light'; icon.innerHTML = sunPath; } }
+    btn.addEventListener('click', function(e) { e.stopPropagation(); var open = dropdown.classList.toggle('open'); btn.setAttribute('aria-expanded', open); });
+    document.querySelectorAll('.theme-option').forEach(function(opt) { opt.addEventListener('click', function() { apply(opt.dataset.value); dropdown.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }); });
+    document.addEventListener('click', function(e) { if (!dropdown.contains(e.target)) { dropdown.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); } });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { dropdown.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); } });
+    function apply(theme) { html.dataset.theme = theme; localStorage.setItem('theme', theme); label.textContent = theme === 'light' ? 'Light' : 'Dark'; icon.innerHTML = theme === 'light' ? sunPath : moonPath; document.querySelectorAll('.theme-option').forEach(function(o) { o.classList.toggle('active', o.dataset.value === theme); }); }
   })();
 
   // FAQ accordion
@@ -287,19 +299,49 @@
     }
   })();
 
+  // Rate limiting — max 2 submissions per email per day (stored in localStorage)
+  function checkRateLimit(email) {
+    const key = 'crux_submissions';
+    const dayMs = 24 * 60 * 60 * 1000;
+    const now = Date.now();
+    let records = JSON.parse(localStorage.getItem(key) || '{}');
+    // Clear entries older than 24h
+    for (const e in records) {
+      records[e] = records[e].filter(t => now - t < dayMs);
+      if (!records[e].length) delete records[e];
+    }
+    const k = email.trim().toLowerCase();
+    if (!records[k]) records[k] = [];
+    if (records[k].length >= 2) {
+      localStorage.setItem(key, JSON.stringify(records));
+      return false;
+    }
+    records[k].push(now);
+    localStorage.setItem(key, JSON.stringify(records));
+    return true;
+  }
+
   // Contact form submission
   async function handleSubmit(e) {
     e.preventDefault();
     const btn = document.getElementById('submitBtn');
-    btn.disabled = true;
-    btn.textContent = 'Sending...';
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
+
+    if (!checkRateLimit(data.email || '')) {
+      btn.textContent = 'Limit reached — try again tomorrow';
+      btn.disabled = true;
+      setTimeout(() => { btn.disabled = false; btn.textContent = 'Send — I want a free consultation →'; }, 5000);
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
     try {
-      await fetch('https://formspree.io/f/xpwzgkej', {
+      await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(data)
+        body: JSON.stringify({ access_key: 'a4f0c527-68f9-4254-ae35-a56f1a906c14', ...data })
       });
     } catch(_) {}
     const toast = document.getElementById('toast');

@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Study | Crux Agent</title>
+  <meta name="description" content="Full case study details from Crux Agent." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── CASE STUDY PAGE ── */
+    .cs-hero {
+      padding-top: 110px;
+      padding-bottom: 80px;
+      background: var(--bg);
+      position: relative;
+      overflow: hidden;
+    }
+    .cs-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 70% 40%, rgba(201,168,76,0.13) 0%, transparent 60%),
+        radial-gradient(ellipse at 20% 80%, rgba(138,101,32,0.10) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .cs-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+    .cs-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: #94a3b8;
+      margin-bottom: 28px;
+    }
+    .cs-breadcrumb a {
+      color: #94a3b8;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .cs-breadcrumb a:hover { color: var(--gold); }
+    .cs-breadcrumb span { opacity: 0.6; }
+    .cs-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .cs-hero-left {}
+    .cs-tag-row { margin-bottom: 18px; }
+    .cs-h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 18px;
+    }
+    .cs-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .cs-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 1.05rem;
+      color: #94a3b8;
+    }
+    .cs-meta-icon {
+      width: 16px;
+      height: 16px;
+      opacity: 0.6;
+    }
+    .cs-header-metrics {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+    .cs-header-metric {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 14px;
+      padding: 16px 22px;
+      min-width: 100px;
+      flex: 1;
+    }
+    .cs-header-metric .met-val {
+      font-size: 1.6rem;
+      font-weight: 800;
+      background: var(--grad2);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+    .cs-header-metric .met-lbl {
+      font-size: 0.95rem;
+      color: #94a3b8;
+      font-weight: 500;
+      line-height: 1.35;
+    }
+    .cs-hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .cs-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--grad);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 13px 26px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .cs-btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+    .cs-btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 12px 22px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+    .cs-btn-ghost:hover { border-color: rgba(255,255,255,0.25); color: var(--text); background: rgba(255,255,255,0.04); }
+    .cs-hero-right {}
+    .cs-hero-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+    }
+
+    /* ── CASE STUDY BODY ── */
+    .cs-body {
+      background: var(--bg2);
+      padding: 80px 0;
+    }
+    .cs-body-grid {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .cs-sidebar {
+      position: sticky;
+      top: 100px;
+    }
+    .cs-sidebar-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 12px;
+    }
+    .cs-sidebar-nav {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .cs-sidebar-nav li a {
+      display: block;
+      font-size: 1rem;
+      color: #94a3b8;
+      text-decoration: none;
+      padding: 7px 12px;
+      border-radius: 8px;
+      border-left: 2px solid transparent;
+      transition: color 0.2s, background 0.2s, border-color 0.2s;
+      line-height: 1.4;
+    }
+    .cs-sidebar-nav li a:hover,
+    .cs-sidebar-nav li a.active {
+      color: var(--gold);
+      background: rgba(201,168,76,0.07);
+      border-left-color: var(--gold);
+    }
+    .cs-sections {}
+    .cs-section {
+      margin-bottom: 52px;
+      scroll-margin-top: 110px;
+    }
+    .cs-section:last-child { margin-bottom: 0; }
+    .cs-section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .cs-section-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .cs-section-label {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .cs-section-body {
+      color: #cbd5e1;
+      font-size: 1.1rem;
+      line-height: 1.85;
+    }
+    .cs-section-body p { margin-bottom: 12px; }
+    .cs-section-body p:last-child { margin-bottom: 0; }
+    .cs-section-body ul, .cs-section-body ol {
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+    .cs-section-body li { margin-bottom: 8px; }
+    .cs-section-body strong { color: var(--fg); font-weight: 700; }
+    .cs-stack { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 4px; }
+    .cs-stack-item {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 100px;
+      padding: 7px 18px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #cbd5e1;
+    }
+    .cs-metrics-summary {
+      color: #cbd5e1;
+      font-size: 1.1rem;
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+    .cs-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .cs-metric-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 20px 24px;
+    }
+    .cs-metric-card .met-val {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: var(--grad2);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+    .cs-metric-card .met-lbl {
+      font-size: 1rem;
+      color: #94a3b8;
+      font-weight: 500;
+      line-height: 1.35;
+    }
+    .cs-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 52px 0;
+    }
+    .cs-cta-banner {
+      background: linear-gradient(135deg, rgba(160,120,40,0.15), rgba(201,168,76,0.08));
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 20px;
+      padding: 40px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      flex-wrap: wrap;
+      margin-top: 64px;
+    }
+    .cs-cta-banner h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .cs-cta-banner p {
+      font-size: 1.05rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+
+    /* Light theme overrides */
+    [data-theme="light"] .cs-hero { background: #f8faff; }
+    [data-theme="light"] .cs-hero::before {
+      background:
+        radial-gradient(ellipse at 70% 40%, rgba(201,168,76,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 20% 80%, rgba(138,101,32,0.06) 0%, transparent 55%);
+    }
+    [data-theme="light"] .cs-body { background: #f1f5fb; }
+    [data-theme="light"] .cs-h1 { color: #0f172a; }
+    [data-theme="light"] .cs-header-metric { background: #fff; border-color: rgba(0,0,0,0.08); }
+    [data-theme="light"] .cs-hero-img { border-color: rgba(0,0,0,0.1); }
+    [data-theme="light"] .cs-section-label { color: #0f172a; }
+    [data-theme="light"] .cs-metric-card { background: #fff; border-color: rgba(0,0,0,0.08); }
+    [data-theme="light"] .cs-stack-item { background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.1); }
+    [data-theme="light"] .cs-btn-ghost { border-color: rgba(0,0,0,0.15); }
+    [data-theme="light"] .cs-btn-ghost:hover { background: rgba(0,0,0,0.04); }
+    [data-theme="light"] .cs-cta-banner { background: linear-gradient(135deg, rgba(160,120,40,0.08), rgba(201,168,76,0.04)); }
+    [data-theme="light"] .cs-breadcrumb { color: #64748b; }
+    [data-theme="light"] .cs-breadcrumb a { color: #64748b; }
+    [data-theme="light"] .cs-meta-item { color: #64748b; }
+    [data-theme="light"] .cs-header-metric .met-lbl { color: #64748b; }
+    [data-theme="light"] .cs-sidebar-nav li a { color: #64748b; }
+    [data-theme="light"] .cs-section-body { color: #475569; }
+    [data-theme="light"] .cs-stack-item { color: #475569; }
+    [data-theme="light"] .cs-metrics-summary { color: #475569; }
+    [data-theme="light"] .cs-metric-card .met-lbl { color: #64748b; }
+    [data-theme="light"] .cs-cta-banner p { color: #475569; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .cs-hero-grid { grid-template-columns: 1fr; gap: 36px; }
+      .cs-hero-right { order: -1; }
+      .cs-body-grid { grid-template-columns: 1fr; }
+      .cs-sidebar { position: static; display: none; }
+      .cs-h1 { font-size: 1.8rem; }
+      .cs-metrics-grid { grid-template-columns: 1fr 1fr; }
+      .cs-cta-banner { flex-direction: column; align-items: flex-start; padding: 28px 24px; }
+    }
+    @media (max-width: 600px) {
+      .cs-inner { padding: 0 20px; }
+      .cs-h1 { font-size: 1.5rem; }
+      .cs-header-metrics { flex-direction: column; }
+      .cs-metrics-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="logo.png" alt="" class="nav-logo-img">
+    Crux Agent
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="solve.html">What We Solve</a></li>
+    <li><a href="process.html">How It Works</a></li>
+    <li><a href="projects.html" class="nav-active">Case Studies</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="faq.html#contact" class="nav-cta"><span>Talk to Us</span></a></li>
+  </ul>
+  <div class="nav-actions">
+    <div class="theme-dropdown" id="themeDropdown">
+      <button class="theme-toggle" id="themeToggle" aria-label="Theme" aria-haspopup="true" aria-expanded="false">
+        <svg id="themeIcon" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="5"/>
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+        <span id="themeLabel">Light</span>
+        <svg class="theme-chevron" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="theme-menu" id="themeMenu" role="menu">
+        <button class="theme-option" data-value="light" role="menuitem">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          Light
+          <svg class="theme-check" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        </button>
+        <button class="theme-option" data-value="dark" role="menuitem">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+          Dark
+          <svg class="theme-check" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        </button>
+      </div>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span class="ham-bar"></span>
+      <span class="ham-bar"></span>
+      <span class="ham-bar"></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-backdrop" id="navBackdrop"></div>
+
+<!-- HERO -->
+<section class="cs-hero">
+  <div class="cs-inner">
+    <div class="cs-breadcrumb" id="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <a href="projects.html">Case Studies</a>
+      <span>›</span>
+      <span id="breadcrumbCategory">Loading…</span>
+    </div>
+    <div class="cs-hero-grid">
+      <div class="cs-hero-left">
+        <div class="cs-tag-row" id="heroTag"></div>
+        <h1 class="cs-h1" id="heroTitle">Loading…</h1>
+        <div class="cs-meta-row" id="heroMeta"></div>
+        <div class="cs-header-metrics" id="heroMetrics"></div>
+        <div class="cs-hero-actions">
+          <a href="faq.html#contact" class="cs-btn-primary">Start Your Project →</a>
+          <a href="projects.html" class="cs-btn-ghost">← All Case Studies</a>
+        </div>
+      </div>
+      <div class="cs-hero-right">
+        <img id="heroImg" class="cs-hero-img" src="" alt="" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BODY -->
+<section class="cs-body">
+  <div class="cs-inner">
+    <div class="cs-body-grid">
+      <aside class="cs-sidebar">
+        <div class="cs-sidebar-label">On this page</div>
+        <ul class="cs-sidebar-nav" id="sidebarNav"></ul>
+      </aside>
+      <div class="cs-sections" id="csSections"></div>
+    </div>
+
+    <div class="cs-cta-banner">
+      <div>
+        <h3>Want a system like this for your business?</h3>
+        <p>We build AI automation that solves real operational problems — tailored to your team, your tools, and your goals.</p>
+      </div>
+      <a href="faq.html#contact" class="cs-btn-primary">Get a Similar System Built →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="f-copy">© 2026 Crux Agent. All rights reserved.</p>
+  <p class="f-copy"><a href="privacy-policy.html" style="color:inherit;opacity:0.6;text-decoration:none;">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms-of-service.html" style="color:inherit;opacity:0.6;text-decoration:none;">Terms of Service</a></p>
+</footer>
+
+<script>
+  // Navbar scroll
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
+
+  // Mobile hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinksEl = document.getElementById('navLinks');
+  const navBackdrop = document.getElementById('navBackdrop');
+  function openMenu() { hamburger.classList.add('active'); hamburger.setAttribute('aria-expanded','true'); navLinksEl.classList.add('open'); navBackdrop.classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeMenu() { hamburger.classList.remove('active'); hamburger.setAttribute('aria-expanded','false'); navLinksEl.classList.remove('open'); navBackdrop.classList.remove('open'); document.body.style.overflow=''; }
+  hamburger.addEventListener('click', () => hamburger.classList.contains('active') ? closeMenu() : openMenu());
+  navBackdrop.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+  navLinksEl.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+  // Theme dropdown
+  (function() {
+    const html = document.documentElement;
+    const dropdown = document.getElementById('themeDropdown');
+    const btn = document.getElementById('themeToggle');
+    const label = document.getElementById('themeLabel');
+    const icon = document.getElementById('themeIcon');
+    const moonPath = '<path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/>';
+    const sunPath = '<circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>';
+    const saved = localStorage.getItem('theme') || 'light';
+    apply(saved);
+    btn.addEventListener('click', function(e) { e.stopPropagation(); var open = dropdown.classList.toggle('open'); btn.setAttribute('aria-expanded', open); });
+    document.querySelectorAll('.theme-option').forEach(function(opt) { opt.addEventListener('click', function() { apply(opt.dataset.value); dropdown.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }); });
+    document.addEventListener('click', function(e) { if (!dropdown.contains(e.target)) { dropdown.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); } });
+    function apply(theme) { html.dataset.theme = theme; localStorage.setItem('theme', theme); label.textContent = theme === 'light' ? 'Light' : 'Dark'; icon.innerHTML = theme === 'light' ? sunPath : moonPath; document.querySelectorAll('.theme-option').forEach(function(o) { o.classList.toggle('active', o.dataset.value === theme); }); }
+  })();
+
+  // Section icons
+  const sectionIcons = {
+    'Client Overview': '🏢',
+    'Business Context': '📋',
+    'Problem Statement': '⚠️',
+    'Objectives': '🎯',
+    'Scope of Work': '📐',
+    'Solution Overview': '💡',
+    'Technology Stack': '🛠️',
+    'Implementation Approach': '🚀',
+    'Key Features': '✨',
+    'Results & Business Impact': '📊',
+    'Results &amp; Business Impact': '📊',
+  };
+
+  // Project data
+  const projects = [
+    {
+      tag: '🗞️ Sales &amp; Marketing — Taiwan',
+      tagPlain: 'Sales & Marketing',
+      title: 'Competitive News Intelligence Platform',
+      modalTitle: 'AI System That Monitors 28 Sources, Filters 92% of Noise, and Delivers Ready Briefings Every Morning',
+      client: 'Sales Division, Consulting Firm — Taiwan',
+      image: 'Card 0.png',
+      headerMetrics: [
+        { val: '700+', lbl: 'Articles processed daily' },
+        { val: '28', lbl: 'Sources monitored' },
+        { val: '0 hrs', lbl: 'Manual monitoring' }
+      ],
+      sections: [
+        { label: 'Client Overview', type: 'text', content: 'A sales division within a consulting firm in Taiwan monitoring 28 news sources daily to surface competitor activity, regulatory changes, and market intelligence relevant to their clients.' },
+        { label: 'Business Context', type: 'text', content: 'The team was spending 6–8 hours per day manually browsing and reading through sources, copy-pasting relevant articles into a shared document, and summarising findings for the marketing team. The process was inconsistent and time-consuming — and the volume of sources made it impossible to guarantee nothing important was missed.' },
+        { label: 'Problem Statement', type: 'text', content: 'Manual monitoring of 28 sources was consuming the team\'s entire morning.<ol><li>6–8 hours per day spent reading and filtering content manually</li><li>No consistent format — briefs looked different depending on who prepared them</li><li>92% of articles were irrelevant noise that still needed to be read before being discarded</li><li>High risk of missing time-sensitive competitor or regulatory news</li></ol>' },
+        { label: 'Objectives', type: 'text', content: '<ul><li>Monitor all 28 sources automatically every morning</li><li>Filter and score articles by relevance to defined topics</li><li>Deliver a structured, ready-to-use briefing to the team without manual input</li><li>Surface time-sensitive items with priority flags</li></ul>' },
+        { label: 'Scope of Work', type: 'text', content: '<ul><li>Automated RSS and web scraping of 28 defined sources on a daily schedule</li><li>AI relevance scoring against defined topic categories and keywords</li><li>Article deduplication and clustering by topic</li><li>Structured briefing generated and delivered via email every morning</li><li>Priority flagging for regulatory and competitor-specific content</li></ul>' },
+        { label: 'Solution Overview', type: 'text', content: 'A fully automated daily intelligence pipeline. 700+ articles are fetched, scored, and filtered every morning. The 8% that matter are structured into a ready-to-use briefing and delivered before the team starts their day — no one reads a single article they don\'t need to.' },
+        { label: 'Technology Stack', type: 'stack', items: ['n8n', 'Python', 'OpenAI API', 'RSS Parser', 'Web Scraper', 'Gmail API', 'Google Sheets'] },
+        { label: 'Implementation Approach', type: 'text', content: 'Source ingestion and relevance scoring built and validated in week one against historical articles. Briefing format iterated with the team. Full pipeline live and running automatically from week two. No ongoing maintenance required from the client.' },
+        { label: 'Results &amp; Business Impact', type: 'metrics', summary: 'The morning briefing now arrives automatically. The team opens it, reads what matters, and moves on — the 6–8 hours of daily monitoring has been eliminated entirely.', items: [{ val: '700+', lbl: 'Articles processed daily' }, { val: '92%', lbl: 'Content filtered automatically' }, { val: '8→2 hrs', lbl: 'Time saved per day' }, { val: '0', lbl: 'Manual reads of irrelevant content' }] }
+      ]
+    },
+    {
+      tag: '🍱 Catering &amp; Food Services — Indonesia',
+      tagPlain: 'Catering & Food Services',
+      title: 'WhatsApp Business Operations Platform',
+      modalTitle: 'Fully Automated WhatsApp System Running Orders, Payments, Deliveries, and Daily Reporting',
+      client: 'Catering Business — Indonesia',
+      image: 'Card 1.png',
+      headerMetrics: [
+        { val: '350+', lbl: 'Orders managed daily' },
+        { val: '24/7', lbl: 'Customer support coverage' },
+        { val: '7', lbl: 'Workflows automated' }
+      ],
+      sections: [
+        { label: 'Client Overview', type: 'text', content: 'A catering business in Indonesia managing 300+ daily orders through WhatsApp — handling order intake, payment logging, delivery tracking, customer communications, and financial reporting, all through a single messaging channel.' },
+        { label: 'Business Context', type: 'text', content: 'The owner and admin team were managing every step of the operation manually through WhatsApp. Orders were taken by hand, payments logged in Excel, deliveries tracked by phone calls, and financial summaries prepared at the end of each day. As volume grew, the manual process became the bottleneck.' },
+        { label: 'Problem Statement', type: 'text', content: 'Every part of the operation depended on manual input from the owner or admin.<ol><li>Orders taken manually — high risk of error and missed messages</li><li>Payments and expenses logged in Excel by hand — no real-time visibility</li><li>Delivery confirmation required calling drivers — no automated notification to customers</li><li>Financial summary prepared manually at end of day — took 30–45 minutes every night</li></ol>' },
+        { label: 'Objectives', type: 'text', content: '<ul><li>Let admin log payments and expenses through WhatsApp — no manual Excel entry</li><li>Track every subscription period and send automatic renewal reminders before expiry</li><li>Give drivers a GPS-triggered one-tap delivery button — customer notified the moment food arrives</li><li>Let customers ask for their ETA and get a real answer based on driver location</li><li>Auto-sync customer records in Sheets as orders are placed or cancelled</li><li>Send the owner a daily financial summary without anyone preparing it</li><li>Collect customer feedback after every delivery and summarize it daily</li></ul>' },
+        { label: 'Scope of Work', type: 'text', content: '<ul><li>Admin payment &amp; expense bot: admin sends payment or expense via text, voice note, or photo → AI logs it to Google Sheets automatically</li><li>Subscription tracker: date-range tracking per customer with automated 3-day renewal reminder</li><li>GPS driver interface: web app that detects driver arrival at delivery address → one-tap delivery confirmation → customer notified instantly</li><li>ETA bot: customer asks when food arrives → chatbot asks their name → checks driver GPS against their address → replies with estimated arrival time</li><li>Auto customer record management: new order adds data to Sheets; cancellation removes the record</li><li>Financial analysis bot: daily automated summary of orders and payments sent to owner via WhatsApp</li><li>Feedback collection bot: post-delivery prompt to customer → responses summarized daily for the owner</li></ul>' },
+        { label: 'Solution Overview', type: 'text', content: 'A fully automated WhatsApp operations system. Orders flow in, admin logs payments in one message, drivers notify customers with one tap, and the owner receives a financial summary every morning — no manual work at any step.' },
+        { label: 'Technology Stack', type: 'stack', items: ['n8n', 'OpenAI API', 'OpenAI Whisper', 'Twilio', 'WhatsApp Business API', 'Google Sheets', 'Google Sheets API', 'Geolocation API', 'Google Maps API', 'HTML / CSS / JS', 'Vercel'] },
+        { label: 'Implementation Approach', type: 'text', content: 'Core order intake and payment logging built first and demoed within 3 hours. Subscription tracker, expiry reminders, and GPS driver interface added next. Feedback collection and financial reporting completed last. Full production system live in 8 days — no team training required.' },
+        { label: 'Key Features', type: 'text', content: '<ul><li>Order bot: customers order via WhatsApp; details logged automatically to Google Sheets</li><li>Payment &amp; expense logger: admin sends payment or expense via text, voice note, or photo → AI records it in Google Sheets instantly</li><li>Subscription tracker: monitors end dates per customer; sends "Your order expires in 3 days — contact us to continue" automatically</li><li>GPS delivery trigger: driver opens web interface on phone, GPS detects arrival at the customer address → "Mark as Delivered" button appears → customer receives WhatsApp notification immediately</li><li>ETA bot: customer sends "when will my food arrive?" → chatbot asks for their name → checks driver GPS against customer address via Google Maps → replies with estimated arrival time</li><li>Auto customer management: new order adds address and info to Sheets; cancelled order deletes the record</li><li>Financial summary bot: daily automated report on orders, income, and payments sent to owner</li><li>Feedback loop: post-delivery chatbot asks for feedback; all responses summarized daily for the owner</li></ul>' },
+        { label: 'Results &amp; Business Impact', type: 'metrics', summary: 'Turned a manually operated catering business into a fully automated WhatsApp-native system — from order intake to delivery confirmation and owner reporting.', items: [{ val: '350+', lbl: 'Orders managed daily' }, { val: '24/7', lbl: 'Customer support coverage' }, { val: '7', lbl: 'Workflows automated' }, { val: '0', lbl: 'Manual steps from order to delivery notification' }] }
+      ]
+    },
+    {
+      tag: '🏭 Manufacturing — Indonesia',
+      tagPlain: 'Manufacturing',
+      title: 'End-to-End Talent Acquisition System',
+      modalTitle: '3-Stage AI Recruitment Pipeline That Replaced 3 Weeks of HR Work',
+      client: 'Manufacturing Company — Indonesia',
+      image: 'Card 2.png',
+      headerMetrics: [
+        { val: '87%', lbl: 'Screening time reduction' },
+        { val: '150+', lbl: 'CVs screened automatically' },
+        { val: '48 hrs', lbl: 'From close to shortlist' }
+      ],
+      sections: [
+        { label: 'Client Overview', type: 'text', content: 'A medium-sized manufacturing company in Indonesia running regular hiring cycles across production, quality control, logistics, and administration — generating 150+ applications per cycle with a lean HR team.' },
+        { label: 'Business Context', type: 'text', content: 'CVs arrived by email and Google Form. HR downloaded each one, read it, noted it in a spreadsheet, and manually coordinated interviews by email. No ATS, no scoring system — one person carrying the entire process for four departments.' },
+        { label: 'Problem Statement', type: 'text', content: 'The HR manager spent 2-3 weeks of every hiring cycle doing nothing but reading documents, with no consistent scoring and no guarantee the right candidates were surfaced.<ol><li>2-3 weeks of CV reading before the first interview</li><li>No consistent scoring framework — different candidates evaluated differently</li><li>Days of back-and-forth emails just to schedule interviews</li></ol>' },
+        { label: 'Objectives', type: 'text', content: '<ul><li>Automate CV collection and AI scoring with written reasoning</li><li>Conduct first-round interviews without HR involvement</li><li>Schedule final interviews directly into HR\'s calendar</li><li>Deliver the top 3 candidates per department, fully briefed</li></ul>' },
+        { label: 'Scope of Work', type: 'text', content: '<ul><li>Stage 1: Automated CV collection, parsing, and AI scoring with reasoning summaries</li><li>Stage 2: AI phone interview with transcription and scoring for the top 10 per department</li><li>Stage 3: Automatic Google Calendar booking and candidate confirmation emails</li></ul>' },
+        { label: 'Solution Overview', type: 'text', content: 'A 3-stage automated pipeline — CV screening, AI voice interview, and calendar scheduling — delivering the final 3 candidates per department with zero HR involvement until the final interview.' },
+        { label: 'Technology Stack', type: 'stack', items: ['n8n', 'OpenAI API', 'OpenAI Whisper', 'Twilio', 'Google Calendar API', 'Gmail API', 'Google Sheets', 'HTML / CSS / JS', 'Vercel'] },
+        { label: 'Implementation Approach', type: 'text', content: 'CV scoring stage demoed in 1 day, processing a sample batch with scored summaries and reasoning. Full 3-stage pipeline including AI voice interviews, transcription, and calendar integration live in 10 days.' },
+        { label: 'Key Features', type: 'text', content: '<ul><li>Automated CV collection from email and Google Form</li><li>AI scoring with written reasoning per candidate, matched against department criteria</li><li>AI voice interviews via Twilio with automatic transcription and scoring</li><li>Automatic rejection emails for unshortlisted candidates</li><li>Google Calendar integration for final interview booking</li></ul>' },
+        { label: 'Results &amp; Business Impact', type: 'metrics', summary: 'Reduced the hiring cycle from 3 weeks of manual screening to 48 hours, with fully briefed final candidates delivered to HR.', items: [{ val: '87%', lbl: 'Screening time reduction' }, { val: '150+', lbl: 'CVs screened automatically' }, { val: '48 hrs', lbl: 'From close to shortlist' }, { val: '12', lbl: 'Final candidates across 4 departments' }] }
+      ]
+    },
+    {
+      tag: '✍️ Marketing — Taiwan',
+      tagPlain: 'Marketing',
+      title: 'Automated Content Production Engine',
+      modalTitle: '9-Agent AI System That Turns a Topic Into a Publication-Ready Article',
+      client: 'Family Office Dept., Consulting Firm — Taiwan',
+      image: 'Card 3.jpg',
+      headerMetrics: [
+        { val: '97%', lbl: 'Production time reduction' },
+        { val: '50+', lbl: 'Articles per year' },
+        { val: '3', lbl: 'Platforms targeted' }
+      ],
+      sections: [
+        { label: 'Client Overview', type: 'text', content: 'A newly established family office department within a management consulting firm in Taiwan, serving high-net-worth individuals and cross-border investors. No existing online presence, no search rankings, and not yet known to the market.' },
+        { label: 'Business Context', type: 'text', content: 'The division had just launched. Potential clients couldn\'t find them, didn\'t know what they offered, and had no reason to choose them over established names. In family office, reputation and visibility aren\'t marketing advantages — they\'re prerequisites. Being invisible means missing opportunities before they even start. The 2026 objective was clear: build brand awareness and influence through content. When potential clients search for answers, this firm should be the advisor they find and trust.' },
+        { label: 'Problem Statement', type: 'text', content: 'A newly launched division in a trust-sensitive field, with no content engine to build the visibility it needed.<ol><li>The market didn\'t know the division existed — no search presence, no content, no credibility signals</li><li>Producing expert-level bilingual content manually took a full day per article</li><li>Articles weren\'t consistently optimised for search or E-E-A-T compliance</li><li>The firm\'s unique philosophy and values weren\'t coming through — content felt generic</li></ol>' },
+        { label: 'Objectives', type: 'text', content: '<ul><li>Become the advisor potential clients find when they search for family office guidance</li><li>Produce expert-level bilingual articles at the volume needed to build authority</li><li>Optimise every article for both traditional search and AI search platforms using E-E-A-T</li><li>Reflect the firm\'s unique philosophy in every piece — recognisable, not generic</li></ul>' },
+        { label: 'Scope of Work', type: 'text', content: '<ul><li>Workflow 1: Topic generation agent querying 3 live research tools, outputting 5 ranked topic options to Google Sheets</li><li>Workflow 2: 9-agent sequential pipeline from topic to two finished bilingual articles</li><li>Company knowledge and proprietary philosophy embedded via vector database retrieval</li><li>Google Drive upload as formatted HTML documents with email notification on completion</li></ul>' },
+        { label: 'Solution Overview', type: 'text', content: 'A 9-agent pipeline that takes one topic and produces two publication-ready articles — Traditional Chinese and English — fully researched, SEO-optimised, E-E-A-T compliant, and written in the firm\'s voice. What took a full day now takes 20 minutes of review.' },
+        { label: 'Technology Stack', type: 'stack', items: ['n8n', 'OpenAI API', 'Anthropic Claude API', 'Pinecone', 'Tavily API', 'Perplexity API', 'Linkup API', 'Firecrawl API', 'Google Drive API', 'Google Docs API', 'Google Sheets', 'Gmail API', 'Railway'] },
+        { label: 'Implementation Approach', type: 'text', content: 'Topic generation workflow built and validated first. Article pipeline built agent by agent — each stage tested independently before connecting to the sequence. Rate limit handling and wait nodes added between API-heavy stages. Full pipeline live in 3 weeks.' },
+        { label: 'Key Features', type: 'text', content: '<ul><li>Topic generation from live trend research across Tavily, Perplexity, and Linkup</li><li>9 specialist agents: data collection, keyword validation, E-E-A-T compliance, planning, writing, SEO optimisation, tone refinement, visual planning, and translation</li><li>Company philosophy and credentials retrieved from Pinecone vector database — every article reflects who they are, not just what\'s trending</li><li>Taiwan legal and regulatory sources pulled via Firecrawl for market-specific accuracy</li><li>Articles optimised to appear in Google AI Overview, AI assistant answers, and traditional search results</li><li>Automatic Google Drive upload and email notification with document links on completion</li></ul>' },
+        { label: 'Results &amp; Business Impact', type: 'metrics', summary: 'Articles are ranking on traditional search, appearing in Google AI Overview, and being cited by AI assistants — hitting all three visibility targets the team set at the start.', items: [{ val: '97%', lbl: 'Production time reduction' }, { val: '50+', lbl: 'Articles per year' }, { val: '3', lbl: 'Platforms targeted' }, { val: '20 min', lbl: 'From topic to ready to publish' }] }
+      ]
+    },
+    {
+      tag: '📋 Sales — Taiwan',
+      tagPlain: 'Sales',
+      title: 'Client Onboarding Intelligence Pipeline',
+      modalTitle: 'AI System That Sends Intake Forms, Syncs Responses to Notion, and Briefs the Sales Team Automatically',
+      client: 'Sales Team — Taiwan',
+      image: 'Card 4.jpg',
+      headerMetrics: [
+        { val: '100%', lbl: 'Form delivery automated' },
+        { val: '0 min', lbl: 'Manual data entry' },
+        { val: '7 days', lbl: 'To go live' }
+      ],
+      sections: [
+        { label: 'Client Overview', type: 'text', content: 'A sales team in Taiwan managing a pipeline of prospective clients across multiple industries, requiring structured intake information before every client call.' },
+        { label: 'Business Context', type: 'text', content: 'Before calling any prospect, the team sent a Google Form via LINE or email to collect background details — company profile, pain points, goals, and budget. Responses had to be manually copied into Notion, individually summarised, and tracked by memory. As the pipeline grew, the process broke down.' },
+        { label: 'Problem Statement', type: 'text', content: 'Every step between sending a form and being ready to call was done manually.<ol><li>Forms sent one by one — no way to confirm every lead was reached</li><li>No system tracked who responded — follow-ups depended entirely on memory</li><li>Copying answers into Notion took 10–15 minutes per client</li><li>Client briefs were written inconsistently, or skipped entirely when the team was busy</li></ol>' },
+        { label: 'Objectives', type: 'text', content: '<ul><li>Send the intake form to all contacts at once with a single trigger</li><li>Automatically sync every completed response into Notion as a structured client record</li><li>Generate an AI client brief per response — ready to use before the call</li><li>Flag and follow up with unresponsive leads automatically</li></ul>' },
+        { label: 'Scope of Work', type: 'text', content: '<ul><li>Stage 1: Bulk form distribution via LINE and email from a single contact list upload</li><li>Stage 2: Real-time Google Forms polling → Notion sync with AI-generated client brief</li><li>Stage 3: Automated follow-up reminders and per-lead status tracking in Notion</li></ul>' },
+        { label: 'Solution Overview', type: 'text', content: 'The sales rep uploads a contact list and the form link — the system does the rest. Forms go out instantly, responses flow into Notion automatically with an AI brief attached, and unresponsive leads are followed up without anyone having to remember.' },
+        { label: 'Technology Stack', type: 'stack', items: ['n8n', 'OpenAI API', 'Google Forms API', 'Google Sheets API', 'Notion API', 'LINE Messaging API', 'Gmail API'] },
+        { label: 'Implementation Approach', type: 'text', content: 'Forms polling and Notion sync built and tested first with sample responses. LINE and email distribution validated with a small contact group. AI brief agent tuned against real form data. Full pipeline live in 7 days.' },
+        { label: 'Key Features', type: 'text', content: '<ul><li>Bulk distribution: upload contact list → personalised messages sent to all via LINE or email instantly</li><li>Real-time sync: new form submission → fields mapped and written to Notion automatically</li><li>AI client brief: GPT-4o reads each response and writes a pre-call summary — background, problem, timeline, key angles</li><li>Status tracking: every lead shows Form Sent, Completed, or Awaiting Response in Notion at a glance</li><li>Auto follow-up: no response after set window → reminder sent via the original channel automatically</li></ul>' },
+        { label: 'Results &amp; Business Impact', type: 'metrics', summary: 'Eliminated manual form sending, data entry, and brief writing — the sales team opens Notion and the pipeline is already ready.', items: [{ val: '100%', lbl: 'Form delivery automated' }, { val: '0 min', lbl: 'Manual data entry per response' }, { val: '10–15 min', lbl: 'Of prep eliminated per lead' }, { val: '7 days', lbl: 'From kickoff to fully live' }] }
+      ]
+    },
+    {
+      tag: '📄 Consulting — Indonesia',
+      tagPlain: 'Consulting',
+      title: 'Document Intelligence &amp; OCR Extraction Portal',
+      modalTitle: 'Local OCR Portal That Extracts Clean, Structured Text From Scanned Books — Accurately',
+      client: 'Consulting Firm — Indonesia',
+      image: 'Card 5.jpg',
+      headerMetrics: [
+        { val: '94.5%', lbl: 'Benchmark accuracy (OmniDocBench)' },
+        { val: '0', lbl: 'Manual re-editing on clean documents' },
+        { val: '100%', lbl: 'Local — no data leaves the network' }
+      ],
+      sections: [
+        { label: 'Client Overview', type: 'text', content: 'A consulting firm in Indonesia with a large library of physical books scanned into PDF — covering consulting frameworks, research, and training materials. Pages are dense with printed diagrams, flowcharts, and figures. The firm wanted to convert this entire library into structured text to power an AI knowledge base and chatbot.' },
+        { label: 'Business Context', type: 'text', content: 'The books contain a mix of plain text and heavily visual content — pages that explain a process use flowcharts, pages that compare options use tables, pages that show relationships use diagrams. Scanning those books preserves the images but loses all the text embedded within them. Before any AI system could use this knowledge, every page had to be extracted accurately — including everything inside the visuals.' },
+        { label: 'Problem Statement', type: 'text', content: 'The team had tried ChatGPT and Gemini. The output was inaccurate enough that every result needed manual correction — which took as long as doing it by hand.<ol><li>General AI models skipped diagram labels and text embedded in flowcharts entirely</li><li>Scanned books produced double-page images — two pages side by side in one frame — which tools couldn\'t split or process correctly</li><li>Tables with merged cells and multi-column layouts were flattened into unusable lists</li><li>Occasionally, models generated content that wasn\'t in the source document at all</li></ol>' },
+        { label: 'Objectives', type: 'text', content: '<ul><li>Build a locally hosted portal the team could use without technical knowledge</li><li>Accurately extract text from scanned pages dense with diagrams, flowcharts, and figures</li><li>Handle double-page book scans — detect and split each page independently</li><li>Preserve table structure so relationships between cells remain meaningful</li><li>Download the extracted raw text as DOCX or PDF</li><li>Keep all documents on their own network — nothing sent to external servers</li></ul>' },
+        { label: 'Scope of Work', type: 'text', content: '<ul><li>Local web portal installed on the firm\'s internal computer — browser-based, no internet required for processing</li><li>PaddleOCR PP-OCRv5 as the core extraction engine — purpose-built for complex document layouts</li><li>Double-page scan detection and automatic centre-split logic</li><li>Table recognition preserving row, column, and merged cell structure</li><li>Figure and diagram text detection — labels, annotations, and embedded text within visuals</li><li>Raw extracted text downloadable as DOCX or PDF directly from the portal</li></ul>' },
+        { label: 'Solution Overview', type: 'text', content: 'A locally installed portal — upload any document format, wait, download the extracted text as DOCX or PDF. PaddleOCR PP-OCRv5 achieves 94.5% accuracy on the OmniDocBench benchmark — the industry standard for document parsing — and is specifically trained to handle tables, figures, diagrams, and complex layouts that general AI models were never designed for.' },
+        { label: 'Technology Stack', type: 'stack', items: ['PaddleOCR PP-OCRv5', 'PaddleOCR-VL-1.5', 'Python', 'Flask', 'HTML / CSS / JS', 'PDF processing libraries'] },
+        { label: 'Implementation Approach', type: 'text', content: 'Built and tested against the firm\'s actual scanned books — including their most diagram-heavy pages and double-page frames. Installed on their local machine and handed over in a single session. Total time from kickoff to live: 2 weeks.' },
+        { label: 'Key Features', type: 'text', content: '<ul><li>PP-OCRv5 engine: 13% accuracy improvement over previous generation — built specifically for complex, real-world document layouts</li><li>Figure &amp; diagram extraction: detects and reads text labels, annotations, and embedded text within flowcharts and figures — not just body text</li><li>Table recognition: extracts row, column, and merged cell structure intact — output remains meaningful, not a flat list of values</li><li>Double-page split: automatically detects wide-format book scans, splits at the centre line, and processes each page in correct reading order</li><li>Flexible output: download the extracted raw text as DOCX or PDF</li><li>Fully local: all processing on the firm\'s own machine — no data leaves the network</li></ul>' },
+        { label: 'Results &amp; Business Impact', type: 'metrics', summary: 'The extraction problem that blocked the AI knowledge base for months was solved in 2 weeks — hours of manual work reduced to minutes, with raw text pulled out of scanned books accurately for the first time.', items: [{ val: '94.5%', lbl: 'Benchmark accuracy on OmniDocBench' }, { val: '0', lbl: 'Manual re-editing on clean documents' }, { val: 'Hours → mins', lbl: 'Processing time per document batch' }, { val: '100%', lbl: 'Local — no data leaves their network' }] }
+      ]
+    }
+  ];
+
+  function slugify(s) { return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''); }
+
+  function renderPage(id) {
+    const p = projects[id];
+    if (!p) { document.title = 'Not Found | Crux Agent'; return; }
+
+    document.title = p.title + ' | Crux Agent';
+
+    // Breadcrumb
+    document.getElementById('breadcrumbCategory').textContent = p.tagPlain;
+
+    // Hero tag
+    const tagClean = p.tag.replace(/^[^\w&]+/, '');
+    document.getElementById('heroTag').innerHTML = `<span class="proj-tag" style="position:relative">${tagClean}</span>`;
+
+    // Hero title (use modalTitle for full-page heading)
+    document.getElementById('heroTitle').textContent = p.modalTitle;
+
+    // Hero meta
+    document.getElementById('heroMeta').innerHTML = p.client
+      ? `<div class="cs-meta-item">
+           <svg class="cs-meta-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+           ${p.client}
+         </div>`
+      : '';
+
+    // Hero metrics
+    document.getElementById('heroMetrics').innerHTML = p.headerMetrics.map(m =>
+      `<div class="cs-header-metric"><div class="met-val">${m.val}</div><div class="met-lbl">${m.lbl}</div></div>`
+    ).join('');
+
+    // Hero image
+    const img = document.getElementById('heroImg');
+    img.src = p.image;
+    img.alt = p.title;
+
+    // Sidebar nav
+    const navItems = p.sections.map((s, i) => {
+      const anchor = 'section-' + slugify(s.label);
+      return `<li><a href="#${anchor}">${s.label.replace('&amp;', '&')}</a></li>`;
+    }).join('');
+    document.getElementById('sidebarNav').innerHTML = navItems;
+
+    // Sections
+    const sectionsHtml = p.sections.map((s, i) => {
+      const anchor = 'section-' + slugify(s.label);
+      const icon = sectionIcons[s.label] || '📌';
+      let body = '';
+      if (s.type === 'stack') {
+        body = `<div class="cs-stack">${s.items.map(item => `<span class="cs-stack-item">${item}</span>`).join('')}</div>`;
+      } else if (s.type === 'metrics') {
+        const summary = s.summary ? `<p class="cs-metrics-summary">${s.summary}</p>` : '';
+        const cards = s.items.map(m => `<div class="cs-metric-card"><div class="met-val">${m.val}</div><div class="met-lbl">${m.lbl}</div></div>`).join('');
+        body = `${summary}<div class="cs-metrics-grid">${cards}</div>`;
+      } else {
+        body = `<div class="cs-section-body">${s.content}</div>`;
+      }
+      return `
+        <div class="cs-section" id="${anchor}">
+          <div class="cs-section-header">
+            <div class="cs-section-icon">${icon}</div>
+            <div class="cs-section-label">${s.label.replace('&amp;', '&')}</div>
+          </div>
+          ${body}
+        </div>
+        ${i < p.sections.length - 1 ? '<hr class="cs-divider">' : ''}
+      `;
+    }).join('');
+    document.getElementById('csSections').innerHTML = sectionsHtml;
+
+    // Sidebar active link on scroll
+    const sectionEls = p.sections.map(s => document.getElementById('section-' + slugify(s.label)));
+    const sidebarLinks = document.querySelectorAll('.cs-sidebar-nav li a');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          sidebarLinks.forEach(a => a.classList.remove('active'));
+          const link = document.querySelector(`.cs-sidebar-nav li a[href="#${entry.target.id}"]`);
+          if (link) link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    sectionEls.forEach(el => { if (el) io.observe(el); });
+  }
+
+  // Read ?id= from URL
+  const params = new URLSearchParams(window.location.search);
+  const id = parseInt(params.get('id'), 10);
+  if (!isNaN(id) && id >= 0 && id < projects.length) {
+    renderPage(id);
+  } else {
+    document.getElementById('heroTitle').textContent = 'Case study not found.';
+  }
+</script>
+</body>
+</html>
