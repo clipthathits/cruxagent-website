@@ -882,7 +882,12 @@
       card.style.transform = 'rotateX(' + lerp(20, 0, p) + 'deg) scale(' + lerp(1.05, 1, p) + ')';
       header.style.opacity = '1';
     }
-    // Scroll-position-driven animation — works on both mobile and desktop
+    // Mobile: no 3D animation — card shows flat at full height
+    if (window.innerWidth <= 960) {
+      header.style.opacity = '1';
+      return;
+    }
+    // Desktop: passive scroll-position-driven animation
     function onScroll() {
       var rect = showcase.getBoundingClientRect();
       var scrollRange = showcase.offsetHeight - window.innerHeight;

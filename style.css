@@ -1261,9 +1261,10 @@
       .stats-grid, .pain-grid { grid-template-columns: 1fr; }
       .for-grid, .about-wrap, .contact-wrap { grid-template-columns: 1fr; gap: 40px; }
       .for-right, .about-cards { grid-template-columns: 1fr 1fr; }
-      #scroll-showcase { height: 150vh; }
-      .scroll-perspective { position: sticky; top: 0; height: 100vh; padding: 4rem 1rem 1.5rem; }
-      .scroll-card-inner { height: 20rem; }
+      #scroll-showcase { height: auto; }
+      .scroll-perspective { position: relative; top: 0; height: auto; padding: 4rem 1rem 3rem; perspective: none; }
+      .scroll-card-inner { height: auto; overflow: visible; }
+      .scroll-card-wrap { transform: none !important; }
       .mockup-stat-row { grid-template-columns: repeat(2, 1fr); }
       .mockup-flow { gap: 0; overflow-x: auto; }
       .flow-node { padding: 8px 6px; min-width: 70px; }
