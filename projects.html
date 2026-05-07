@@ -7,7 +7,7 @@
   <meta name="description" content="Real AI automation projects delivered for real businesses — from WhatsApp operations to talent acquisition and content production." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -19,15 +19,33 @@
     Crux Agent
   </a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="solve.html">What We Solve</a></li>
-    <li><a href="process.html">How It Works</a></li>
-    <li><a href="projects.html">Case Studies</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="faq.html#contact" class="nav-cta"><span>Talk to Us</span></a></li>
+    <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+    <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
+    <li><a href="solve.html" data-i18n="nav.solve">What We Solve</a></li>
+    <li><a href="process.html" data-i18n="nav.process">How It Works</a></li>
+    <li><a href="projects.html" data-i18n="nav.projects">Case Studies</a></li>
+    <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+    <li><a href="faq.html#contact" class="nav-cta"><span data-i18n="nav.cta">Talk to Us</span></a></li>
   </ul>
   <div class="nav-actions">
+    <div class="lang-dropdown" id="langDropdown">
+      <button class="lang-toggle" id="langToggle" aria-label="Language" aria-haspopup="true" aria-expanded="false">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+      </button>
+      <div class="lang-menu" id="langMenu" role="menu">
+        <button class="lang-option" data-lang="en" role="menuitem">
+          EN
+          <svg class="lang-check" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        </button>
+        <button class="lang-option" data-lang="zh" role="menuitem">
+          繁中
+          <svg class="lang-check" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        </button>
+      </div>
+    </div>
     <div class="theme-dropdown" id="themeDropdown">
       <button class="theme-toggle" id="themeToggle" aria-label="Theme" aria-haspopup="true" aria-expanded="false">
         <svg id="themeIcon" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -63,21 +81,21 @@
 <section id="projects" style="padding-top:120px;">
   <div class="inner">
     <div class="proj-hdr">
-      <span class="stag stag-violet reveal">Success Stories</span>
-      <h2 class="sh reveal">Client Case Studies</h2>
-      <p class="ss reveal">Every project here started with a specific business problem —and ended with a system that solved it.</p>
+      <span class="stag stag-violet reveal" data-i18n="proj.tag">Success Stories</span>
+      <h2 class="sh reveal" data-i18n="proj.h2">Client Case Studies</h2>
+      <p class="ss reveal" data-i18n="proj.sub">Every project here started with a specific business problem —and ended with a system that solved it.</p>
       <div class="proj-stats reveal">
         <div>
           <div class="proj-stat-val">15+</div>
-          <div class="proj-stat-lbl">Projects Delivered</div>
+          <div class="proj-stat-lbl" data-i18n="proj.stat.delivered">Projects Delivered</div>
         </div>
         <div>
           <div class="proj-stat-val">100%</div>
-          <div class="proj-stat-lbl">Success Rate</div>
+          <div class="proj-stat-lbl" data-i18n="proj.stat.success">Success Rate</div>
         </div>
         <div>
           <div class="proj-stat-val">3 Days</div>
-          <div class="proj-stat-lbl">To First Demo</div>
+          <div class="proj-stat-lbl" data-i18n="proj.stat.demo">To First Demo</div>
         </div>
       </div>
     </div>
@@ -86,15 +104,15 @@
       <div class="proj-card reveal" data-pid="0">
         <div class="proj-card-img">
           <img src="Card 0.png" alt="Competitive News Intelligence Platform">
-          <span class="proj-tag">Sales &amp; Marketing — Taiwan</span>
+          <span class="proj-tag" data-i18n="proj.card1.tag">🗞️ Sales &amp; Marketing — Taiwan</span>
         </div>
         <div class="proj-card-body">
-          <h3>Competitive News Intelligence Platform</h3>
-          <p>Monitor 28 sources, surface what matters, and deliver ready articles to marketing.</p>
+          <h3 data-i18n="proj.card1.h3">Competitive News Intelligence Platform</h3>
+          <p data-i18n="proj.card1.p">Monitor 28 sources, surface what matters, and deliver ready articles to marketing.</p>
           <div class="metrics">
-            <div><div class="met-val">700+</div><div class="met-lbl">Articles processed<br>daily</div></div>
-            <div><div class="met-val">28</div><div class="met-lbl">Sources monitored<br>daily</div></div>
-            <div><div class="met-val">0 hrs</div><div class="met-lbl">Spent on manual<br>monitoring</div></div>
+            <div><div class="met-val">700+</div><div class="met-lbl" data-i18n="proj.card1.met1.lbl">Articles processed<br>daily</div></div>
+            <div><div class="met-val">28</div><div class="met-lbl" data-i18n="proj.card1.met2.lbl">Sources monitored<br>daily</div></div>
+            <div><div class="met-val">0 hrs</div><div class="met-lbl" data-i18n="proj.card1.met3.lbl">Spent on manual<br>monitoring</div></div>
           </div>
           <div class="proj-tech-tags">
             <span class="proj-tech-tag">n8n</span>
@@ -102,22 +120,22 @@
             <span class="proj-tech-tag">OpenAI API</span>
             <span class="proj-tech-tag">+4 more</span>
           </div>
-          <a class="proj-details-btn" href="case-study.html?id=0">Read Full Case Study <span class="btn-arrow">→</span></a>
+          <a class="proj-details-btn" href="case-study.html?id=0"><span data-i18n="proj.read">Read Full Case Study</span> <span class="btn-arrow">→</span></a>
         </div>
       </div>
 
       <div class="proj-card reveal" data-pid="1">
         <div class="proj-card-img">
           <img src="Card 1.png" alt="WhatsApp Business Operations Platform">
-          <span class="proj-tag">Catering &amp; Food Services — Indonesia</span>
+          <span class="proj-tag" data-i18n="proj.card2.tag">🍱 Catering &amp; Food Services — Indonesia</span>
         </div>
         <div class="proj-card-body">
-          <h3>WhatsApp Business Operations Platform</h3>
-          <p>Orders, payments, and deliveries — fully automated through WhatsApp.</p>
+          <h3 data-i18n="proj.card2.h3">WhatsApp Business Operations Platform</h3>
+          <p data-i18n="proj.card2.p">Orders, payments, and deliveries — fully automated through WhatsApp.</p>
           <div class="metrics">
-            <div><div class="met-val">350+</div><div class="met-lbl">Orders managed<br>daily</div></div>
-            <div><div class="met-val">24/7</div><div class="met-lbl">Customer support<br>coverage</div></div>
-            <div><div class="met-val">7</div><div class="met-lbl">Workflows automated</div></div>
+            <div><div class="met-val">350+</div><div class="met-lbl" data-i18n="proj.card2.met1.lbl">Orders managed<br>daily</div></div>
+            <div><div class="met-val">24/7</div><div class="met-lbl" data-i18n="proj.card2.met2.lbl">Customer support<br>coverage</div></div>
+            <div><div class="met-val">7</div><div class="met-lbl" data-i18n="proj.card2.met3.lbl">Workflows automated</div></div>
           </div>
           <div class="proj-tech-tags">
             <span class="proj-tech-tag">n8n</span>
@@ -125,22 +143,22 @@
             <span class="proj-tech-tag">OpenAI API</span>
             <span class="proj-tech-tag">+8 more</span>
           </div>
-          <a class="proj-details-btn" href="case-study.html?id=1">Read Full Case Study <span class="btn-arrow">→</span></a>
+          <a class="proj-details-btn" href="case-study.html?id=1"><span data-i18n="proj.read">Read Full Case Study</span> <span class="btn-arrow">→</span></a>
         </div>
       </div>
 
       <div class="proj-card reveal" data-pid="2">
         <div class="proj-card-img">
           <img src="Card 2.png" alt="End-to-End Talent Acquisition System">
-          <span class="proj-tag">Manufacturing — Indonesia</span>
+          <span class="proj-tag" data-i18n="proj.card3.tag">🏭 Manufacturing — Indonesia</span>
         </div>
         <div class="proj-card-body">
-          <h3>End-to-End Talent Acquisition System</h3>
-          <p>Screen, interview, and schedule candidates — without HR lifting a finger.</p>
+          <h3 data-i18n="proj.card3.h3">End-to-End Talent Acquisition System</h3>
+          <p data-i18n="proj.card3.p">Screen, interview, and schedule candidates — without HR lifting a finger.</p>
           <div class="metrics">
-            <div><div class="met-val">87%</div><div class="met-lbl">Screening time<br>reduction</div></div>
-            <div><div class="met-val">150+</div><div class="met-lbl">CVs screened<br>automatically</div></div>
-            <div><div class="met-val">48 hrs</div><div class="met-lbl">From close to<br>shortlist</div></div>
+            <div><div class="met-val">87%</div><div class="met-lbl" data-i18n="proj.card3.met1.lbl">Screening time<br>reduction</div></div>
+            <div><div class="met-val">150+</div><div class="met-lbl" data-i18n="proj.card3.met2.lbl">CVs screened<br>automatically</div></div>
+            <div><div class="met-val">48 hrs</div><div class="met-lbl" data-i18n="proj.card3.met3.lbl">From close to<br>shortlist</div></div>
           </div>
           <div class="proj-tech-tags">
             <span class="proj-tech-tag">n8n</span>
@@ -148,22 +166,22 @@
             <span class="proj-tech-tag">Twilio</span>
             <span class="proj-tech-tag">+6 more</span>
           </div>
-          <a class="proj-details-btn" href="case-study.html?id=2">Read Full Case Study <span class="btn-arrow">→</span></a>
+          <a class="proj-details-btn" href="case-study.html?id=2"><span data-i18n="proj.read">Read Full Case Study</span> <span class="btn-arrow">→</span></a>
         </div>
       </div>
 
       <div class="proj-card reveal" data-pid="3">
         <div class="proj-card-img">
           <img src="Card 3.jpg" alt="Automated Content Production Engine">
-          <span class="proj-tag">Marketing — Taiwan</span>
+          <span class="proj-tag" data-i18n="proj.card4.tag">✍️ Marketing — Taiwan</span>
         </div>
         <div class="proj-card-body">
-          <h3>Automated Content Production Engine</h3>
-          <p>One topic in. Two publication-ready articles out.</p>
+          <h3 data-i18n="proj.card4.h3">Automated Content Production Engine</h3>
+          <p data-i18n="proj.card4.p">One topic in. Two publication-ready articles out.</p>
           <div class="metrics">
-            <div><div class="met-val">97%</div><div class="met-lbl">Production time<br>reduction</div></div>
-            <div><div class="met-val">50+</div><div class="met-lbl">Articles per year</div></div>
-            <div><div class="met-val">3</div><div class="met-lbl">Platforms targeted</div></div>
+            <div><div class="met-val">97%</div><div class="met-lbl" data-i18n="proj.card4.met1.lbl">Production time<br>reduction</div></div>
+            <div><div class="met-val">50+</div><div class="met-lbl" data-i18n="proj.card4.met2.lbl">Articles per year</div></div>
+            <div><div class="met-val">3</div><div class="met-lbl" data-i18n="proj.card4.met3.lbl">Platforms targeted</div></div>
           </div>
           <div class="proj-tech-tags">
             <span class="proj-tech-tag">n8n</span>
@@ -171,22 +189,22 @@
             <span class="proj-tech-tag">Claude API</span>
             <span class="proj-tech-tag">+10 more</span>
           </div>
-          <a class="proj-details-btn" href="case-study.html?id=3">Read Full Case Study <span class="btn-arrow">→</span></a>
+          <a class="proj-details-btn" href="case-study.html?id=3"><span data-i18n="proj.read">Read Full Case Study</span> <span class="btn-arrow">→</span></a>
         </div>
       </div>
 
       <div class="proj-card reveal" data-pid="4">
         <div class="proj-card-img">
           <img src="Card 4.jpg" alt="Client Onboarding Intelligence Pipeline">
-          <span class="proj-tag">Sales — Taiwan</span>
+          <span class="proj-tag" data-i18n="proj.card5.tag">📋 Sales — Taiwan</span>
         </div>
         <div class="proj-card-body">
-          <h3>Client Onboarding Intelligence Pipeline</h3>
-          <p>Send intake forms, auto-populate Notion, and flag unresponsive leads — automatically.</p>
+          <h3 data-i18n="proj.card5.h3">Client Onboarding Intelligence Pipeline</h3>
+          <p data-i18n="proj.card5.p">Send intake forms, auto-populate Notion, and flag unresponsive leads — automatically.</p>
           <div class="metrics">
-            <div><div class="met-val">100%</div><div class="met-lbl">Form delivery<br>automated</div></div>
-            <div><div class="met-val">0</div><div class="met-lbl">Manual data<br>entry</div></div>
-            <div><div class="met-val">Real-time</div><div class="met-lbl">Notion database</div></div>
+            <div><div class="met-val">100%</div><div class="met-lbl" data-i18n="proj.card5.met1.lbl">Form delivery<br>automated</div></div>
+            <div><div class="met-val">0</div><div class="met-lbl" data-i18n="proj.card5.met2.lbl">Manual data<br>entry</div></div>
+            <div><div class="met-val">Real-time</div><div class="met-lbl" data-i18n="proj.card5.met3.lbl">Notion database</div></div>
           </div>
           <div class="proj-tech-tags">
             <span class="proj-tech-tag">n8n</span>
@@ -194,22 +212,22 @@
             <span class="proj-tech-tag">LINE API</span>
             <span class="proj-tech-tag">+4 more</span>
           </div>
-          <a class="proj-details-btn" href="case-study.html?id=4">Read Full Case Study <span class="btn-arrow">→</span></a>
+          <a class="proj-details-btn" href="case-study.html?id=4"><span data-i18n="proj.read">Read Full Case Study</span> <span class="btn-arrow">→</span></a>
         </div>
       </div>
 
       <div class="proj-card reveal" data-pid="5">
         <div class="proj-card-img">
           <img src="Card 5.jpg" alt="Document Intelligence & OCR Extraction Portal">
-          <span class="proj-tag">Consulting — Indonesia</span>
+          <span class="proj-tag" data-i18n="proj.card6.tag">📄 Consulting — Indonesia</span>
         </div>
         <div class="proj-card-body">
-          <h3>Document Intelligence &amp; OCR Extraction Portal</h3>
-          <p>Extract clean, structured text from scanned books packed with diagrams, flowcharts, and complex layouts.</p>
+          <h3 data-i18n="proj.card6.h3">Document Intelligence &amp; OCR Extraction Portal</h3>
+          <p data-i18n="proj.card6.p">Extract clean, structured text from scanned books packed with diagrams, flowcharts, and complex layouts.</p>
           <div class="metrics">
-            <div><div class="met-val">94.5%</div><div class="met-lbl">Benchmark accuracy<br>(OmniDocBench)</div></div>
-            <div><div class="met-val">0</div><div class="met-lbl">Manual re-editing<br>on clean docs</div></div>
-            <div><div class="met-val">100%</div><div class="met-lbl">Local — no data<br>leaves the network</div></div>
+            <div><div class="met-val">94.5%</div><div class="met-lbl" data-i18n="proj.card6.met1.lbl">Benchmark accuracy<br>(OmniDocBench)</div></div>
+            <div><div class="met-val">0</div><div class="met-lbl" data-i18n="proj.card6.met2.lbl">Manual re-editing<br>on clean docs</div></div>
+            <div><div class="met-val">100%</div><div class="met-lbl" data-i18n="proj.card6.met3.lbl">Local — no data<br>leaves the network</div></div>
           </div>
           <div class="proj-tech-tags">
             <span class="proj-tech-tag">PaddleOCR</span>
@@ -217,7 +235,7 @@
             <span class="proj-tech-tag">Flask</span>
             <span class="proj-tech-tag">+3 more</span>
           </div>
-          <a class="proj-details-btn" href="case-study.html?id=5">Read Full Case Study <span class="btn-arrow">→</span></a>
+          <a class="proj-details-btn" href="case-study.html?id=5"><span data-i18n="proj.read">Read Full Case Study</span> <span class="btn-arrow">→</span></a>
         </div>
       </div>
 
@@ -239,6 +257,7 @@
   </div>
 </div>
 
+<script src="i18n.js"></script>
 <script>
   // Navbar scroll
   const nav = document.getElementById('navbar');
@@ -715,7 +734,10 @@
   ];
 
   function openModal(id) {
-    const p = projects[id];
+    const isZh = window.CruxI18n && window.CruxI18n.get() === 'zh';
+    const p = (isZh && window.CruxI18n.zhModal && window.CruxI18n.zhModal[id]) ? window.CruxI18n.zhModal[id] : projects[id];
+    const clientLbl = isZh ? '客戶' : 'Client';
+    const ctaText = isZh ? '打造類似的系統 →' : 'Get a Similar System Built →';
     const modalTitle = p.modalTitle || p.title;
     const bodyHtml = p.sections.map(s => {
       if (s.type === 'stack') {
@@ -729,7 +751,7 @@
       }
       return `<div class="modal-section"><div class="modal-section-label">${s.label}</div><div class="modal-section-body">${s.content}</div></div>`;
     }).join('');
-    const metaHtml = p.client ? `<div class="modal-meta"><span class="modal-meta-item"><span class="modal-meta-lbl">Client</span>${p.client}</span></div>` : '';
+    const metaHtml = p.client ? `<div class="modal-meta"><span class="modal-meta-item"><span class="modal-meta-lbl">${clientLbl}</span>${p.client}</span></div>` : '';
     const headerMetricsHtml = p.headerMetrics ? `<div class="modal-header-metrics">${p.headerMetrics.map(m => `<div class="modal-metric"><div class="met-val">${m.val}</div><div class="met-lbl">${m.lbl}</div></div>`).join('')}</div>` : '';
     document.getElementById('modalContent').innerHTML = `
       <div class="modal-tag"><span class="proj-tag" style="position:relative;z-index:2">${p.tag}</span></div>
@@ -737,7 +759,7 @@
       ${metaHtml}
       ${headerMetricsHtml}
       ${bodyHtml}
-      <a href="faq.html#contact" class="modal-cta" onclick="closeModal()">Get a Similar System Built →</a>
+      <a href="faq.html#contact" class="modal-cta" onclick="closeModal()">${ctaText}</a>
     `;
     document.getElementById('projModalOverlay').classList.add('open');
     document.body.style.overflow = 'hidden';

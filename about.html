@@ -7,7 +7,7 @@
   <meta name="description" content="Crux Agent is an AI automation agency built for SMEs — bridging the gap between what AI can do and what most businesses have had access to." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -19,15 +19,33 @@
     Crux Agent
   </a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="solve.html">What We Solve</a></li>
-    <li><a href="process.html">How It Works</a></li>
-    <li><a href="projects.html">Case Studies</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="faq.html#contact" class="nav-cta"><span>Talk to Us</span></a></li>
+    <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+    <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
+    <li><a href="solve.html" data-i18n="nav.solve">What We Solve</a></li>
+    <li><a href="process.html" data-i18n="nav.process">How It Works</a></li>
+    <li><a href="projects.html" data-i18n="nav.projects">Case Studies</a></li>
+    <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+    <li><a href="faq.html#contact" class="nav-cta"><span data-i18n="nav.cta">Talk to Us</span></a></li>
   </ul>
   <div class="nav-actions">
+    <div class="lang-dropdown" id="langDropdown">
+      <button class="lang-toggle" id="langToggle" aria-label="Language" aria-haspopup="true" aria-expanded="false">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+      </button>
+      <div class="lang-menu" id="langMenu" role="menu">
+        <button class="lang-option" data-lang="en" role="menuitem">
+          EN
+          <svg class="lang-check" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        </button>
+        <button class="lang-option" data-lang="zh" role="menuitem">
+          繁中
+          <svg class="lang-check" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        </button>
+      </div>
+    </div>
     <div class="theme-dropdown" id="themeDropdown">
       <button class="theme-toggle" id="themeToggle" aria-label="Theme" aria-haspopup="true" aria-expanded="false">
         <svg id="themeIcon" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -64,34 +82,34 @@
   <div class="inner">
     <div class="about-wrap">
       <div class="reveal">
-        <span class="stag">About Crux Agent</span>
-        <h2 class="sh">AI can do more for your business<br /><span class="gt">than you've been shown</span></h2>
-        <p class="about-body">
+        <span class="stag" data-i18n="about.tag">About Crux Agent</span>
+        <h2 class="sh"><span data-i18n="about.h2.1">AI can do more for your business</span><br /><span class="gt" data-i18n="about.h2.2">than you've been shown</span></h2>
+        <p class="about-body" data-i18n="about.body1">
           Crux Agent is an AI automation and agent agency built for small and medium-sized businesses. We exist to bridge the gap between what AI is genuinely capable of and what most SMEs have had a chance to access —without needing a dedicated tech team, a complex rollout, or an enterprise budget.
         </p>
-        <p class="about-body">
+        <p class="about-body" data-i18n="about.body2">
           Most growing businesses already know AI can help. The challenge isn't willingness —it's clarity. AI doesn't underdeliver because it lacks capability. It underdelivers when it's applied without the right structure behind it. When automation is built correctly —matched to your actual processes, your existing tools, and the specific tasks your team is ready to hand off —the results are measurable and fast.
         </p>
-        <p class="about-body">
+        <p class="about-body" data-i18n="about.body3">
           Our mission is to eliminate repetitive, low-value work from your team's day and replace it with systems that run on their own. Because every hour your people spend on manual tasks is an hour that could go toward the work that actually grows your business. We help SMEs redirect that time toward work that actually moves the needle.
         </p>
       </div>
       <div class="about-cards reveal">
         <div class="a-card">
-          <h4>Outcome-First</h4>
-          <p>Every system is designed around a specific, measurable business result —not a technology showcase.</p>
+          <h4 data-i18n="about.card1.h4">Outcome-First</h4>
+          <p data-i18n="about.card1.p">Every system is designed around a specific, measurable business result —not a technology showcase.</p>
         </div>
         <div class="a-card">
-          <h4>Function Over Fancy</h4>
-          <p>We don't build complexity for complexity's sake. If a simple workflow gets the result, that's what we use. The best system is the one your team can rely on —not the one that looks most sophisticated.</p>
+          <h4 data-i18n="about.card2.h4">Function Over Fancy</h4>
+          <p data-i18n="about.card2.p">We don't build complexity for complexity's sake. If a simple workflow gets the result, that's what we use. The best system is the one your team can rely on —not the one that looks most sophisticated.</p>
         </div>
         <div class="a-card">
-          <h4>Works With Your Stack</h4>
-          <p>No ripping out your existing tools. We build around what you already use —CRM, email, Slack, everything.</p>
+          <h4 data-i18n="about.card3.h4">Works With Your Stack</h4>
+          <p data-i18n="about.card3.p">No ripping out your existing tools. We build around what you already use —CRM, email, Slack, everything.</p>
         </div>
         <div class="a-card">
-          <h4>Built for SMEs</h4>
-          <p>We work exclusively with small and medium-sized businesses —so everything we build is designed around your scale, your budget, and your team.</p>
+          <h4 data-i18n="about.card4.h4">Built for SMEs</h4>
+          <p data-i18n="about.card4.p">We work exclusively with small and medium-sized businesses —so everything we build is designed around your scale, your budget, and your team.</p>
         </div>
       </div>
     </div>
@@ -102,25 +120,25 @@
 <section id="services">
   <div class="inner">
     <div class="diff-header">
-      <span class="stag reveal">What We Build</span>
-      <h2 class="sh reveal">Three types of solutions<br /><span class="gt">one goal</span></h2>
-      <p class="ss reveal">Whether you need automated workflows, intelligent systems, or autonomous AI agents that act on your behalf —we scope the right solution for what your business actually needs.</p>
+      <span class="stag reveal" data-i18n="services.tag">What We Build</span>
+      <h2 class="sh reveal"><span data-i18n="services.h2.1">Three types of solutions</span><br /><span class="gt" data-i18n="services.h2.2">one goal</span></h2>
+      <p class="ss reveal" data-i18n="services.sub">Whether you need automated workflows, intelligent systems, or autonomous AI agents that act on your behalf —we scope the right solution for what your business actually needs.</p>
     </div>
     <div class="services-grid">
       <div class="for-card ac-blue reveal" data-glow>
         <span class="card-num">01</span>
-        <h4 style="text-align:center;">AI Automation</h4>
-        <p>Automated workflows that eliminate repetitive tasks —connecting your existing tools and running without manual input.</p>
+        <h4 style="text-align:center;" data-i18n="services.card1.h4">AI Automation</h4>
+        <p data-i18n="services.card1.p">Automated workflows that eliminate repetitive tasks —connecting your existing tools and running without manual input.</p>
       </div>
       <div class="for-card ac-purple reveal" data-glow>
         <span class="card-num">02</span>
-        <h4 style="text-align:center;">AI Systems</h4>
-        <p>Intelligent systems that process information, make decisions, or generate outputs —built around your specific data and processes.</p>
+        <h4 style="text-align:center;" data-i18n="services.card2.h4">AI Systems</h4>
+        <p data-i18n="services.card2.p">Intelligent systems that process information, make decisions, or generate outputs —built around your specific data and processes.</p>
       </div>
       <div class="for-card ac-green reveal" data-glow>
         <span class="card-num">03</span>
-        <h4 style="text-align:center;">AI Agents</h4>
-        <p>Autonomous agents that plan, decide, and act on your behalf —handling multi-step tasks end-to-end without waiting for human input at every step.</p>
+        <h4 style="text-align:center;" data-i18n="services.card3.h4">AI Agents</h4>
+        <p data-i18n="services.card3.p">Autonomous agents that plan, decide, and act on your behalf —handling multi-step tasks end-to-end without waiting for human input at every step.</p>
       </div>
     </div>
   </div>
@@ -128,10 +146,11 @@
 
 <!-- FOOTER -->
 <footer>
-  <p class="f-copy">© 2026 Crux Agent. All rights reserved.</p>
-  <p class="f-copy"><a href="privacy-policy.html" style="color:inherit;opacity:0.6;text-decoration:none;">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms-of-service.html" style="color:inherit;opacity:0.6;text-decoration:none;">Terms of Service</a></p>
+  <p class="f-copy" data-i18n="footer.rights">© 2026 Crux Agent. All rights reserved.</p>
+  <p class="f-copy"><a href="privacy-policy.html" style="color:inherit;opacity:0.6;text-decoration:none;" data-i18n="footer.privacy">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms-of-service.html" style="color:inherit;opacity:0.6;text-decoration:none;" data-i18n="footer.terms">Terms of Service</a></p>
 </footer>
 
+<script src="i18n.js"></script>
 <script>
   // Navbar scroll
   const nav = document.getElementById('navbar');

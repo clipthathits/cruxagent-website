@@ -7,7 +7,7 @@
   <meta name="description" content="Real automation use cases across sales, marketing, operations, HR, and more — built for real businesses and delivering real results." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -19,15 +19,33 @@
     Crux Agent
   </a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="solve.html">What We Solve</a></li>
-    <li><a href="process.html">How It Works</a></li>
-    <li><a href="projects.html">Case Studies</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="faq.html#contact" class="nav-cta"><span>Talk to Us</span></a></li>
+    <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+    <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
+    <li><a href="solve.html" data-i18n="nav.solve">What We Solve</a></li>
+    <li><a href="process.html" data-i18n="nav.process">How It Works</a></li>
+    <li><a href="projects.html" data-i18n="nav.projects">Case Studies</a></li>
+    <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+    <li><a href="faq.html#contact" class="nav-cta"><span data-i18n="nav.cta">Talk to Us</span></a></li>
   </ul>
   <div class="nav-actions">
+    <div class="lang-dropdown" id="langDropdown">
+      <button class="lang-toggle" id="langToggle" aria-label="Language" aria-haspopup="true" aria-expanded="false">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+      </button>
+      <div class="lang-menu" id="langMenu" role="menu">
+        <button class="lang-option" data-lang="en" role="menuitem">
+          EN
+          <svg class="lang-check" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        </button>
+        <button class="lang-option" data-lang="zh" role="menuitem">
+          繁中
+          <svg class="lang-check" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        </button>
+      </div>
+    </div>
     <div class="theme-dropdown" id="themeDropdown">
       <button class="theme-toggle" id="themeToggle" aria-label="Theme" aria-haspopup="true" aria-expanded="false">
         <svg id="themeIcon" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -63,9 +81,9 @@
 <section id="solve" style="padding-top:120px;">
   <div class="inner">
     <div class="solve-header">
-      <span class="stag reveal">Real Work</span>
-      <h2 class="sh reveal">Built for real businesses<br /><span class="gt">delivered for real results</span></h2>
-      <p class="ss reveal">More can be automated than most teams expect —these systems are proof</p>
+      <span class="stag reveal" data-i18n="solve.tag">Real Work</span>
+      <h2 class="sh reveal"><span data-i18n="solve.h2.1">Built for real businesses</span><br /><span class="gt" data-i18n="solve.h2.2">delivered for real results</span></h2>
+      <p class="ss reveal" data-i18n="solve.sub">More can be automated than most teams expect —these systems are proof</p>
     </div>
     <div class="solve-marquee">
       <div class="solve-track">
@@ -75,21 +93,21 @@
           <div class="sc-left">
             <div class="sc-icon">🗞️</div>
             <div>
-              <div class="sc-title">News Intelligence</div>
-              <span class="sc-industry">Sales — Taiwan</span>
+              <div class="sc-title" data-i18n="solve.sc1.title">News Intelligence</div>
+              <span class="sc-industry" data-i18n="solve.sc1.industry">Sales — Taiwan</span>
             </div>
           </div>
           <div class="sc-badge">
             <span class="sc-badge-val">92%</span>
-            <span class="sc-badge-lbl">Content filtered</span>
+            <span class="sc-badge-lbl" data-i18n="solve.sc1.badge.lbl">Content filtered</span>
           </div>
         </div>
         <div class="sc-inner">
           <div class="sc-qmark">"</div>
-          <p class="sc-body">28 sources monitored daily, curated and filtered automatically — a ready-to-use briefing delivered each morning without lifting a finger.</p>
+          <p class="sc-body" data-i18n="solve.sc1.body">28 sources monitored daily, curated and filtered automatically — a ready-to-use briefing delivered each morning without lifting a finger.</p>
           <div class="sc-extra">
             <span class="sc-extra-val">8→2 hrs</span>
-            <span class="sc-extra-lbl">saved per day</span>
+            <span class="sc-extra-lbl" data-i18n="solve.sc1.extra.lbl">saved per day</span>
           </div>
         </div>
       </div>
@@ -99,21 +117,21 @@
           <div class="sc-left">
             <div class="sc-icon">🎙️</div>
             <div>
-              <div class="sc-title">Meeting Intelligence</div>
-              <span class="sc-industry">Consulting — Indonesia</span>
+              <div class="sc-title" data-i18n="solve.sc2.title">Meeting Intelligence</div>
+              <span class="sc-industry" data-i18n="solve.sc2.industry">Consulting — Indonesia</span>
             </div>
           </div>
           <div class="sc-badge">
             <span class="sc-badge-val">100%</span>
-            <span class="sc-badge-lbl">Documented</span>
+            <span class="sc-badge-lbl" data-i18n="solve.sc2.badge.lbl">Documented</span>
           </div>
         </div>
         <div class="sc-inner">
           <div class="sc-qmark">"</div>
-          <p class="sc-body">Every recording transcribed, speakers identified, and output filed in the right place —automatically, without anyone reviewing the recording manually.</p>
+          <p class="sc-body" data-i18n="solve.sc2.body">Every recording transcribed, speakers identified, and output filed in the right place —automatically, without anyone reviewing the recording manually.</p>
           <div class="sc-extra">
             <span class="sc-extra-val">90%</span>
-            <span class="sc-extra-lbl">faster than manual notes</span>
+            <span class="sc-extra-lbl" data-i18n="solve.sc2.extra.lbl">faster than manual notes</span>
           </div>
         </div>
       </div>
@@ -123,21 +141,21 @@
           <div class="sc-left">
             <div class="sc-icon">🍱</div>
             <div>
-              <div class="sc-title">WhatsApp Operations</div>
-              <span class="sc-industry">Catering — Indonesia</span>
+              <div class="sc-title" data-i18n="solve.sc3.title">WhatsApp Operations</div>
+              <span class="sc-industry" data-i18n="solve.sc3.industry">Catering — Indonesia</span>
             </div>
           </div>
           <div class="sc-badge">
             <span class="sc-badge-val">80%</span>
-            <span class="sc-badge-lbl">Admin saved</span>
+            <span class="sc-badge-lbl" data-i18n="solve.sc3.badge.lbl">Admin saved</span>
           </div>
         </div>
         <div class="sc-inner">
           <div class="sc-qmark">"</div>
-          <p class="sc-body">Orders, payments, expenses, and deliveries managed entirely through WhatsApp —no separate system, no manual logging, no extra tools.</p>
+          <p class="sc-body" data-i18n="solve.sc3.body">Orders, payments, expenses, and deliveries managed entirely through WhatsApp —no separate system, no manual logging, no extra tools.</p>
           <div class="sc-extra">
             <span class="sc-extra-val">300+</span>
-            <span class="sc-extra-lbl">orders handled daily</span>
+            <span class="sc-extra-lbl" data-i18n="solve.sc3.extra.lbl">orders handled daily</span>
           </div>
         </div>
       </div>
@@ -147,21 +165,21 @@
           <div class="sc-left">
             <div class="sc-icon">🏭</div>
             <div>
-              <div class="sc-title">Talent Acquisition</div>
-              <span class="sc-industry">Manufacturing — Indonesia</span>
+              <div class="sc-title" data-i18n="solve.sc4.title">Talent Acquisition</div>
+              <span class="sc-industry" data-i18n="solve.sc4.industry">Manufacturing — Indonesia</span>
             </div>
           </div>
           <div class="sc-badge">
             <span class="sc-badge-val">85%</span>
-            <span class="sc-badge-lbl">Screening time</span>
+            <span class="sc-badge-lbl" data-i18n="solve.sc4.badge.lbl">Screening time</span>
           </div>
         </div>
         <div class="sc-inner">
           <div class="sc-qmark">"</div>
-          <p class="sc-body">CVs screened and scored, AI interviews conducted, top candidates scheduled —HR focuses on final decisions, not repetitive screening steps.</p>
+          <p class="sc-body" data-i18n="solve.sc4.body">CVs screened and scored, AI interviews conducted, top candidates scheduled —HR focuses on final decisions, not repetitive screening steps.</p>
           <div class="sc-extra">
             <span class="sc-extra-val">3x</span>
-            <span class="sc-extra-lbl">faster time-to-hire</span>
+            <span class="sc-extra-lbl" data-i18n="solve.sc4.extra.lbl">faster time-to-hire</span>
           </div>
         </div>
       </div>
@@ -171,21 +189,21 @@
           <div class="sc-left">
             <div class="sc-icon">✍️</div>
             <div>
-              <div class="sc-title">Article Production</div>
-              <span class="sc-industry">Marketing — Taiwan</span>
+              <div class="sc-title" data-i18n="solve.sc5.title">Article Production</div>
+              <span class="sc-industry" data-i18n="solve.sc5.industry">Marketing — Taiwan</span>
             </div>
           </div>
           <div class="sc-badge">
             <span class="sc-badge-val">&lt;10 min</span>
-            <span class="sc-badge-lbl">To publish</span>
+            <span class="sc-badge-lbl" data-i18n="solve.sc5.badge.lbl">To publish</span>
           </div>
         </div>
         <div class="sc-inner">
           <div class="sc-qmark">"</div>
-          <p class="sc-body">Research, writing, and optimisation handled by a pipeline of AI agents —from topic to publication-ready article in under ten minutes.</p>
+          <p class="sc-body" data-i18n="solve.sc5.body">Research, writing, and optimisation handled by a pipeline of AI agents —from topic to publication-ready article in under ten minutes.</p>
           <div class="sc-extra">
             <span class="sc-extra-val">1,000+</span>
-            <span class="sc-extra-lbl">articles per year</span>
+            <span class="sc-extra-lbl" data-i18n="solve.sc5.extra.lbl">articles per year</span>
           </div>
         </div>
       </div>
@@ -195,21 +213,21 @@
           <div class="sc-left">
             <div class="sc-icon">🎓</div>
             <div>
-              <div class="sc-title">Curriculum Design</div>
-              <span class="sc-industry">Family Office — Taiwan</span>
+              <div class="sc-title" data-i18n="solve.sc6.title">Curriculum Design</div>
+              <span class="sc-industry" data-i18n="solve.sc6.industry">Family Office — Taiwan</span>
             </div>
           </div>
           <div class="sc-badge">
             <span class="sc-badge-val">30</span>
-            <span class="sc-badge-lbl">Matched fast</span>
+            <span class="sc-badge-lbl" data-i18n="solve.sc6.badge.lbl">Matched fast</span>
           </div>
         </div>
         <div class="sc-inner">
           <div class="sc-qmark">"</div>
-          <p class="sc-body">A personalised training programme built from a client brief —30 modules matched and structured in minutes, not the hours it used to take.</p>
+          <p class="sc-body" data-i18n="solve.sc6.body">A personalised training programme built from a client brief —30 modules matched and structured in minutes, not the hours it used to take.</p>
           <div class="sc-extra">
             <span class="sc-extra-val">0</span>
-            <span class="sc-extra-lbl">manual module comparisons</span>
+            <span class="sc-extra-lbl" data-i18n="solve.sc6.extra.lbl">manual module comparisons</span>
           </div>
         </div>
       </div>
@@ -219,21 +237,21 @@
           <div class="sc-left">
             <div class="sc-icon">📄</div>
             <div>
-              <div class="sc-title">Document Intelligence Pipeline</div>
-              <span class="sc-industry">Consulting — Knowledge Base</span>
+              <div class="sc-title" data-i18n="solve.sc7.title">Document Intelligence Pipeline</div>
+              <span class="sc-industry" data-i18n="solve.sc7.industry">Consulting — Knowledge Base</span>
             </div>
           </div>
           <div class="sc-badge">
             <span class="sc-badge-val">#1</span>
-            <span class="sc-badge-lbl">OCR benchmark</span>
+            <span class="sc-badge-lbl" data-i18n="solve.sc7.badge.lbl">OCR benchmark</span>
           </div>
         </div>
         <div class="sc-inner">
           <div class="sc-qmark">"</div>
-          <p class="sc-body">Scanned books, PowerPoints, and image-heavy files parsed locally and routed directly into their knowledge base —no data leaving the building, no rate limits, no manual cleanup.</p>
+          <p class="sc-body" data-i18n="solve.sc7.body">Scanned books, PowerPoints, and image-heavy files parsed locally and routed directly into their knowledge base —no data leaving the building, no rate limits, no manual cleanup.</p>
           <div class="sc-extra">
             <span class="sc-extra-val">0 pages</span>
-            <span class="sc-extra-lbl">sent to external APIs</span>
+            <span class="sc-extra-lbl" data-i18n="solve.sc7.extra.lbl">sent to external APIs</span>
           </div>
         </div>
       </div>
@@ -243,21 +261,21 @@
           <div class="sc-left">
             <div class="sc-icon">📥</div>
             <div>
-              <div class="sc-title">Sales Intake Automation</div>
-              <span class="sc-industry">Sales — Intake Workflow</span>
+              <div class="sc-title" data-i18n="solve.sc8.title">Sales Intake Automation</div>
+              <span class="sc-industry" data-i18n="solve.sc8.industry">Sales — Intake Workflow</span>
             </div>
           </div>
           <div class="sc-badge">
             <span class="sc-badge-val">3 hrs</span>
-            <span class="sc-badge-lbl">saved per call</span>
+            <span class="sc-badge-lbl" data-i18n="solve.sc8.badge.lbl">saved per call</span>
           </div>
         </div>
         <div class="sc-inner">
           <div class="sc-qmark">"</div>
-          <p class="sc-body">Intake forms sent and followed up via Gmail and LINE automatically —every completed response lands in Notion, structured and ready before the call starts.</p>
+          <p class="sc-body" data-i18n="solve.sc8.body">Intake forms sent and followed up via Gmail and LINE automatically —every completed response lands in Notion, structured and ready before the call starts.</p>
           <div class="sc-extra">
             <span class="sc-extra-val">0 manual</span>
-            <span class="sc-extra-lbl">follow-ups sent</span>
+            <span class="sc-extra-lbl" data-i18n="solve.sc8.extra.lbl">follow-ups sent</span>
           </div>
         </div>
       </div>
@@ -267,21 +285,21 @@
           <div class="sc-left">
             <div class="sc-icon">📱</div>
             <div>
-              <div class="sc-title">Video Summarisation</div>
-              <span class="sc-industry">Marketing — Indonesia</span>
+              <div class="sc-title" data-i18n="solve.sc9.title">Video Summarisation</div>
+              <span class="sc-industry" data-i18n="solve.sc9.industry">Marketing — Indonesia</span>
             </div>
           </div>
           <div class="sc-badge">
             <span class="sc-badge-val">95%</span>
-            <span class="sc-badge-lbl">Per video</span>
+            <span class="sc-badge-lbl" data-i18n="solve.sc9.badge.lbl">Per video</span>
           </div>
         </div>
         <div class="sc-inner">
           <div class="sc-qmark">"</div>
-          <p class="sc-body">Send any video link to a chatbot, get a clean structured summary in under 30 seconds —no employee time spent watching or taking notes.</p>
+          <p class="sc-body" data-i18n="solve.sc9.body">Send any video link to a chatbot, get a clean structured summary in under 30 seconds —no employee time spent watching or taking notes.</p>
           <div class="sc-extra">
             <span class="sc-extra-val">&lt;30s</span>
-            <span class="sc-extra-lbl">summary delivered</span>
+            <span class="sc-extra-lbl" data-i18n="solve.sc9.extra.lbl">summary delivered</span>
           </div>
         </div>
       </div>
@@ -291,21 +309,21 @@
           <div class="sc-left">
             <div class="sc-icon">🖥️</div>
             <div>
-              <div class="sc-title">Client Reporting Portal</div>
-              <span class="sc-industry">Digital Agency — Indonesia</span>
+              <div class="sc-title" data-i18n="solve.sc10.title">Client Reporting Portal</div>
+              <span class="sc-industry" data-i18n="solve.sc10.industry">Digital Agency — Indonesia</span>
             </div>
           </div>
           <div class="sc-badge">
             <span class="sc-badge-val">80%</span>
-            <span class="sc-badge-lbl">Status saved</span>
+            <span class="sc-badge-lbl" data-i18n="solve.sc10.badge.lbl">Status saved</span>
           </div>
         </div>
         <div class="sc-inner">
           <div class="sc-qmark">"</div>
-          <p class="sc-body">Clients see real-time project progress on demand. The team logs updates in seconds. Manual status emails become a thing of the past.</p>
+          <p class="sc-body" data-i18n="solve.sc10.body">Clients see real-time project progress on demand. The team logs updates in seconds. Manual status emails become a thing of the past.</p>
           <div class="sc-extra">
             <span class="sc-extra-val">30+</span>
-            <span class="sc-extra-lbl">faster report generation</span>
+            <span class="sc-extra-lbl" data-i18n="solve.sc10.extra.lbl">faster report generation</span>
           </div>
         </div>
       </div>
@@ -315,21 +333,21 @@
           <div class="sc-left">
             <div class="sc-icon">🏪</div>
             <div>
-              <div class="sc-title">Customer Support</div>
-              <span class="sc-industry">Retail &amp; E-Commerce</span>
+              <div class="sc-title" data-i18n="solve.sc11.title">Customer Support</div>
+              <span class="sc-industry" data-i18n="solve.sc11.industry">Retail &amp; E-Commerce</span>
             </div>
           </div>
           <div class="sc-badge">
             <span class="sc-badge-val">90%</span>
-            <span class="sc-badge-lbl">Auto-resolved</span>
+            <span class="sc-badge-lbl" data-i18n="solve.sc11.badge.lbl">Auto-resolved</span>
           </div>
         </div>
         <div class="sc-inner">
           <div class="sc-qmark">"</div>
-          <p class="sc-body">Order status, returns, and FAQs resolved automatically using your product and order data. Your team handles what genuinely needs a person.</p>
+          <p class="sc-body" data-i18n="solve.sc11.body">Order status, returns, and FAQs resolved automatically using your product and order data. Your team handles what genuinely needs a person.</p>
           <div class="sc-extra">
             <span class="sc-extra-val">24/7</span>
-            <span class="sc-extra-lbl">instant customer responses</span>
+            <span class="sc-extra-lbl" data-i18n="solve.sc11.extra.lbl">instant customer responses</span>
           </div>
         </div>
       </div>
@@ -339,21 +357,21 @@
           <div class="sc-left">
             <div class="sc-icon">🍽️</div>
             <div>
-              <div class="sc-title">Reservations &amp; Guest Comms</div>
-              <span class="sc-industry">Restaurants &amp; Hospitality</span>
+              <div class="sc-title" data-i18n="solve.sc12.title">Reservations &amp; Guest Comms</div>
+              <span class="sc-industry" data-i18n="solve.sc12.industry">Restaurants &amp; Hospitality</span>
             </div>
           </div>
           <div class="sc-badge">
             <span class="sc-badge-val">24/7</span>
-            <span class="sc-badge-lbl">Always on</span>
+            <span class="sc-badge-lbl" data-i18n="solve.sc12.badge.lbl">Always on</span>
           </div>
         </div>
         <div class="sc-inner">
           <div class="sc-qmark">"</div>
-          <p class="sc-body">Calls and messages handled around the clock —reservations taken, questions answered, confirmations sent automatically, day or night.</p>
+          <p class="sc-body" data-i18n="solve.sc12.body">Calls and messages handled around the clock —reservations taken, questions answered, confirmations sent automatically, day or night.</p>
           <div class="sc-extra">
             <span class="sc-extra-val">0</span>
-            <span class="sc-extra-lbl">bookings missed after hours</span>
+            <span class="sc-extra-lbl" data-i18n="solve.sc12.extra.lbl">bookings missed after hours</span>
           </div>
         </div>
       </div>
@@ -363,21 +381,21 @@
           <div class="sc-left">
             <div class="sc-icon">📊</div>
             <div>
-              <div class="sc-title">Lead Follow-Up</div>
-              <span class="sc-industry">Sales &amp; CRM</span>
+              <div class="sc-title" data-i18n="solve.sc13.title">Lead Follow-Up</div>
+              <span class="sc-industry" data-i18n="solve.sc13.industry">Sales &amp; CRM</span>
             </div>
           </div>
           <div class="sc-badge">
             <span class="sc-badge-val">&lt;5 min</span>
-            <span class="sc-badge-lbl">First response</span>
+            <span class="sc-badge-lbl" data-i18n="solve.sc13.badge.lbl">First response</span>
           </div>
         </div>
         <div class="sc-inner">
           <div class="sc-qmark">"</div>
-          <p class="sc-body">Every lead scored, enriched, and followed up the moment it arrives. Your sales team focuses on conversations that are ready to convert.</p>
+          <p class="sc-body" data-i18n="solve.sc13.body">Every lead scored, enriched, and followed up the moment it arrives. Your sales team focuses on conversations that are ready to convert.</p>
           <div class="sc-extra">
             <span class="sc-extra-val">100%</span>
-            <span class="sc-extra-lbl">leads followed up</span>
+            <span class="sc-extra-lbl" data-i18n="solve.sc13.extra.lbl">leads followed up</span>
           </div>
         </div>
       </div>
@@ -387,82 +405,40 @@
           <div class="sc-left">
             <div class="sc-icon">🏥</div>
             <div>
-              <div class="sc-title">Appointment Management</div>
-              <span class="sc-industry">Healthcare &amp; Clinics</span>
+              <div class="sc-title" data-i18n="solve.sc14.title">Appointment Management</div>
+              <span class="sc-industry" data-i18n="solve.sc14.industry">Healthcare &amp; Clinics</span>
             </div>
           </div>
           <div class="sc-badge">
             <span class="sc-badge-val">80%</span>
-            <span class="sc-badge-lbl">Less admin</span>
+            <span class="sc-badge-lbl" data-i18n="solve.sc14.badge.lbl">Less admin</span>
           </div>
         </div>
         <div class="sc-inner">
           <div class="sc-qmark">"</div>
-          <p class="sc-body">Booking, confirmations, and reminders handled automatically. Staff stay focused on patients —not on managing the calendar.</p>
+          <p class="sc-body" data-i18n="solve.sc14.body">Booking, confirmations, and reminders handled automatically. Staff stay focused on patients —not on managing the calendar.</p>
           <div class="sc-extra">
             <span class="sc-extra-val">30%</span>
-            <span class="sc-extra-lbl">fewer no-shows</span>
+            <span class="sc-extra-lbl" data-i18n="solve.sc14.extra.lbl">fewer no-shows</span>
           </div>
         </div>
       </div>
 
       <!-- duplicate for seamless loop -->
-      <div class="solve-card" data-sc-color="blue" aria-hidden="true">
-        <div class="sc-top"><div class="sc-left"><div class="sc-icon">🗞️</div><div><div class="sc-title">News Intelligence</div><span class="sc-industry">Sales — Taiwan</span></div></div><div class="sc-badge"><span class="sc-badge-val">92%</span><span class="sc-badge-lbl">Content filtered</span></div></div>
-        <div class="sc-inner"><div class="sc-qmark">"</div><p class="sc-body">28 sources monitored daily, curated and filtered automatically — a ready-to-use briefing delivered each morning without lifting a finger.</p><div class="sc-extra"><span class="sc-extra-val">8→2 hrs</span><span class="sc-extra-lbl">saved per day</span></div></div>
-      </div>
-      <div class="solve-card" data-sc-color="violet" aria-hidden="true">
-        <div class="sc-top"><div class="sc-left"><div class="sc-icon">🎙️</div><div><div class="sc-title">Meeting Intelligence</div><span class="sc-industry">Consulting — Indonesia</span></div></div><div class="sc-badge"><span class="sc-badge-val">100%</span><span class="sc-badge-lbl">Documented</span></div></div>
-        <div class="sc-inner"><div class="sc-qmark">"</div><p class="sc-body">Every recording transcribed, speakers identified, and output filed in the right place —automatically, without anyone reviewing the recording manually.</p><div class="sc-extra"><span class="sc-extra-val">90%</span><span class="sc-extra-lbl">faster than manual notes</span></div></div>
-      </div>
-      <div class="solve-card" data-sc-color="cyan" aria-hidden="true">
-        <div class="sc-top"><div class="sc-left"><div class="sc-icon">🍱</div><div><div class="sc-title">WhatsApp Operations</div><span class="sc-industry">Catering — Indonesia</span></div></div><div class="sc-badge"><span class="sc-badge-val">80%</span><span class="sc-badge-lbl">Admin saved</span></div></div>
-        <div class="sc-inner"><div class="sc-qmark">"</div><p class="sc-body">Orders, payments, expenses, and deliveries managed entirely through WhatsApp —no separate system, no manual logging, no extra tools.</p><div class="sc-extra"><span class="sc-extra-val">300+</span><span class="sc-extra-lbl">orders handled daily</span></div></div>
-      </div>
-      <div class="solve-card" data-sc-color="green" aria-hidden="true">
-        <div class="sc-top"><div class="sc-left"><div class="sc-icon">🏭</div><div><div class="sc-title">Talent Acquisition</div><span class="sc-industry">Manufacturing — Indonesia</span></div></div><div class="sc-badge"><span class="sc-badge-val">85%</span><span class="sc-badge-lbl">Screening time</span></div></div>
-        <div class="sc-inner"><div class="sc-qmark">"</div><p class="sc-body">CVs screened and scored, AI interviews conducted, top candidates scheduled —HR focuses on final decisions, not repetitive screening steps.</p><div class="sc-extra"><span class="sc-extra-val">3x</span><span class="sc-extra-lbl">faster time-to-hire</span></div></div>
-      </div>
-      <div class="solve-card" data-sc-color="blue" aria-hidden="true">
-        <div class="sc-top"><div class="sc-left"><div class="sc-icon">✍️</div><div><div class="sc-title">Article Production</div><span class="sc-industry">Marketing — Taiwan</span></div></div><div class="sc-badge"><span class="sc-badge-val">&lt;10 min</span><span class="sc-badge-lbl">To publish</span></div></div>
-        <div class="sc-inner"><div class="sc-qmark">"</div><p class="sc-body">Research, writing, and optimisation handled by a pipeline of AI agents —from topic to publication-ready article in under ten minutes.</p><div class="sc-extra"><span class="sc-extra-val">1,000+</span><span class="sc-extra-lbl">articles per year</span></div></div>
-      </div>
-      <div class="solve-card" data-sc-color="violet" aria-hidden="true">
-        <div class="sc-top"><div class="sc-left"><div class="sc-icon">🎓</div><div><div class="sc-title">Curriculum Design</div><span class="sc-industry">Family Office — Taiwan</span></div></div><div class="sc-badge"><span class="sc-badge-val">30</span><span class="sc-badge-lbl">Matched fast</span></div></div>
-        <div class="sc-inner"><div class="sc-qmark">"</div><p class="sc-body">A personalised training programme built from a client brief —30 modules matched and structured in minutes, not the hours it used to take.</p><div class="sc-extra"><span class="sc-extra-val">0</span><span class="sc-extra-lbl">manual module comparisons</span></div></div>
-      </div>
-      <div class="solve-card" data-sc-color="cyan" aria-hidden="true">
-        <div class="sc-top"><div class="sc-left"><div class="sc-icon">📄</div><div><div class="sc-title">Document Intelligence Pipeline</div><span class="sc-industry">Consulting — Knowledge Base</span></div></div><div class="sc-badge"><span class="sc-badge-val">#1</span><span class="sc-badge-lbl">OCR benchmark</span></div></div>
-        <div class="sc-inner"><div class="sc-qmark">"</div><p class="sc-body">Scanned books, PowerPoints, and image-heavy files parsed locally and routed directly into their knowledge base —no data leaving the building, no rate limits, no manual cleanup.</p><div class="sc-extra"><span class="sc-extra-val">0 pages</span><span class="sc-extra-lbl">sent to external APIs</span></div></div>
-      </div>
-      <div class="solve-card" data-sc-color="green" aria-hidden="true">
-        <div class="sc-top"><div class="sc-left"><div class="sc-icon">📥</div><div><div class="sc-title">Sales Intake Automation</div><span class="sc-industry">Sales — Intake Workflow</span></div></div><div class="sc-badge"><span class="sc-badge-val">3 hrs</span><span class="sc-badge-lbl">saved per call</span></div></div>
-        <div class="sc-inner"><div class="sc-qmark">"</div><p class="sc-body">Intake forms sent and followed up via Gmail and LINE automatically —every completed response lands in Notion, structured and ready before the call starts.</p><div class="sc-extra"><span class="sc-extra-val">0 manual</span><span class="sc-extra-lbl">follow-ups sent</span></div></div>
-      </div>
-      <div class="solve-card" data-sc-color="blue" aria-hidden="true">
-        <div class="sc-top"><div class="sc-left"><div class="sc-icon">📱</div><div><div class="sc-title">Video Summarisation</div><span class="sc-industry">Marketing — Indonesia</span></div></div><div class="sc-badge"><span class="sc-badge-val">95%</span><span class="sc-badge-lbl">Per video</span></div></div>
-        <div class="sc-inner"><div class="sc-qmark">"</div><p class="sc-body">Send any video link to a chatbot, get a clean structured summary in under 30 seconds —no employee time spent watching or taking notes.</p><div class="sc-extra"><span class="sc-extra-val">&lt;30s</span><span class="sc-extra-lbl">summary delivered</span></div></div>
-      </div>
-      <div class="solve-card" data-sc-color="green" aria-hidden="true">
-        <div class="sc-top"><div class="sc-left"><div class="sc-icon">🖥️</div><div><div class="sc-title">Client Reporting Portal</div><span class="sc-industry">Digital Agency — Indonesia</span></div></div><div class="sc-badge"><span class="sc-badge-val">80%</span><span class="sc-badge-lbl">Status saved</span></div></div>
-        <div class="sc-inner"><div class="sc-qmark">"</div><p class="sc-body">Clients see real-time project progress on demand. The team logs updates in seconds. Manual status emails become a thing of the past.</p><div class="sc-extra"><span class="sc-extra-val">30+</span><span class="sc-extra-lbl">faster report generation</span></div></div>
-      </div>
-      <div class="solve-card" data-sc-color="blue" aria-hidden="true">
-        <div class="sc-top"><div class="sc-left"><div class="sc-icon">🏪</div><div><div class="sc-title">Customer Support</div><span class="sc-industry">Retail &amp; E-Commerce</span></div></div><div class="sc-badge"><span class="sc-badge-val">90%</span><span class="sc-badge-lbl">Auto-resolved</span></div></div>
-        <div class="sc-inner"><div class="sc-qmark">"</div><p class="sc-body">Order status, returns, and FAQs resolved automatically using your product and order data. Your team handles what genuinely needs a person.</p><div class="sc-extra"><span class="sc-extra-val">24/7</span><span class="sc-extra-lbl">instant customer responses</span></div></div>
-      </div>
-      <div class="solve-card" data-sc-color="violet" aria-hidden="true">
-        <div class="sc-top"><div class="sc-left"><div class="sc-icon">🍽️</div><div><div class="sc-title">Reservations &amp; Guest Comms</div><span class="sc-industry">Restaurants &amp; Hospitality</span></div></div><div class="sc-badge"><span class="sc-badge-val">24/7</span><span class="sc-badge-lbl">Always on</span></div></div>
-        <div class="sc-inner"><div class="sc-qmark">"</div><p class="sc-body">Calls and messages handled around the clock —reservations taken, questions answered, confirmations sent automatically, day or night.</p><div class="sc-extra"><span class="sc-extra-val">0</span><span class="sc-extra-lbl">bookings missed after hours</span></div></div>
-      </div>
-      <div class="solve-card" data-sc-color="cyan" aria-hidden="true">
-        <div class="sc-top"><div class="sc-left"><div class="sc-icon">📊</div><div><div class="sc-title">Lead Follow-Up</div><span class="sc-industry">Sales &amp; CRM</span></div></div><div class="sc-badge"><span class="sc-badge-val">&lt;5 min</span><span class="sc-badge-lbl">First response</span></div></div>
-        <div class="sc-inner"><div class="sc-qmark">"</div><p class="sc-body">Every lead scored, enriched, and followed up the moment it arrives. Your sales team focuses on conversations that are ready to convert.</p><div class="sc-extra"><span class="sc-extra-val">100%</span><span class="sc-extra-lbl">leads followed up</span></div></div>
-      </div>
-      <div class="solve-card" data-sc-color="green" aria-hidden="true">
-        <div class="sc-top"><div class="sc-left"><div class="sc-icon">🏥</div><div><div class="sc-title">Appointment Management</div><span class="sc-industry">Healthcare &amp; Clinics</span></div></div><div class="sc-badge"><span class="sc-badge-val">80%</span><span class="sc-badge-lbl">Less admin</span></div></div>
-        <div class="sc-inner"><div class="sc-qmark">"</div><p class="sc-body">Booking, confirmations, and reminders handled automatically. Staff stay focused on patients —not on managing the calendar.</p><div class="sc-extra"><span class="sc-extra-val">30%</span><span class="sc-extra-lbl">fewer no-shows</span></div></div>
-      </div>
+      <div class="solve-card" data-sc-color="blue" aria-hidden="true"><div class="sc-top"><div class="sc-left"><div class="sc-icon">🗞️</div><div><div class="sc-title" data-i18n="solve.sc1.title">News Intelligence</div><span class="sc-industry" data-i18n="solve.sc1.industry">Sales — Taiwan</span></div></div><div class="sc-badge"><span class="sc-badge-val">92%</span><span class="sc-badge-lbl" data-i18n="solve.sc1.badge.lbl">Content filtered</span></div></div><div class="sc-inner"><div class="sc-qmark">"</div><p class="sc-body" data-i18n="solve.sc1.body">28 sources monitored daily, curated and filtered automatically — a ready-to-use briefing delivered each morning without lifting a finger.</p><div class="sc-extra"><span class="sc-extra-val">8→2 hrs</span><span class="sc-extra-lbl" data-i18n="solve.sc1.extra.lbl">saved per day</span></div></div></div>
+      <div class="solve-card" data-sc-color="violet" aria-hidden="true"><div class="sc-top"><div class="sc-left"><div class="sc-icon">🎙️</div><div><div class="sc-title" data-i18n="solve.sc2.title">Meeting Intelligence</div><span class="sc-industry" data-i18n="solve.sc2.industry">Consulting — Indonesia</span></div></div><div class="sc-badge"><span class="sc-badge-val">100%</span><span class="sc-badge-lbl" data-i18n="solve.sc2.badge.lbl">Documented</span></div></div><div class="sc-inner"><div class="sc-qmark">"</div><p class="sc-body" data-i18n="solve.sc2.body">Every recording transcribed, speakers identified, and output filed in the right place —automatically, without anyone reviewing the recording manually.</p><div class="sc-extra"><span class="sc-extra-val">90%</span><span class="sc-extra-lbl" data-i18n="solve.sc2.extra.lbl">faster than manual notes</span></div></div></div>
+      <div class="solve-card" data-sc-color="cyan" aria-hidden="true"><div class="sc-top"><div class="sc-left"><div class="sc-icon">🍱</div><div><div class="sc-title" data-i18n="solve.sc3.title">WhatsApp Operations</div><span class="sc-industry" data-i18n="solve.sc3.industry">Catering — Indonesia</span></div></div><div class="sc-badge"><span class="sc-badge-val">80%</span><span class="sc-badge-lbl" data-i18n="solve.sc3.badge.lbl">Admin saved</span></div></div><div class="sc-inner"><div class="sc-qmark">"</div><p class="sc-body" data-i18n="solve.sc3.body">Orders, payments, expenses, and deliveries managed entirely through WhatsApp —no separate system, no manual logging, no extra tools.</p><div class="sc-extra"><span class="sc-extra-val">300+</span><span class="sc-extra-lbl" data-i18n="solve.sc3.extra.lbl">orders handled daily</span></div></div></div>
+      <div class="solve-card" data-sc-color="green" aria-hidden="true"><div class="sc-top"><div class="sc-left"><div class="sc-icon">🏭</div><div><div class="sc-title" data-i18n="solve.sc4.title">Talent Acquisition</div><span class="sc-industry" data-i18n="solve.sc4.industry">Manufacturing — Indonesia</span></div></div><div class="sc-badge"><span class="sc-badge-val">85%</span><span class="sc-badge-lbl" data-i18n="solve.sc4.badge.lbl">Screening time</span></div></div><div class="sc-inner"><div class="sc-qmark">"</div><p class="sc-body" data-i18n="solve.sc4.body">CVs screened and scored, AI interviews conducted, top candidates scheduled —HR focuses on final decisions, not repetitive screening steps.</p><div class="sc-extra"><span class="sc-extra-val">3x</span><span class="sc-extra-lbl" data-i18n="solve.sc4.extra.lbl">faster time-to-hire</span></div></div></div>
+      <div class="solve-card" data-sc-color="blue" aria-hidden="true"><div class="sc-top"><div class="sc-left"><div class="sc-icon">✍️</div><div><div class="sc-title" data-i18n="solve.sc5.title">Article Production</div><span class="sc-industry" data-i18n="solve.sc5.industry">Marketing — Taiwan</span></div></div><div class="sc-badge"><span class="sc-badge-val">&lt;10 min</span><span class="sc-badge-lbl" data-i18n="solve.sc5.badge.lbl">To publish</span></div></div><div class="sc-inner"><div class="sc-qmark">"</div><p class="sc-body" data-i18n="solve.sc5.body">Research, writing, and optimisation handled by a pipeline of AI agents —from topic to publication-ready article in under ten minutes.</p><div class="sc-extra"><span class="sc-extra-val">1,000+</span><span class="sc-extra-lbl" data-i18n="solve.sc5.extra.lbl">articles per year</span></div></div></div>
+      <div class="solve-card" data-sc-color="violet" aria-hidden="true"><div class="sc-top"><div class="sc-left"><div class="sc-icon">🎓</div><div><div class="sc-title" data-i18n="solve.sc6.title">Curriculum Design</div><span class="sc-industry" data-i18n="solve.sc6.industry">Family Office — Taiwan</span></div></div><div class="sc-badge"><span class="sc-badge-val">30</span><span class="sc-badge-lbl" data-i18n="solve.sc6.badge.lbl">Matched fast</span></div></div><div class="sc-inner"><div class="sc-qmark">"</div><p class="sc-body" data-i18n="solve.sc6.body">A personalised training programme built from a client brief —30 modules matched and structured in minutes, not the hours it used to take.</p><div class="sc-extra"><span class="sc-extra-val">0</span><span class="sc-extra-lbl" data-i18n="solve.sc6.extra.lbl">manual module comparisons</span></div></div></div>
+      <div class="solve-card" data-sc-color="cyan" aria-hidden="true"><div class="sc-top"><div class="sc-left"><div class="sc-icon">📄</div><div><div class="sc-title" data-i18n="solve.sc7.title">Document Intelligence Pipeline</div><span class="sc-industry" data-i18n="solve.sc7.industry">Consulting — Knowledge Base</span></div></div><div class="sc-badge"><span class="sc-badge-val">#1</span><span class="sc-badge-lbl" data-i18n="solve.sc7.badge.lbl">OCR benchmark</span></div></div><div class="sc-inner"><div class="sc-qmark">"</div><p class="sc-body" data-i18n="solve.sc7.body">Scanned books, PowerPoints, and image-heavy files parsed locally and routed directly into their knowledge base —no data leaving the building, no rate limits, no manual cleanup.</p><div class="sc-extra"><span class="sc-extra-val">0 pages</span><span class="sc-extra-lbl" data-i18n="solve.sc7.extra.lbl">sent to external APIs</span></div></div></div>
+      <div class="solve-card" data-sc-color="green" aria-hidden="true"><div class="sc-top"><div class="sc-left"><div class="sc-icon">📥</div><div><div class="sc-title" data-i18n="solve.sc8.title">Sales Intake Automation</div><span class="sc-industry" data-i18n="solve.sc8.industry">Sales — Intake Workflow</span></div></div><div class="sc-badge"><span class="sc-badge-val">3 hrs</span><span class="sc-badge-lbl" data-i18n="solve.sc8.badge.lbl">saved per call</span></div></div><div class="sc-inner"><div class="sc-qmark">"</div><p class="sc-body" data-i18n="solve.sc8.body">Intake forms sent and followed up via Gmail and LINE automatically —every completed response lands in Notion, structured and ready before the call starts.</p><div class="sc-extra"><span class="sc-extra-val">0 manual</span><span class="sc-extra-lbl" data-i18n="solve.sc8.extra.lbl">follow-ups sent</span></div></div></div>
+      <div class="solve-card" data-sc-color="blue" aria-hidden="true"><div class="sc-top"><div class="sc-left"><div class="sc-icon">📱</div><div><div class="sc-title" data-i18n="solve.sc9.title">Video Summarisation</div><span class="sc-industry" data-i18n="solve.sc9.industry">Marketing — Indonesia</span></div></div><div class="sc-badge"><span class="sc-badge-val">95%</span><span class="sc-badge-lbl" data-i18n="solve.sc9.badge.lbl">Per video</span></div></div><div class="sc-inner"><div class="sc-qmark">"</div><p class="sc-body" data-i18n="solve.sc9.body">Send any video link to a chatbot, get a clean structured summary in under 30 seconds —no employee time spent watching or taking notes.</p><div class="sc-extra"><span class="sc-extra-val">&lt;30s</span><span class="sc-extra-lbl" data-i18n="solve.sc9.extra.lbl">summary delivered</span></div></div></div>
+      <div class="solve-card" data-sc-color="green" aria-hidden="true"><div class="sc-top"><div class="sc-left"><div class="sc-icon">🖥️</div><div><div class="sc-title" data-i18n="solve.sc10.title">Client Reporting Portal</div><span class="sc-industry" data-i18n="solve.sc10.industry">Digital Agency — Indonesia</span></div></div><div class="sc-badge"><span class="sc-badge-val">80%</span><span class="sc-badge-lbl" data-i18n="solve.sc10.badge.lbl">Status saved</span></div></div><div class="sc-inner"><div class="sc-qmark">"</div><p class="sc-body" data-i18n="solve.sc10.body">Clients see real-time project progress on demand. The team logs updates in seconds. Manual status emails become a thing of the past.</p><div class="sc-extra"><span class="sc-extra-val">30+</span><span class="sc-extra-lbl" data-i18n="solve.sc10.extra.lbl">faster report generation</span></div></div></div>
+      <div class="solve-card" data-sc-color="blue" aria-hidden="true"><div class="sc-top"><div class="sc-left"><div class="sc-icon">🏪</div><div><div class="sc-title" data-i18n="solve.sc11.title">Customer Support</div><span class="sc-industry" data-i18n="solve.sc11.industry">Retail &amp; E-Commerce</span></div></div><div class="sc-badge"><span class="sc-badge-val">90%</span><span class="sc-badge-lbl" data-i18n="solve.sc11.badge.lbl">Auto-resolved</span></div></div><div class="sc-inner"><div class="sc-qmark">"</div><p class="sc-body" data-i18n="solve.sc11.body">Order status, returns, and FAQs resolved automatically using your product and order data. Your team handles what genuinely needs a person.</p><div class="sc-extra"><span class="sc-extra-val">24/7</span><span class="sc-extra-lbl" data-i18n="solve.sc11.extra.lbl">instant customer responses</span></div></div></div>
+      <div class="solve-card" data-sc-color="violet" aria-hidden="true"><div class="sc-top"><div class="sc-left"><div class="sc-icon">🍽️</div><div><div class="sc-title" data-i18n="solve.sc12.title">Reservations &amp; Guest Comms</div><span class="sc-industry" data-i18n="solve.sc12.industry">Restaurants &amp; Hospitality</span></div></div><div class="sc-badge"><span class="sc-badge-val">24/7</span><span class="sc-badge-lbl" data-i18n="solve.sc12.badge.lbl">Always on</span></div></div><div class="sc-inner"><div class="sc-qmark">"</div><p class="sc-body" data-i18n="solve.sc12.body">Calls and messages handled around the clock —reservations taken, questions answered, confirmations sent automatically, day or night.</p><div class="sc-extra"><span class="sc-extra-val">0</span><span class="sc-extra-lbl" data-i18n="solve.sc12.extra.lbl">bookings missed after hours</span></div></div></div>
+      <div class="solve-card" data-sc-color="cyan" aria-hidden="true"><div class="sc-top"><div class="sc-left"><div class="sc-icon">📊</div><div><div class="sc-title" data-i18n="solve.sc13.title">Lead Follow-Up</div><span class="sc-industry" data-i18n="solve.sc13.industry">Sales &amp; CRM</span></div></div><div class="sc-badge"><span class="sc-badge-val">&lt;5 min</span><span class="sc-badge-lbl" data-i18n="solve.sc13.badge.lbl">First response</span></div></div><div class="sc-inner"><div class="sc-qmark">"</div><p class="sc-body" data-i18n="solve.sc13.body">Every lead scored, enriched, and followed up the moment it arrives. Your sales team focuses on conversations that are ready to convert.</p><div class="sc-extra"><span class="sc-extra-val">100%</span><span class="sc-extra-lbl" data-i18n="solve.sc13.extra.lbl">leads followed up</span></div></div></div>
+      <div class="solve-card" data-sc-color="green" aria-hidden="true"><div class="sc-top"><div class="sc-left"><div class="sc-icon">🏥</div><div><div class="sc-title" data-i18n="solve.sc14.title">Appointment Management</div><span class="sc-industry" data-i18n="solve.sc14.industry">Healthcare &amp; Clinics</span></div></div><div class="sc-badge"><span class="sc-badge-val">80%</span><span class="sc-badge-lbl" data-i18n="solve.sc14.badge.lbl">Less admin</span></div></div><div class="sc-inner"><div class="sc-qmark">"</div><p class="sc-body" data-i18n="solve.sc14.body">Booking, confirmations, and reminders handled automatically. Staff stay focused on patients —not on managing the calendar.</p><div class="sc-extra"><span class="sc-extra-val">30%</span><span class="sc-extra-lbl" data-i18n="solve.sc14.extra.lbl">fewer no-shows</span></div></div></div>
 
       </div>
     </div>
@@ -473,50 +449,50 @@
 <section id="different">
   <div class="inner">
     <div class="diff-header">
-      <span class="stag reveal">How We Work</span>
-      <h2 class="sh reveal">Six principles we hold ourselves to<br /><span class="gt">on every engagement</span></h2>
+      <span class="stag reveal" data-i18n="diff.tag">How We Work</span>
+      <h2 class="sh reveal"><span data-i18n="diff.h2.1">Six principles we hold ourselves to</span><br /><span class="gt" data-i18n="diff.h2.2">on every engagement</span></h2>
     </div>
     <div class="diff-grid">
       <div class="diff-card reveal" data-glow>
         <div class="diff-num">01</div>
         <div>
-          <h4>Consulting first —technology second</h4>
-          <p>We fix the process before we automate it. Automating a broken workflow just makes it break faster. So we start by understanding how your business actually works —then build around it.</p>
+          <h4 data-i18n="diff.card1.h4">Consulting first —technology second</h4>
+          <p data-i18n="diff.card1.p">We fix the process before we automate it. Automating a broken workflow just makes it break faster. So we start by understanding how your business actually works —then build around it.</p>
         </div>
       </div>
       <div class="diff-card reveal" data-glow>
         <div class="diff-num">02</div>
         <div>
-          <h4>Productised packages —no scope creep</h4>
-          <p>Every engagement comes with fixed deliverables, fixed timelines, and clear boundaries. You know exactly what you're getting before you pay a cent —no surprises, no moving targets.</p>
+          <h4 data-i18n="diff.card2.h4">Productised packages —no scope creep</h4>
+          <p data-i18n="diff.card2.p">Every engagement comes with fixed deliverables, fixed timelines, and clear boundaries. You know exactly what you're getting before you pay a cent —no surprises, no moving targets.</p>
         </div>
       </div>
       <div class="diff-card reveal" data-glow>
         <div class="diff-num">03</div>
         <div>
-          <h4>We document everything. You own it.</h4>
-          <p>Your system comes with full documentation and a handover walkthrough. You own everything we build —the logic, the workflows, the setup. We build it so you understand it, not so you need us forever.</p>
+          <h4 data-i18n="diff.card3.h4">We document everything. You own it.</h4>
+          <p data-i18n="diff.card3.p">Your system comes with full documentation and a handover walkthrough. You own everything we build —the logic, the workflows, the setup. We build it so you understand it, not so you need us forever.</p>
         </div>
       </div>
       <div class="diff-card reveal" data-glow>
         <div class="diff-num">04</div>
         <div>
-          <h4>Consistency over complexity</h4>
-          <p>Some systems are built to look impressive —layers of complexity that could have been a straightforward workflow. We build what works, not what looks sophisticated. If a simple process gets the same result, that's what we build. Less to break, easier to understand, and just as effective.</p>
+          <h4 data-i18n="diff.card4.h4">Consistency over complexity</h4>
+          <p data-i18n="diff.card4.p">Some systems are built to look impressive —layers of complexity that could have been a straightforward workflow. We build what works, not what looks sophisticated. If a simple process gets the same result, that's what we build. Less to break, easier to understand, and just as effective.</p>
         </div>
       </div>
       <div class="diff-card reveal" data-glow>
         <div class="diff-num">05</div>
         <div>
-          <h4>We only take clients we can genuinely help</h4>
-          <p>If your problem can be solved with an off-the-shelf tool, we'll tell you that upfront and point you in the right direction. We only take on work where we can deliver real, measurable value.</p>
+          <h4 data-i18n="diff.card5.h4">We only take clients we can genuinely help</h4>
+          <p data-i18n="diff.card5.p">If your problem can be solved with an off-the-shelf tool, we'll tell you that upfront and point you in the right direction. We only take on work where we can deliver real, measurable value.</p>
         </div>
       </div>
       <div class="diff-card reveal" data-glow>
         <div class="diff-num">06</div>
         <div>
-          <h4>Support retainer —we're always in your corner</h4>
-          <p>We offer ongoing retainers so your system stays monitored, updated, and optimised over time. APIs change, workflows evolve —we handle all of it so you don't have to.</p>
+          <h4 data-i18n="diff.card6.h4">Support retainer —we're always in your corner</h4>
+          <p data-i18n="diff.card6.p">We offer ongoing retainers so your system stays monitored, updated, and optimised over time. APIs change, workflows evolve —we handle all of it so you don't have to.</p>
         </div>
       </div>
     </div>
@@ -525,10 +501,11 @@
 
 <!-- FOOTER -->
 <footer>
-  <p class="f-copy">© 2026 Crux Agent. All rights reserved.</p>
-  <p class="f-copy"><a href="privacy-policy.html" style="color:inherit;opacity:0.6;text-decoration:none;">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms-of-service.html" style="color:inherit;opacity:0.6;text-decoration:none;">Terms of Service</a></p>
+  <p class="f-copy" data-i18n="footer.rights">© 2026 Crux Agent. All rights reserved.</p>
+  <p class="f-copy"><a href="privacy-policy.html" style="color:inherit;opacity:0.6;text-decoration:none;" data-i18n="footer.privacy">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms-of-service.html" style="color:inherit;opacity:0.6;text-decoration:none;" data-i18n="footer.terms">Terms of Service</a></p>
 </footer>
 
+<script src="i18n.js"></script>
 <script>
   // Navbar scroll
   const nav = document.getElementById('navbar');

@@ -4,10 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Crux Agent | Your Team Was Built for More Than This</title>
+  <link rel="icon" type="image/png" href="logo.png" />
   <meta name="description" content="Crux Agent builds custom automation systems that eliminate repetitive work, cut overhead, and free your team to focus on what actually grows the business." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -19,15 +20,33 @@
     Crux Agent
   </a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="solve.html">What We Solve</a></li>
-    <li><a href="process.html">How It Works</a></li>
-    <li><a href="projects.html">Case Studies</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="faq.html#contact" class="nav-cta"><span>Talk to Us</span></a></li>
+    <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+    <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
+    <li><a href="solve.html" data-i18n="nav.solve">What We Solve</a></li>
+    <li><a href="process.html" data-i18n="nav.process">How It Works</a></li>
+    <li><a href="projects.html" data-i18n="nav.projects">Case Studies</a></li>
+    <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+    <li><a href="faq.html#contact" class="nav-cta"><span data-i18n="nav.cta">Talk to Us</span></a></li>
   </ul>
   <div class="nav-actions">
+    <div class="lang-dropdown" id="langDropdown">
+      <button class="lang-toggle" id="langToggle" aria-label="Language" aria-haspopup="true" aria-expanded="false">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+      </button>
+      <div class="lang-menu" id="langMenu" role="menu">
+        <button class="lang-option" data-lang="en" role="menuitem">
+          EN
+          <svg class="lang-check" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        </button>
+        <button class="lang-option" data-lang="zh" role="menuitem">
+          繁中
+          <svg class="lang-check" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        </button>
+      </div>
+    </div>
     <div class="theme-dropdown" id="themeDropdown">
       <button class="theme-toggle" id="themeToggle" aria-label="Theme" aria-haspopup="true" aria-expanded="false">
         <svg id="themeIcon" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -61,38 +80,123 @@
 
 <!-- HERO -->
 <section id="hero">
-  <canvas id="heroShader"></canvas>
+  <svg id="heroShader" width="100%" height="100%" viewBox="0 0 200 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="currentColor" fill="none" stroke-width="0.3" stroke-dasharray="100 100" pathLength="100">
+      <path id="cpu-vis-path-1" pathLength="100" d="M 5 20 h 45 q 5 0 5 5 v 40 q 0 5 5 5 h 15" />
+      <path id="cpu-vis-path-2" pathLength="100" d="M 195 20 h -45 q -5 0 -5 5 v 40 q 0 5 -5 5 h -15" />
+      <path id="cpu-vis-path-3" pathLength="100" d="M 110 5 v 60" />
+      <path id="cpu-vis-path-4" pathLength="100" d="M 165 95 h -35 q -5 0 -5 -5 v -15" />
+      <path id="cpu-vis-path-5" pathLength="100" d="M 100 98 v -23" />
+      <path id="cpu-vis-path-6" pathLength="100" d="M 20 95 h 50 q 5 0 5 -5 v -15" />
+      <path id="cpu-vis-path-7" pathLength="100" d="M 5 10 v 50 q 0 5 5 5 h 65" />
+      <path id="cpu-vis-path-8" pathLength="100" d="M 90 5 v 60" />
+      <animate attributeName="stroke-dashoffset" from="100" to="0" dur="1s" fill="freeze" calcMode="spline" keySplines="0.25,0.1,0.5,1" keyTimes="0; 1" />
+    </g>
+    <!-- Masked lights: thin slit (0.5) exposes only the bright gradient center = natural glow -->
+    <g mask="url(#cpu-mask-1)"><circle id="cpu-c1" cx="-99" cy="-99" r="8" fill="url(#cpu-blue-grad)" /></g>
+    <g mask="url(#cpu-mask-2)"><circle id="cpu-c2" cx="-99" cy="-99" r="8" fill="url(#cpu-yellow-grad)" /></g>
+    <g mask="url(#cpu-mask-3)"><circle id="cpu-c3" cx="-99" cy="-99" r="8" fill="url(#cpu-pinkish-grad)" /></g>
+    <g mask="url(#cpu-mask-4)"><circle id="cpu-c4" cx="-99" cy="-99" r="8" fill="url(#cpu-white-grad)" /></g>
+    <g mask="url(#cpu-mask-5)"><circle id="cpu-c5" cx="-99" cy="-99" r="8" fill="url(#cpu-green-grad)" /></g>
+    <g mask="url(#cpu-mask-6)"><circle id="cpu-c6" cx="-99" cy="-99" r="8" fill="url(#cpu-orange-grad)" /></g>
+    <g mask="url(#cpu-mask-7)"><circle id="cpu-c7" cx="-99" cy="-99" r="8" fill="url(#cpu-cyan-grad)" /></g>
+    <g mask="url(#cpu-mask-8)"><circle id="cpu-c8" cx="-99" cy="-99" r="8" fill="url(#cpu-rose-grad)" /></g>
+    <defs>
+      <path id="cpu-anim-path-1" d="M 5 20 h 45 q 5 0 5 5 v 40 q 0 5 5 5 h 15" />
+      <path id="cpu-anim-path-2" d="M 195 20 h -45 q -5 0 -5 5 v 40 q 0 5 -5 5 h -15" />
+      <path id="cpu-anim-path-3" d="M 110 5 v 60" />
+      <path id="cpu-anim-path-4" d="M 165 95 h -35 q -5 0 -5 -5 v -15" />
+      <path id="cpu-anim-path-5" d="M 100 98 v -23" />
+      <path id="cpu-anim-path-6" d="M 20 95 h 50 q 5 0 5 -5 v -15" />
+      <path id="cpu-anim-path-7" d="M 5 10 v 50 q 0 5 5 5 h 65" />
+      <path id="cpu-anim-path-8" d="M 90 5 v 60" />
+      <mask id="cpu-mask-1"><path id="cpu-mask-path-1" d="M 5 20 h 45 q 5 0 5 5 v 40 q 0 5 5 5 h 15" stroke-width="0.8" stroke="white" fill="none" /></mask>
+      <mask id="cpu-mask-2"><path id="cpu-mask-path-2" d="M 195 20 h -45 q -5 0 -5 5 v 40 q 0 5 -5 5 h -15" stroke-width="0.8" stroke="white" fill="none" /></mask>
+      <mask id="cpu-mask-3"><path id="cpu-mask-path-3" d="M 110 5 v 60" stroke-width="0.8" stroke="white" fill="none" /></mask>
+      <mask id="cpu-mask-4"><path id="cpu-mask-path-4" d="M 165 95 h -35 q -5 0 -5 -5 v -15" stroke-width="0.8" stroke="white" fill="none" /></mask>
+      <mask id="cpu-mask-5"><path id="cpu-mask-path-5" d="M 100 98 v -23" stroke-width="0.8" stroke="white" fill="none" /></mask>
+      <mask id="cpu-mask-6"><path id="cpu-mask-path-6" d="M 20 95 h 50 q 5 0 5 -5 v -15" stroke-width="0.8" stroke="white" fill="none" /></mask>
+      <mask id="cpu-mask-7"><path id="cpu-mask-path-7" d="M 5 10 v 50 q 0 5 5 5 h 65" stroke-width="0.8" stroke="white" fill="none" /></mask>
+      <mask id="cpu-mask-8"><path id="cpu-mask-path-8" d="M 90 5 v 60" stroke-width="0.8" stroke="white" fill="none" /></mask>
+      <radialGradient id="cpu-blue-grad" fx="0.9" fy="0.5">
+        <stop offset="0%" stop-color="#FFFFFF" /><stop offset="20%" stop-color="#00FFFF" /><stop offset="55%" stop-color="#00BFFF" stop-opacity="0.6" /><stop offset="100%" stop-color="transparent" stop-opacity="0" />
+      </radialGradient>
+      <radialGradient id="cpu-yellow-grad" fx="0.9" fy="0.5">
+        <stop offset="0%" stop-color="#FFFFFF" /><stop offset="20%" stop-color="#FFFF00" /><stop offset="55%" stop-color="#FFD700" stop-opacity="0.6" /><stop offset="100%" stop-color="transparent" stop-opacity="0" />
+      </radialGradient>
+      <radialGradient id="cpu-pinkish-grad" fx="0.9" fy="0.5">
+        <stop offset="0%" stop-color="#FFFFFF" /><stop offset="20%" stop-color="#CCFF00" /><stop offset="55%" stop-color="#7FFF00" stop-opacity="0.6" /><stop offset="100%" stop-color="transparent" stop-opacity="0" />
+      </radialGradient>
+      <radialGradient id="cpu-white-grad" fx="0.9" fy="0.5">
+        <stop offset="0%" stop-color="#FFFFFF" /><stop offset="30%" stop-color="#B0FFFF" /><stop offset="65%" stop-color="#80CFFF" stop-opacity="0.5" /><stop offset="100%" stop-color="transparent" stop-opacity="0" />
+      </radialGradient>
+      <radialGradient id="cpu-green-grad" fx="0.9" fy="0.5">
+        <stop offset="0%" stop-color="#FFFFFF" /><stop offset="20%" stop-color="#39FF14" /><stop offset="55%" stop-color="#00CC44" stop-opacity="0.6" /><stop offset="100%" stop-color="transparent" stop-opacity="0" />
+      </radialGradient>
+      <radialGradient id="cpu-orange-grad" fx="0.9" fy="0.5">
+        <stop offset="0%" stop-color="#FFFFFF" /><stop offset="20%" stop-color="#FFB300" /><stop offset="55%" stop-color="#FF6600" stop-opacity="0.6" /><stop offset="100%" stop-color="transparent" stop-opacity="0" />
+      </radialGradient>
+      <radialGradient id="cpu-cyan-grad" fx="0.9" fy="0.5">
+        <stop offset="0%" stop-color="#FFFFFF" /><stop offset="20%" stop-color="#00FFDD" /><stop offset="55%" stop-color="#00BFFF" stop-opacity="0.6" /><stop offset="100%" stop-color="transparent" stop-opacity="0" />
+      </radialGradient>
+      <radialGradient id="cpu-rose-grad" fx="0.9" fy="0.5">
+        <stop offset="0%" stop-color="#FFFFFF" /><stop offset="20%" stop-color="#FF00FF" /><stop offset="55%" stop-color="#CC00CC" stop-opacity="0.6" /><stop offset="100%" stop-color="transparent" stop-opacity="0" />
+      </radialGradient>
+      <filter id="cpu-light-shadow" x="-50%" y="-50%" width="200%" height="200%">
+        <feDropShadow dx="1.5" dy="1.5" stdDeviation="1" flood-color="black" flood-opacity="0.1" />
+      </filter>
+      <marker id="cpu-circle-marker" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="18" markerHeight="18">
+        <circle cx="5" cy="5" r="2" fill="black" stroke="#232323" stroke-width="0.5">
+          <animate attributeName="r" values="0; 3; 2" dur="0.5s" />
+        </circle>
+      </marker>
+      <linearGradient id="cpu-connection-gradient" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#4F4F4F" /><stop offset="60%" stop-color="#121214" />
+      </linearGradient>
+      <linearGradient id="cpu-text-gradient" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#666666">
+          <animate attributeName="offset" values="-2; -1; 0" dur="5s" repeatCount="indefinite" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+        </stop>
+        <stop offset="25%" stop-color="white">
+          <animate attributeName="offset" values="-1; 0; 1" dur="5s" repeatCount="indefinite" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+        </stop>
+        <stop offset="50%" stop-color="#666666">
+          <animate attributeName="offset" values="0; 1; 2" dur="5s" repeatCount="indefinite" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+        </stop>
+      </linearGradient>
+    </defs>
+  </svg>
 
   <div class="hero-main">
     <div class="hero-badge">
       <span class="badge-dot"></span>
-      AI Innovation Leaders · 2026
+      <span data-i18n="hero.badge">AI Innovation Leaders · 2026</span>
     </div>
 
     <h1 class="hero-title">
-      Your team was built for more than<br />
-      <span class="rw-wrap"><span class="rw-word">repetitive</span></span> work
+      <span data-i18n="hero.title.before">Your team was built for more than</span><br />
+      <span class="rw-wrap"><span class="rw-word">repetitive</span></span> <span data-i18n="hero.title.after">work</span>
     </h1>
 
-    <p class="hero-sub">
+    <p class="hero-sub" data-i18n="hero.sub">
       Automation, AI systems, and autonomous AI agents —built for how your business actually works. So your team can focus on what actually matters.
     </p>
 
     <div class="hero-btns">
       <a href="faq.html#contact" class="btn-p">
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-        Get a Free Audit
+        <span data-i18n="hero.btn.audit">Get a Free Audit</span>
       </a>
       <a href="solve.html" class="btn-s">
         <div class="btn-glow"></div>
-        See What We Solve
+        <span data-i18n="hero.btn.solve">See What We Solve</span>
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
   </div>
 
   <div class="hero-tools">
-    <p class="tools-heading">Plugs into the tools your business already runs on</p>
+    <p class="tools-heading" data-i18n="tools.heading">Plugs into the tools your business already runs on</p>
     <div class="tools-marquee">
       <div class="tools-track">
       <div class="tool-item"><img src="https://cdn.simpleicons.org/openai/ffffff" alt="OpenAI" /><span>OpenAI</span></div>
@@ -129,9 +233,9 @@
   <div class="scroll-perspective">
 
     <div class="scroll-header" id="scrollHeader">
-      <span class="stag stag-violet">See It In Action</span>
-      <h2 class="sh">Automation that <span class="gt">runs itself</span></h2>
-      <p class="ss">One system replaces hours of daily manual work — running 24/7 without anyone touching it.</p>
+      <span class="stag stag-violet" data-i18n="showcase.tag">See It In Action</span>
+      <h2 class="sh"><span data-i18n="showcase.h2.1">Automation that</span> <span class="gt" data-i18n="showcase.h2.2">runs itself</span></h2>
+      <p class="ss" data-i18n="showcase.sub">One system replaces hours of daily manual work — running 24/7 without anyone touching it.</p>
     </div>
 
     <div class="scroll-card-wrap" id="scrollCard">
@@ -148,79 +252,79 @@
 
           <div class="mockup-stat-row">
             <div class="mockup-stat">
-              <div class="m-label">Tasks Automated</div>
+              <div class="m-label" data-i18n="dash.kpi.tasks">Tasks Automated</div>
               <div class="stat-mid">
                 <span class="m-value" id="kpi-tasks">847</span>
                 <svg class="sparkline" viewBox="0 0 60 24" preserveAspectRatio="none">
                   <polyline class="spark-line sk1" points="0,22 10,16 20,19 30,10 40,14 50,7 60,3"/>
                 </svg>
               </div>
-              <div class="m-delta">↑ 12% today</div>
+              <div class="m-delta" data-i18n="dash.kpi.delta.tasks">↑ 12% today</div>
             </div>
             <div class="mockup-stat">
-              <div class="m-label">Hours Saved</div>
+              <div class="m-label" data-i18n="dash.kpi.hours">Hours Saved</div>
               <div class="stat-mid">
                 <span class="m-value" id="kpi-hours">63.0h</span>
                 <svg class="sparkline" viewBox="0 0 60 24" preserveAspectRatio="none">
                   <polyline class="spark-line sk2" points="0,20 10,18 20,14 30,12 40,9 50,7 60,4"/>
                 </svg>
               </div>
-              <div class="m-delta">$3,800 saved</div>
+              <div class="m-delta" data-i18n="dash.kpi.delta.hours">$3,800 saved</div>
             </div>
             <div class="mockup-stat">
-              <div class="m-label">Leads Processed</div>
+              <div class="m-label" data-i18n="dash.kpi.leads">Leads Processed</div>
               <div class="stat-mid">
                 <span class="m-value" id="kpi-leads">214</span>
                 <svg class="sparkline" viewBox="0 0 60 24" preserveAspectRatio="none">
                   <polyline class="spark-line sk3" points="0,22 10,20 20,15 30,17 40,11 50,8 60,3"/>
                 </svg>
               </div>
-              <div class="m-delta">100% followed up</div>
+              <div class="m-delta" data-i18n="dash.kpi.delta.leads">100% followed up</div>
             </div>
             <div class="mockup-stat">
-              <div class="m-label">System Uptime</div>
+              <div class="m-label" data-i18n="dash.kpi.uptime">System Uptime</div>
               <div class="stat-mid">
                 <span class="m-value">99.9%</span>
                 <svg class="sparkline" viewBox="0 0 60 24" preserveAspectRatio="none">
                   <polyline class="spark-line sk4" points="0,6 10,5 20,6 30,5 40,6 50,5 60,5"/>
                 </svg>
               </div>
-              <div class="m-delta" style="color:#6ee7b7">● Running 24/7</div>
+              <div class="m-delta" style="color:#6ee7b7" data-i18n="dash.kpi.delta.uptime">● Running 24/7</div>
             </div>
           </div>
 
-          <div class="mockup-flow-label">── Live Automation Pipeline</div>
+          <div class="mockup-flow-label" data-i18n="dash.flow.label">── Live Automation Pipeline</div>
           <div class="mockup-flow">
             <div class="flow-node done">
               <div class="fn-badge">✓</div>
               <div class="fn-icon">📥</div>
-              <div class="fn-name">Lead In</div>
-              <div class="fn-sub">Form / Ad</div>
+              <div class="fn-name" data-i18n="dash.flow.lead.name">Lead In</div>
+              <div class="fn-sub" data-i18n="dash.flow.lead.sub">Form / Ad</div>
             </div>
             <div class="flow-conn"><div class="flow-pkt" style="animation-delay:0s"></div></div>
             <div class="flow-node done">
               <div class="fn-badge">✓</div>
               <div class="fn-icon">🤖</div>
-              <div class="fn-name">AI Score</div>
-              <div class="fn-sub">&lt; 2s</div>
+              <div class="fn-name" data-i18n="dash.flow.ai.name">AI Score</div>
+              <div class="fn-sub" data-i18n="dash.flow.ai.sub">&lt; 2s</div>
             </div>
             <div class="flow-conn"><div class="flow-pkt" style="animation-delay:0.5s"></div></div>
             <div class="flow-node active">
               <div class="fn-icon">📊</div>
-              <div class="fn-name">CRM Update</div>
-              <div class="fn-sub">Auto-assign</div>
+              <div class="fn-name" data-i18n="dash.flow.crm.name">CRM Update</div>
+              <div class="fn-sub" data-i18n="dash.flow.crm.sub">Auto-assign</div>
             </div>
             <div class="flow-conn"><div class="flow-pkt" style="animation-delay:1s"></div></div>
             <div class="flow-node">
               <div class="fn-icon">✉️</div>
-              <div class="fn-name">Follow-Up</div>
-              <div class="fn-sub">Personalised</div>
+              <div class="fn-name" data-i18n="dash.flow.followup.name">Follow-Up</div>
+              <div class="fn-sub" data-i18n="dash.flow.followup.sub">Personalised</div>
             </div>
             <div class="flow-conn"><div class="flow-pkt" style="animation-delay:1.5s"></div></div>
             <div class="flow-node">
               <div class="fn-icon">📅</div>
-              <div class="fn-name">Booked</div>
-              <div class="fn-sub">0 staff needed</div>
+              <div class="fn-name" data-i18n="dash.flow.booked.name">Booked</div>
+              <div class="fn-sub" data-i18n="dash.flow.booked.sub">0 staff needed</div>
             </div>
           </div>
 
@@ -243,19 +347,19 @@
   <div class="stats-grid">
     <div class="stat-item reveal">
       <div class="stat-num"><span class="cu" data-t="80">0</span>%+</div>
-      <div class="stat-label">Reduction in<br/>manual work hours</div>
+      <div class="stat-label" data-i18n="stats.manual">Reduction in<br/>manual work hours</div>
     </div>
     <div class="stat-item reveal">
       <div class="stat-num"><span class="cu" data-t="40">0</span>%</div>
-      <div class="stat-label">Average operational<br/>cost saved</div>
+      <div class="stat-label" data-i18n="stats.cost">Average operational<br/>cost saved</div>
     </div>
     <div class="stat-item reveal">
       <div class="stat-num"><span class="cu" data-t="15">0</span>+</div>
-      <div class="stat-label">Automation systems<br/>deployed</div>
+      <div class="stat-label" data-i18n="stats.deployed">Automation systems<br/>deployed</div>
     </div>
     <div class="stat-item reveal">
       <div class="stat-num"><span class="cu" data-t="24">0</span>/<span class="cu" data-t="7">0</span></div>
-      <div class="stat-label">Systems run without<br/>interruption</div>
+      <div class="stat-label" data-i18n="stats.uptime">Systems run without<br/>interruption</div>
     </div>
   </div>
 </div>
@@ -265,104 +369,104 @@
   <div class="inner">
     <div class="for-grid">
       <div class="for-left reveal">
-        <span class="stag stag-green">Who This Is For</span>
-        <h2 class="sh">Some people know AI could help them<br /><span class="gt">Others just haven't seen how yet</span></h2>
-        <p>The gap isn't willingness —it's implementation. Whether you're running a business, a creative operation, or just your own schedule, if you're still doing things manually that could already be running on their own, this is where that changes.</p>
+        <span class="stag stag-green" data-i18n="for.tag">Who This Is For</span>
+        <h2 class="sh"><span data-i18n="for.h2.1">Some people know AI could help them</span><br /><span class="gt" data-i18n="for.h2.2">Others just haven't seen how yet</span></h2>
+        <p data-i18n="for.body">The gap isn't willingness —it's implementation. Whether you're running a business, a creative operation, or just your own schedule, if you're still doing things manually that could already be running on their own, this is where that changes.</p>
         <div class="for-checks">
           <div class="check-item">
             <div class="check-icon">✓</div>
-            <p class="check-text"><strong>Your team's hours are getting eaten by work that shouldn't need them</strong> —emails, data entry, follow-ups, scheduling. You know it's fixable. You just haven't had the right system built for it yet.</p>
+            <p class="check-text" data-i18n="for.check1"><strong>Your team's hours are getting eaten by work that shouldn't need them</strong> —emails, data entry, follow-ups, scheduling. You know it's fixable. You just haven't had the right system built for it yet.</p>
           </div>
           <div class="check-item">
             <div class="check-icon">✓</div>
-            <p class="check-text"><strong>You're a local business owner out on jobs all day.</strong> Being unavailable doesn't mean you're not interested —it means you're actually working. An AI that picks up, books, and follows up keeps leads moving while you do.</p>
+            <p class="check-text" data-i18n="for.check2"><strong>You're a local business owner out on jobs all day.</strong> Being unavailable doesn't mean you're not interested —it means you're actually working. An AI that picks up, books, and follows up keeps leads moving while you do.</p>
           </div>
           <div class="check-item">
             <div class="check-icon">✓</div>
-            <p class="check-text"><strong>You're running the whole operation yourself.</strong> The hours that go toward client emails, invoices, and follow-ups could go toward the work that actually moves things forward —none of that admin needs you specifically.</p>
+            <p class="check-text" data-i18n="for.check3"><strong>You're running the whole operation yourself.</strong> The hours that go toward client emails, invoices, and follow-ups could go toward the work that actually moves things forward —none of that admin needs you specifically.</p>
           </div>
           <div class="check-item">
             <div class="check-icon">✓</div>
-            <p class="check-text"><strong>You've opened ChatGPT or Claude, seen what it can do, and thought</strong> — <em>"this should be doing more for me."</em> The technology is real. What's missing is the right setup. That's the part we handle.</p>
+            <p class="check-text" data-i18n="for.check4"><strong>You've opened ChatGPT or Claude, seen what it can do, and thought</strong> — <em>"this should be doing more for me."</em> The technology is real. What's missing is the right setup. That's the part we handle.</p>
           </div>
           <div class="check-item">
             <div class="check-icon">✓</div>
-            <p class="check-text"><strong>You want a working system, not a project.</strong> Not a tool to figure out on your own —something built, handed over, and running from day one.</p>
+            <p class="check-text" data-i18n="for.check5"><strong>You want a working system, not a project.</strong> Not a tool to figure out on your own —something built, handed over, and running from day one.</p>
           </div>
           <div class="check-item">
             <div class="check-icon">✓</div>
-            <p class="check-text"><strong>Or you just want AI working for you personally</strong> —your schedule, your inbox, your research handled automatically so your time actually goes where you want it.</p>
+            <p class="check-text" data-i18n="for.check6"><strong>Or you just want AI working for you personally</strong> —your schedule, your inbox, your research handled automatically so your time actually goes where you want it.</p>
           </div>
           <div class="check-item">
             <div class="check-icon">✓</div>
-            <p class="check-text"><strong>Or you're not convinced AI applies to what you do</strong> —and that's a fair place to start. Walk us through how your day actually runs and we'll show you what could already be handling itself.</p>
+            <p class="check-text" data-i18n="for.check7"><strong>Or you're not convinced AI applies to what you do</strong> —and that's a fair place to start. Walk us through how your day actually runs and we'll show you what could already be handling itself.</p>
           </div>
         </div>
-        <a href="faq.html#contact" class="for-cta-link">Not sure if any of this applies to you? Walk us through what you do →</a>
+        <a href="faq.html#contact" class="for-cta-link" data-i18n="for.cta">Not sure if any of this applies to you? Walk us through what you do →</a>
       </div>
       <div class="for-right reveal">
         <div class="for-pill ac-green">
           <div class="pill-top">
             <div class="pill-ico">🧠</div>
-            <span class="pill-lbl">Personal AI Assistant</span>
+            <span class="pill-lbl" data-i18n="for.pill1.label">Personal AI Assistant</span>
           </div>
-          <p class="pill-desc">An AI assistant built around how you actually work —your calendar, your inbox, your tasks. Not a generic tool you have to figure out. Something set up for you, specifically.</p>
+          <p class="pill-desc" data-i18n="for.pill1.desc">An AI assistant built around how you actually work —your calendar, your inbox, your tasks. Not a generic tool you have to figure out. Something set up for you, specifically.</p>
         </div>
         <div class="for-pill ac-amber">
           <div class="pill-top">
             <div class="pill-ico">⚡</div>
-            <span class="pill-lbl">Solopreneurs</span>
+            <span class="pill-lbl" data-i18n="for.pill2.label">Solopreneurs</span>
           </div>
-          <p class="pill-desc">The work you started this for deserves your best hours. Admin, follow-up, scheduling —those can run on their own so your time goes toward what actually moves things forward.</p>
+          <p class="pill-desc" data-i18n="for.pill2.desc">The work you started this for deserves your best hours. Admin, follow-up, scheduling —those can run on their own so your time goes toward what actually moves things forward.</p>
         </div>
         <div class="for-pill ac-blue">
           <div class="pill-top">
             <div class="pill-ico">🎬</div>
-            <span class="pill-lbl">Content Creators</span>
+            <span class="pill-lbl" data-i18n="for.pill3.label">Content Creators</span>
           </div>
-          <p class="pill-desc">One video, one podcast —ten pieces of content. Repurposing, scheduling, email sequences —that whole pipeline can run automatically so you stay focused on creating.</p>
+          <p class="pill-desc" data-i18n="for.pill3.desc">One video, one podcast —ten pieces of content. Repurposing, scheduling, email sequences —that whole pipeline can run automatically so you stay focused on creating.</p>
         </div>
         <div class="for-pill ac-blue">
           <div class="pill-top">
             <div class="pill-ico">🏗️</div>
-            <span class="pill-lbl">Operations Leaders</span>
+            <span class="pill-lbl" data-i18n="for.pill4.label">Operations Leaders</span>
           </div>
-          <p class="pill-desc">Your team is capable of more than their current workload shows. When the low-value tasks run automatically, their time goes toward the work that actually moves things.</p>
+          <p class="pill-desc" data-i18n="for.pill4.desc">Your team is capable of more than their current workload shows. When the low-value tasks run automatically, their time goes toward the work that actually moves things.</p>
         </div>
         <div class="for-pill ac-purple">
           <div class="pill-top">
             <div class="pill-ico">🚀</div>
-            <span class="pill-lbl">Scale-Up Founders</span>
+            <span class="pill-lbl" data-i18n="for.pill5.label">Scale-Up Founders</span>
           </div>
-          <p class="pill-desc">Growth brings more moving parts —not less. The businesses that scale well are the ones with systems that grow with them, not ones built to handle today's volume only.</p>
+          <p class="pill-desc" data-i18n="for.pill5.desc">Growth brings more moving parts —not less. The businesses that scale well are the ones with systems that grow with them, not ones built to handle today's volume only.</p>
         </div>
         <div class="for-pill ac-green">
           <div class="pill-top">
             <div class="pill-ico">🔧</div>
-            <span class="pill-lbl">Local Service Businesses</span>
+            <span class="pill-lbl" data-i18n="for.pill6.label">Local Service Businesses</span>
           </div>
-          <p class="pill-desc">You're on a job site when a lead calls. An AI that picks up, books the appointment, and follows up means being out working never costs you the next job.</p>
+          <p class="pill-desc" data-i18n="for.pill6.desc">You're on a job site when a lead calls. An AI that picks up, books the appointment, and follows up means being out working never costs you the next job.</p>
         </div>
         <div class="for-pill ac-amber">
           <div class="pill-top">
             <div class="pill-ico">📈</div>
-            <span class="pill-lbl">Sales-Driven Teams</span>
+            <span class="pill-lbl" data-i18n="for.pill7.label">Sales-Driven Teams</span>
           </div>
-          <p class="pill-desc">The fastest teams aren't the ones with the best closers —they're the ones where no lead waits more than five minutes for a response. Automation handles the follow-up so your team handles the close.</p>
+          <p class="pill-desc" data-i18n="for.pill7.desc">The fastest teams aren't the ones with the best closers —they're the ones where no lead waits more than five minutes for a response. Automation handles the follow-up so your team handles the close.</p>
         </div>
         <div class="for-pill ac-blue">
           <div class="pill-top">
             <div class="pill-ico">⚖️</div>
-            <span class="pill-lbl">Professional Services</span>
+            <span class="pill-lbl" data-i18n="for.pill8.label">Professional Services</span>
           </div>
-          <p class="pill-desc">Document intake, client onboarding, invoice follow-up —none of that needs your best people. It just needs to get done. Automation does it, every time, without the overhead.</p>
+          <p class="pill-desc" data-i18n="for.pill8.desc">Document intake, client onboarding, invoice follow-up —none of that needs your best people. It just needs to get done. Automation does it, every time, without the overhead.</p>
         </div>
         <div class="for-pill ac-purple">
           <div class="pill-top">
             <div class="pill-ico">🛒</div>
-            <span class="pill-lbl">E-Commerce Brands</span>
+            <span class="pill-lbl" data-i18n="for.pill9.label">E-Commerce Brands</span>
           </div>
-          <p class="pill-desc">Customers want quick answers. Automation makes sure they always get one —and keeps your team free for the conversations that actually need a human.</p>
+          <p class="pill-desc" data-i18n="for.pill9.desc">Customers want quick answers. Automation makes sure they always get one —and keeps your team free for the conversations that actually need a human.</p>
         </div>
       </div>
     </div>
@@ -373,12 +477,12 @@
 <section id="home-cta" style="padding: 80px 24px; text-align: center;">
   <div class="inner">
     <div class="reveal">
-      <span class="stag">Get Started</span>
-      <h2 class="sh" style="margin-top: 12px;">Not Sure Where to Start?</h2>
-      <p class="ss" style="max-width: 520px; margin: 16px auto 32px;">Schedule a free consultation with our AI experts to discuss your specific needs.</p>
+      <span class="stag" data-i18n="home.cta.tag">Get Started</span>
+      <h2 class="sh" style="margin-top: 12px;" data-i18n="home.cta.h2">Not Sure Where to Start?</h2>
+      <p class="ss" style="max-width: 520px; margin: 16px auto 32px;" data-i18n="home.cta.sub">Schedule a free consultation with our AI experts to discuss your specific needs.</p>
       <a href="faq.html#contact" class="btn-p">
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
-        Book a Free Consultation
+        <span data-i18n="home.cta.btn">Book a Free Consultation</span>
       </a>
     </div>
   </div>
@@ -386,10 +490,11 @@
 
 <!-- FOOTER -->
 <footer>
-  <p class="f-copy">© 2026 Crux Agent. All rights reserved.</p>
-  <p class="f-copy"><a href="privacy-policy.html" style="color:inherit;opacity:0.6;text-decoration:none;">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms-of-service.html" style="color:inherit;opacity:0.6;text-decoration:none;">Terms of Service</a></p>
+  <p class="f-copy" data-i18n="footer.rights">© 2026 Crux Agent. All rights reserved.</p>
+  <p class="f-copy"><a href="privacy-policy.html" style="color:inherit;opacity:0.6;text-decoration:none;" data-i18n="footer.privacy">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms-of-service.html" style="color:inherit;opacity:0.6;text-decoration:none;" data-i18n="footer.terms">Terms of Service</a></p>
 </footer>
 
+<script src="i18n.js"></script>
 <script>
   // Navbar scroll
   const nav = document.getElementById('navbar');
@@ -456,8 +561,106 @@
     card.addEventListener('pointerleave', function() { this.style.setProperty('--mx', '-9999px'); this.style.setProperty('--my', '-9999px'); });
   });
 
-  // Hero interactive AI chip background
-  (function initHeroShader() {
+  // Dynamically rebuild SVG paths so they always converge on the actual buttons
+  (function() {
+    var svg = document.getElementById('heroShader');
+    var btns = document.querySelector('.hero-btns');
+    if (!svg || !btns) return;
+
+    function f(v) { return +v.toFixed(2); }
+
+    // L-shaped path: horizontal from edge then vertical to target
+    function hThenV(sx, sy, ex, ey) {
+      var cr = Math.min(5, Math.abs(ex - sx) / 2, Math.abs(ey - sy) / 2);
+      if (cr < 0.5 || Math.abs(ey - sy) < 0.1) return 'M ' + f(sx) + ' ' + f(sy) + ' H ' + f(ex);
+      var hd = ex > sx ? 1 : -1, vd = ey > sy ? 1 : -1;
+      return 'M ' + f(sx) + ' ' + f(sy) + ' H ' + f(ex - cr * hd) + ' Q ' + f(ex) + ' ' + f(sy) + ' ' + f(ex) + ' ' + f(sy + cr * vd) + ' V ' + f(ey);
+    }
+    // L-shaped path: vertical from edge then horizontal to target
+    function vThenH(sx, sy, ex, ey) {
+      var cr = Math.min(5, Math.abs(ex - sx) / 2, Math.abs(ey - sy) / 2);
+      if (cr < 0.5 || Math.abs(ex - sx) < 0.1) return 'M ' + f(sx) + ' ' + f(sy) + ' V ' + f(ey);
+      var vd = ey > sy ? 1 : -1, hd = ex > sx ? 1 : -1;
+      return 'M ' + f(sx) + ' ' + f(sy) + ' V ' + f(ey - cr * vd) + ' Q ' + f(sx) + ' ' + f(ey) + ' ' + f(sx + cr * hd) + ' ' + f(ey) + ' H ' + f(ex);
+    }
+
+    function updatePaths() {
+      var ctm = svg.getScreenCTM();
+      if (!ctm) return;
+      var inv = ctm.inverse();
+      var bR = btns.getBoundingClientRect();
+
+      function sv(sx, sy) {
+        var pt = svg.createSVGPoint();
+        pt.x = sx; pt.y = sy;
+        pt = pt.matrixTransform(inv);
+        return [+pt.x.toFixed(2), +pt.y.toFixed(2)];
+      }
+
+      var tl  = sv(bR.left,                        bR.top);
+      var tr  = sv(bR.right,                       bR.top);
+      var bl  = sv(bR.left,                        bR.bottom);
+      var br  = sv(bR.right,                       bR.bottom);
+      var ml  = sv(bR.left,                        bR.top + bR.height * 0.5);
+      var mr  = sv(bR.right,                       bR.top + bR.height * 0.5);
+      var tca = sv(bR.left + bR.width * 0.35,      bR.top);
+      var tcb = sv(bR.left + bR.width * 0.65,      bR.top);
+      var bc  = sv(bR.left + bR.width * 0.5,       bR.bottom);
+
+      var ds = [
+        hThenV(0,   20, ml[0],  ml[1]),   // 1. left  → button left-center
+        hThenV(200, 20, mr[0],  mr[1]),   // 2. right → button right-center
+        'M ' + f(tcb[0]) + ' 0 V ' + f(tcb[1]),  // 3. top   → top 65%
+        hThenV(200, 85, br[0],  br[1]),   // 4. right → button bottom-right
+        'M ' + f(bc[0])  + ' 100 V ' + f(bc[1]), // 5. bot   → bottom center
+        hThenV(0,   85, bl[0],  bl[1]),   // 6. left  → button bottom-left
+        hThenV(0,   10, tl[0],  tl[1]),   // 7. left  → button top-left
+        'M ' + f(tca[0]) + ' 0 V ' + f(tca[1]),  // 8. top   → top 35%
+      ];
+
+      for (var i = 0; i < 8; i++) {
+        var n = i + 1, d = ds[i];
+        var vis  = document.getElementById('cpu-vis-path-'  + n);
+        var anim = document.getElementById('cpu-anim-path-' + n);
+        var mask = document.getElementById('cpu-mask-path-' + n);
+        if (vis)  vis.setAttribute('d', d);
+        if (anim) anim.setAttribute('d', d);
+        if (mask) mask.setAttribute('d', d);
+      }
+    }
+
+    updatePaths();
+    window.addEventListener('resize', updatePaths);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(updatePaths);
+
+    // Animate colored lights — re-reads getTotalLength() each frame so paths can change
+    var lights = [
+      { cid: 'cpu-c1', pid: 'cpu-anim-path-1', dur: 5000, delay: 1000 },
+      { cid: 'cpu-c2', pid: 'cpu-anim-path-2', dur: 2000, delay: 0    },
+      { cid: 'cpu-c3', pid: 'cpu-anim-path-3', dur: 6000, delay: 1500 },
+      { cid: 'cpu-c4', pid: 'cpu-anim-path-4', dur: 3000, delay: 400  },
+      { cid: 'cpu-c5', pid: 'cpu-anim-path-5', dur: 4500, delay: 800  },
+      { cid: 'cpu-c6', pid: 'cpu-anim-path-6', dur: 7000, delay: 2000 },
+      { cid: 'cpu-c7', pid: 'cpu-anim-path-7', dur: 4000, delay: 500  },
+      { cid: 'cpu-c8', pid: 'cpu-anim-path-8', dur: 3000, delay: 1200 }
+    ];
+    lights.forEach(function(cfg) {
+      var c = document.getElementById(cfg.cid);
+      var p = document.getElementById(cfg.pid);
+      if (!c || !p) return;
+      var t0 = performance.now() + cfg.delay;
+      (function tick(now) {
+        if (now < t0) { requestAnimationFrame(tick); return; }
+        var len = p.getTotalLength();
+        var pt  = p.getPointAtLength(((now - t0) % cfg.dur) / cfg.dur * len);
+        c.setAttribute('cx', pt.x);
+        c.setAttribute('cy', pt.y);
+        requestAnimationFrame(tick);
+      })(performance.now());
+    });
+  })();
+
+  if (false) { (function initHeroShader() {
     const canvas = document.getElementById('heroShader');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -633,7 +836,7 @@
       drawChip(chipX, chipY, chipSz, t);
     }
     requestAnimationFrame(render);
-  })();
+  })(); }
 
   // Dashboard live animations
   (function() {
@@ -679,23 +882,7 @@
       card.style.transform = 'rotateX(' + lerp(20, 0, p) + 'deg) scale(' + lerp(1.05, 1, p) + ')';
       header.style.opacity = '1';
     }
-    // Mobile: animate on enter via IntersectionObserver
-    if (window.innerWidth <= 960) {
-      header.style.opacity = '1';
-      card.style.transform = 'rotateX(15deg) scale(0.78)';
-      card.style.transition = 'transform 0.9s cubic-bezier(0.22,1,0.36,1)';
-      var mObs = new IntersectionObserver(function(entries) {
-        entries.forEach(function(e) {
-          if (e.isIntersecting) {
-            card.style.transform = 'rotateX(0deg) scale(1)';
-            mObs.disconnect();
-          }
-        });
-      }, { threshold: 0.2 });
-      mObs.observe(showcase);
-      return;
-    }
-    // Desktop: passive scroll-position-driven animation — never blocks scroll
+    // Scroll-position-driven animation — works on both mobile and desktop
     function onScroll() {
       var rect = showcase.getBoundingClientRect();
       var scrollRange = showcase.offsetHeight - window.innerHeight;
@@ -724,10 +911,11 @@
   (function () {
     const wrap   = document.querySelector('.rw-wrap');
     const wordEl = document.querySelector('.rw-word');
-    const words  = ['repetitive', 'manual', 'mindless', 'time-consuming', 'low-value'];
+    let words  = (window.CruxI18n ? window.CruxI18n.words[window.CruxI18n.get()] : null) || ['repetitive', 'manual', 'mindless', 'time-consuming', 'low-value'];
     let current  = 0;
     function measure(text) { const t = document.createElement('span'); t.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;font-weight:800;'; wrap.parentNode.insertBefore(t, wrap.nextSibling); t.textContent = text; const w = t.offsetWidth; t.remove(); return w; }
     function init() {
+      wordEl.textContent = words[0];
       wrap.style.width = measure(words[0]) + 'px';
       setInterval(() => {
         wordEl.classList.add('rw-out');
@@ -742,6 +930,9 @@
           requestAnimationFrame(() => requestAnimationFrame(() => { wordEl.style.transform = ''; wordEl.style.opacity = ''; }));
         }, 280);
       }, 2400);
+    }
+    if (window.CruxI18n) {
+      window.CruxI18n.on(function(lang) { words = window.CruxI18n.words[lang]; current = 0; });
     }
     document.fonts ? document.fonts.ready.then(init) : window.addEventListener('load', init);
   })();

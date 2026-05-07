@@ -7,7 +7,7 @@
   <meta name="description" content="Full case study details from Crux Agent." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
     /* ── CASE STUDY PAGE ── */
@@ -370,15 +370,33 @@
     Crux Agent
   </a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="solve.html">What We Solve</a></li>
-    <li><a href="process.html">How It Works</a></li>
-    <li><a href="projects.html" class="nav-active">Case Studies</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="faq.html#contact" class="nav-cta"><span>Talk to Us</span></a></li>
+    <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+    <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
+    <li><a href="solve.html" data-i18n="nav.solve">What We Solve</a></li>
+    <li><a href="process.html" data-i18n="nav.process">How It Works</a></li>
+    <li><a href="projects.html" class="nav-active" data-i18n="nav.projects">Case Studies</a></li>
+    <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+    <li><a href="faq.html#contact" class="nav-cta"><span data-i18n="nav.cta">Talk to Us</span></a></li>
   </ul>
   <div class="nav-actions">
+    <div class="lang-dropdown" id="langDropdown">
+      <button class="lang-toggle" id="langToggle" aria-label="Language" aria-haspopup="true" aria-expanded="false">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+      </button>
+      <div class="lang-menu" id="langMenu" role="menu">
+        <button class="lang-option" data-lang="en" role="menuitem">
+          EN
+          <svg class="lang-check" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        </button>
+        <button class="lang-option" data-lang="zh" role="menuitem">
+          繁中
+          <svg class="lang-check" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        </button>
+      </div>
+    </div>
     <div class="theme-dropdown" id="themeDropdown">
       <button class="theme-toggle" id="themeToggle" aria-label="Theme" aria-haspopup="true" aria-expanded="false">
         <svg id="themeIcon" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -461,10 +479,11 @@
 
 <!-- FOOTER -->
 <footer>
-  <p class="f-copy">© 2026 Crux Agent. All rights reserved.</p>
-  <p class="f-copy"><a href="privacy-policy.html" style="color:inherit;opacity:0.6;text-decoration:none;">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms-of-service.html" style="color:inherit;opacity:0.6;text-decoration:none;">Terms of Service</a></p>
+  <p class="f-copy" data-i18n="footer.rights">© 2026 Crux Agent. All rights reserved.</p>
+  <p class="f-copy"><a href="privacy-policy.html" style="color:inherit;opacity:0.6;text-decoration:none;" data-i18n="footer.privacy">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms-of-service.html" style="color:inherit;opacity:0.6;text-decoration:none;" data-i18n="footer.terms">Terms of Service</a></p>
 </footer>
 
+<script src="i18n.js"></script>
 <script>
   // Navbar scroll
   const nav = document.getElementById('navbar');
@@ -511,6 +530,17 @@
     'Key Features': '✨',
     'Results & Business Impact': '📊',
     'Results &amp; Business Impact': '📊',
+    '客戶概況': '🏢',
+    '業務背景': '📋',
+    '問題描述': '⚠️',
+    '目標': '🎯',
+    '工作範疇': '📐',
+    '解決方案概述': '💡',
+    '技術架構': '🛠️',
+    '實作方式': '🚀',
+    '主要功能': '✨',
+    '成果 &amp; 業務影響': '📊',
+    '成果 & 業務影響': '📊',
   };
 
   // Project data
@@ -669,7 +699,8 @@
   function slugify(s) { return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''); }
 
   function renderPage(id) {
-    const p = projects[id];
+    const isZh = window.CruxI18n && window.CruxI18n.get() === 'zh';
+    const p = (isZh && window.CruxI18n.zhModal && window.CruxI18n.zhModal[id]) ? window.CruxI18n.zhModal[id] : projects[id];
     if (!p) { document.title = 'Not Found | Crux Agent'; return; }
 
     document.title = p.title + ' | Crux Agent';

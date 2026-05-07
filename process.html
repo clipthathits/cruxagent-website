@@ -7,7 +7,7 @@
   <meta name="description" content="Our process starts with a working demo — you see exactly what you're getting before we build the real thing." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -19,15 +19,33 @@
     Crux Agent
   </a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="solve.html">What We Solve</a></li>
-    <li><a href="process.html">How It Works</a></li>
-    <li><a href="projects.html">Case Studies</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="faq.html#contact" class="nav-cta"><span>Talk to Us</span></a></li>
+    <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+    <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
+    <li><a href="solve.html" data-i18n="nav.solve">What We Solve</a></li>
+    <li><a href="process.html" data-i18n="nav.process">How It Works</a></li>
+    <li><a href="projects.html" data-i18n="nav.projects">Case Studies</a></li>
+    <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+    <li><a href="faq.html#contact" class="nav-cta"><span data-i18n="nav.cta">Talk to Us</span></a></li>
   </ul>
   <div class="nav-actions">
+    <div class="lang-dropdown" id="langDropdown">
+      <button class="lang-toggle" id="langToggle" aria-label="Language" aria-haspopup="true" aria-expanded="false">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+      </button>
+      <div class="lang-menu" id="langMenu" role="menu">
+        <button class="lang-option" data-lang="en" role="menuitem">
+          EN
+          <svg class="lang-check" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        </button>
+        <button class="lang-option" data-lang="zh" role="menuitem">
+          繁中
+          <svg class="lang-check" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        </button>
+      </div>
+    </div>
     <div class="theme-dropdown" id="themeDropdown">
       <button class="theme-toggle" id="themeToggle" aria-label="Theme" aria-haspopup="true" aria-expanded="false">
         <svg id="themeIcon" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -63,50 +81,51 @@
 <section id="process" style="padding-top:120px;">
   <div class="inner">
     <div class="process-hdr">
-      <span class="stag reveal">The Process</span>
-      <h2 class="sh reveal">You'll see it working<br /><span class="gt">before we build the real thing</span></h2>
-      <p class="ss reveal">Every engagement starts with a working demo —so you can see exactly what you're getting before we commit to the full build.</p>
+      <span class="stag reveal" data-i18n="process.tag">The Process</span>
+      <h2 class="sh reveal"><span data-i18n="process.h2.1">You'll see it working</span><br /><span class="gt" data-i18n="process.h2.2">before we build the real thing</span></h2>
+      <p class="ss reveal" data-i18n="process.sub">Every engagement starts with a working demo —so you can see exactly what you're getting before we commit to the full build.</p>
     </div>
     <div class="steps">
       <div class="step reveal">
         <div class="step-n">01</div>
-        <h3>Discovery</h3>
-        <p>We start by understanding your business and mapping where your team's time is going. No proposals yet —just a clear picture of what's worth building and what the impact would be.</p>
+        <h3 data-i18n="step1.h3">Discovery</h3>
+        <p data-i18n="step1.p">We start by understanding your business and mapping where your team's time is going. No proposals yet —just a clear picture of what's worth building and what the impact would be.</p>
       </div>
       <div class="step reveal">
         <div class="step-n">02</div>
-        <h3>Rapid Demo</h3>
-        <p>Before anything is finalised, we build a working demo of your solution. You'll see how it behaves, what it handles, and how it fits into your workflow —usually within days. Something real, not a slide deck.</p>
+        <h3 data-i18n="step2.h3">Rapid Demo</h3>
+        <p data-i18n="step2.p">Before anything is finalised, we build a working demo of your solution. You'll see how it behaves, what it handles, and how it fits into your workflow —usually within days. Something real, not a slide deck.</p>
       </div>
       <div class="step reveal">
         <div class="step-n">03</div>
-        <h3>Review &amp; Alignment</h3>
-        <p>We walk you through the demo together. You'll see exactly what's included, what the production version will add, and what the full build will look like. Only once you're clear and satisfied do we move forward.</p>
+        <h3 data-i18n="step3.h3">Review &amp; Alignment</h3>
+        <p data-i18n="step3.p">We walk you through the demo together. You'll see exactly what's included, what the production version will add, and what the full build will look like. Only once you're clear and satisfied do we move forward.</p>
       </div>
       <div class="step reveal">
         <div class="step-n">04</div>
-        <h3>Production Build</h3>
-        <p>With scope confirmed, we build the full system. Timeline depends on complexity —some builds are done quickly, others take longer. Either way, you'll have visibility throughout and no surprises at the end.</p>
+        <h3 data-i18n="step4.h3">Production Build</h3>
+        <p data-i18n="step4.p">With scope confirmed, we build the full system. Timeline depends on complexity —some builds are done quickly, others take longer. Either way, you'll have visibility throughout and no surprises at the end.</p>
       </div>
       <div class="step reveal">
         <div class="step-n">05</div>
-        <h3>Handoff &amp; Support</h3>
-        <p>Your system comes with full documentation and a walkthrough so your team knows exactly how to use it. After launch, we stay available —monitoring, updating, and refining as your business evolves.</p>
+        <h3 data-i18n="step5.h3">Handoff &amp; Support</h3>
+        <p data-i18n="step5.p">Your system comes with full documentation and a walkthrough so your team knows exactly how to use it. After launch, we stay available —monitoring, updating, and refining as your business evolves.</p>
       </div>
     </div>
     <div class="diff-header reveal" style="margin-top:60px; border-top:1px solid var(--border); padding-top:60px;">
-      <h2 class="sh">"The best system is the<br /><span class="gt">simplest one that works."</span></h2>
-      <p class="ss">Efficient, effective, and never more complex than it needs to be.</p>
+      <h2 class="sh"><span data-i18n="process.quote.h2.1">"The best system is the</span><br /><span class="gt" data-i18n="process.quote.h2.2">simplest one that works."</span></h2>
+      <p class="ss" data-i18n="process.quote.sub">Efficient, effective, and never more complex than it needs to be.</p>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p class="f-copy">© 2026 Crux Agent. All rights reserved.</p>
-  <p class="f-copy"><a href="privacy-policy.html" style="color:inherit;opacity:0.6;text-decoration:none;">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms-of-service.html" style="color:inherit;opacity:0.6;text-decoration:none;">Terms of Service</a></p>
+  <p class="f-copy" data-i18n="footer.rights">© 2026 Crux Agent. All rights reserved.</p>
+  <p class="f-copy"><a href="privacy-policy.html" style="color:inherit;opacity:0.6;text-decoration:none;" data-i18n="footer.privacy">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms-of-service.html" style="color:inherit;opacity:0.6;text-decoration:none;" data-i18n="footer.terms">Terms of Service</a></p>
 </footer>
 
+<script src="i18n.js"></script>
 <script>
   // Navbar scroll
   const nav = document.getElementById('navbar');

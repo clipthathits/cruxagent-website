@@ -1,23 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms of Service | Novuskai</title>
+  <title>Terms of Service | Crux Agent</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>(function(){var t=localStorage.getItem('theme')||'light';document.documentElement.setAttribute('data-theme',t);})();</script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --bg:     #050811;
       --bg2:    #090f1e;
       --border: rgba(255,255,255,0.08);
-      --blue:   #4f8ef7;
-      --violet: #8b5cf6;
-      --grad:   linear-gradient(135deg, #4f8ef7, #8b5cf6);
+      --gold:   #c9a84c;
+      --grad:   linear-gradient(135deg, #a07828, #c9a84c);
       --text:   #f1f5f9;
       --muted:  #94a3b8;
+    }
+    [data-theme="light"] {
+      --bg:     #ffffff;
+      --bg2:    #f8fafc;
+      --border: rgba(0,0,0,0.1);
+      --gold:   #7a5210;
+      --text:   #0f172a;
+      --muted:  #475569;
     }
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
@@ -36,11 +44,22 @@
       font-size: 1.4rem;
       font-weight: 800;
       letter-spacing: -0.5px;
-      background: var(--grad);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #a07828, #c9a84c);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
       text-decoration: none;
+    }
+    .logo-img {
+      height: 38px;
+      width: auto;
+      flex-shrink: 0;
+      border-radius: 9px;
+      background: rgba(255,255,255,0.93);
+      padding: 2px 5px;
     }
     .back {
       font-size: 0.85rem;
@@ -62,7 +81,7 @@
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--blue);
+      color: var(--gold);
       margin-bottom: 16px;
     }
     h1 {
@@ -98,7 +117,7 @@
       margin-bottom: 14px;
     }
     li { margin-bottom: 6px; }
-    a { color: var(--blue); text-decoration: none; }
+    a { color: var(--gold); text-decoration: none; }
     a:hover { text-decoration: underline; }
     .divider {
       border: none;
@@ -117,23 +136,26 @@
 <body>
 
 <header>
-  <a href="index.html" class="logo">Novuskai</a>
+  <a href="index.html" class="logo">
+    <img src="logo.png" alt="" class="logo-img">
+    Crux Agent
+  </a>
   <a href="index.html" class="back">← Back to site</a>
 </header>
 
 <main>
   <div class="page-tag">Legal</div>
   <h1>Terms of Service</h1>
-  <p class="effective">Effective date: April 2026 &nbsp;·&nbsp; Last updated: April 2026 &nbsp;·&nbsp; Novuskai &nbsp;·&nbsp; <a href="mailto:brian@novuskai.com">brian@novuskai.com</a></p>
+  <p class="effective">Effective date: April 2026 &nbsp;·&nbsp; Last updated: April 2026 &nbsp;·&nbsp; Crux Agent &nbsp;·&nbsp; <a href="mailto:sales@crux-agent.com">sales@crux-agent.com</a></p>
 
   <section>
     <h2>1. Overview</h2>
-    <p>These Terms of Service govern your engagement with Novuskai, an AI automation agency based in Taiwan. By proceeding with any paid engagement, you agree to these terms. Submitting an enquiry through our website does not constitute an agreement — these terms apply only once a project has been formally agreed between both parties.</p>
+    <p>These Terms of Service govern your engagement with Crux Agent, an AI automation agency based in Taiwan. By proceeding with any paid engagement, you agree to these terms. Submitting an enquiry through our website does not constitute an agreement — these terms apply only once a project has been formally agreed between both parties.</p>
   </section>
 
   <section>
     <h2>2. Our services</h2>
-    <p>Novuskai designs and builds AI-powered systems for small and medium-sized businesses, including:</p>
+    <p>Crux Agent designs and builds AI-powered systems for small and medium-sized businesses, including:</p>
     <ul>
       <li>AI automation workflows</li>
       <li>AI systems and integrations</li>
@@ -144,7 +166,7 @@
 
   <section>
     <h2>3. Acceptable use</h2>
-    <p>You agree to use systems built by Novuskai only for lawful purposes and in accordance with all applicable laws and regulations. You must not use our deliverables to:</p>
+    <p>You agree to use systems built by Crux Agent only for lawful purposes and in accordance with all applicable laws and regulations. You must not use our deliverables to:</p>
     <ul>
       <li>Engage in or facilitate illegal activity</li>
       <li>Harass, harm, or discriminate against individuals</li>
@@ -162,7 +184,7 @@
 
   <section>
     <h2>5. Ownership of deliverables</h2>
-    <p>You own everything we build for you. Upon receipt of final payment, all source files, documentation, credentials, and system access are transferred to you in full. You are never dependent on Novuskai to keep your systems running — they are built to operate independently.</p>
+    <p>You own everything we build for you. Upon receipt of final payment, all source files, documentation, credentials, and system access are transferred to you in full. You are never dependent on Crux Agent to keep your systems running — they are built to operate independently.</p>
   </section>
 
   <section>
@@ -202,7 +224,7 @@
 
   <section>
     <h2>12. Termination</h2>
-    <p>Either party may end an engagement by giving written notice. If you choose to end a project before completion, you will be billed for work completed up to that point. If Novuskai is unable to complete a project due to circumstances within our control, we will refund any portion of pre-paid fees for work not yet delivered.</p>
+    <p>Either party may end an engagement by giving written notice. If you choose to end a project before completion, you will be billed for work completed up to that point. If Crux Agent is unable to complete a project due to circumstances within our control, we will refund any portion of pre-paid fees for work not yet delivered.</p>
     <p>Upon termination, we will provide you with all work completed to date, including any source files, documentation, and system access.</p>
   </section>
 
@@ -214,14 +236,14 @@
 
   <section>
     <h2>14. Limitation of liability</h2>
-    <p>Novuskai is not liable for any indirect, consequential, incidental, or loss-of-profit damages arising from the use of systems we build. Our total liability in any engagement is limited to the amount paid for that specific engagement.</p>
+    <p>Crux Agent is not liable for any indirect, consequential, incidental, or loss-of-profit damages arising from the use of systems we build. Our total liability in any engagement is limited to the amount paid for that specific engagement.</p>
     <p>We build and test every system thoroughly before handover, but we cannot guarantee uninterrupted operation of third-party tools or APIs that your system may depend on.</p>
   </section>
 
   <section>
     <h2>15. Indemnification</h2>
-    <p>You agree to indemnify and hold harmless Novuskai from any claims, losses, damages, or expenses (including reasonable legal costs) arising from: your use of the systems we build, your breach of these terms, or any claim that your use of our deliverables infringes the rights of a third party.</p>
-    <p>This clause does not apply to issues directly caused by Novuskai's own negligence or failure to deliver agreed work.</p>
+    <p>You agree to indemnify and hold harmless Crux Agent from any claims, losses, damages, or expenses (including reasonable legal costs) arising from: your use of the systems we build, your breach of these terms, or any claim that your use of our deliverables infringes the rights of a third party.</p>
+    <p>This clause does not apply to issues directly caused by Crux Agent's own negligence or failure to deliver agreed work.</p>
   </section>
 
   <section>
@@ -236,7 +258,7 @@
 
   <section>
     <h2>18. Entire agreement and severability</h2>
-    <p>These terms, together with any written project agreement, constitute the entire agreement between you and Novuskai for the services described. They supersede all prior discussions, representations, or agreements on the same subject matter.</p>
+    <p>These terms, together with any written project agreement, constitute the entire agreement between you and Crux Agent for the services described. They supersede all prior discussions, representations, or agreements on the same subject matter.</p>
     <p>If any provision of these terms is found to be unenforceable under applicable law, that provision will be modified to the minimum extent necessary, and the remaining provisions will continue in full force.</p>
   </section>
 
@@ -247,14 +269,15 @@
 
   <section>
     <h2>20. Contact</h2>
-    <p>For any questions about these terms, reach us at <a href="mailto:brian@novuskai.com">brian@novuskai.com</a>.</p>
+    <p>For any questions about these terms, reach us at <a href="mailto:sales@crux-agent.com">sales@crux-agent.com</a>.</p>
   </section>
 </main>
 
 <footer>
-  © 2026 Novuskai. All rights reserved. &nbsp;·&nbsp;
+  © 2026 Crux Agent. All rights reserved. &nbsp;·&nbsp;
   <a href="privacy-policy.html">Privacy Policy</a>
 </footer>
 
+<script src="i18n.js"></script>
 </body>
 </html>

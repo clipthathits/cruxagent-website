@@ -7,7 +7,7 @@
   <meta name="description" content="Answers to common questions about AI automation — and a free consultation to find out what's possible for your business." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <script src="https://web3forms.com/client/script.js" async defer></script>
 </head>
@@ -20,15 +20,33 @@
     Crux Agent
   </a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="solve.html">What We Solve</a></li>
-    <li><a href="process.html">How It Works</a></li>
-    <li><a href="projects.html">Case Studies</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="faq.html#contact" class="nav-cta"><span>Talk to Us</span></a></li>
+    <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+    <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
+    <li><a href="solve.html" data-i18n="nav.solve">What We Solve</a></li>
+    <li><a href="process.html" data-i18n="nav.process">How It Works</a></li>
+    <li><a href="projects.html" data-i18n="nav.projects">Case Studies</a></li>
+    <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+    <li><a href="faq.html#contact" class="nav-cta"><span data-i18n="nav.cta">Talk to Us</span></a></li>
   </ul>
   <div class="nav-actions">
+    <div class="lang-dropdown" id="langDropdown">
+      <button class="lang-toggle" id="langToggle" aria-label="Language" aria-haspopup="true" aria-expanded="false">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+      </button>
+      <div class="lang-menu" id="langMenu" role="menu">
+        <button class="lang-option" data-lang="en" role="menuitem">
+          EN
+          <svg class="lang-check" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        </button>
+        <button class="lang-option" data-lang="zh" role="menuitem">
+          繁中
+          <svg class="lang-check" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        </button>
+      </div>
+    </div>
     <div class="theme-dropdown" id="themeDropdown">
       <button class="theme-toggle" id="themeToggle" aria-label="Theme" aria-haspopup="true" aria-expanded="false">
         <svg id="themeIcon" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -65,49 +83,49 @@
   <div class="inner">
     <div class="faq-wrap">
       <div class="faq-left reveal">
-        <span class="stag">FAQ</span>
-        <h2>Questions worth<br />asking before<br /><span class="gt">you get started</span></h2>
+        <span class="stag" data-i18n="faq.tag">FAQ</span>
+        <h2><span data-i18n="faq.h2.1">Questions worth</span><br /><span data-i18n="faq.h2.2">asking before</span><br /><span class="gt" data-i18n="faq.h2.3">you get started</span></h2>
       </div>
       <div class="faq-list reveal">
 
         <div class="faq-item">
           <div class="faq-q">
-            Will this affect my employees?
+            <span data-i18n="faq.q1">Will this affect my employees?</span>
             <span class="faq-icon">+</span>
           </div>
-          <div class="faq-a">The goal is to free your team from repetitive, low-value tasks —not to reduce headcount. When people spend less time on manual work, they can focus on the parts of their job that actually need a human. Most teams find they can take on more meaningful work once the routine tasks are handled automatically.</div>
+          <div class="faq-a" data-i18n="faq.a1">The goal is to free your team from repetitive, low-value tasks —not to reduce headcount. When people spend less time on manual work, they can focus on the parts of their job that actually need a human. Most teams find they can take on more meaningful work once the routine tasks are handled automatically.</div>
         </div>
 
         <div class="faq-item">
           <div class="faq-q">
-            Will it work with the tools we already use?
+            <span data-i18n="faq.q2">Will it work with the tools we already use?</span>
             <span class="faq-icon">+</span>
           </div>
-          <div class="faq-a">We build around your existing stack —not the other way around. Before we design anything, we map out the tools and platforms your team already uses and make sure the system fits into those workflows. You won't be asked to change how you work or adopt new software just to make our solution function.</div>
+          <div class="faq-a" data-i18n="faq.a2">We build around your existing stack —not the other way around. Before we design anything, we map out the tools and platforms your team already uses and make sure the system fits into those workflows. You won't be asked to change how you work or adopt new software just to make our solution function.</div>
         </div>
 
         <div class="faq-item">
           <div class="faq-q">
-            Do I need to understand the technology?
+            <span data-i18n="faq.q3">Do I need to understand the technology?</span>
             <span class="faq-icon">+</span>
           </div>
-          <div class="faq-a">Not at all. You describe the problem in your own words —"we spend 10 hours a week on X and it costs us Y." We handle everything else. We'll walk you through what we build in clear terms, no technical background needed.</div>
+          <div class="faq-a" data-i18n="faq.a3">Not at all. You describe the problem in your own words —"we spend 10 hours a week on X and it costs us Y." We handle everything else. We'll walk you through what we build in clear terms, no technical background needed.</div>
         </div>
 
         <div class="faq-item">
           <div class="faq-q">
-            How long does it take before I see results?
+            <span data-i18n="faq.q4">How long does it take before I see results?</span>
             <span class="faq-icon">+</span>
           </div>
-          <div class="faq-a">You'll see a working demo within days of the discovery call —not weeks. The full build timeline depends on complexity, but most projects are live within 2–4 weeks. Because we start with a clear picture of what you need before we build anything, there's less back-and-forth and fewer surprises.</div>
+          <div class="faq-a" data-i18n="faq.a4">You'll see a working demo within days of the discovery call —not weeks. The full build timeline depends on complexity, but most projects are live within 2–4 weeks. Because we start with a clear picture of what you need before we build anything, there's less back-and-forth and fewer surprises.</div>
         </div>
 
         <div class="faq-item">
           <div class="faq-q">
-            What if the system breaks after you've delivered it?
+            <span data-i18n="faq.q5">What if the system breaks after you've delivered it?</span>
             <span class="faq-icon">+</span>
           </div>
-          <div class="faq-a">Every delivery includes full documentation and a support handover. We also offer ongoing retainer packages where we monitor and maintain your systems proactively. APIs change, tools update —we handle it so you don't have to.</div>
+          <div class="faq-a" data-i18n="faq.a5">Every delivery includes full documentation and a support handover. We also offer ongoing retainer packages where we monitor and maintain your systems proactively. APIs change, tools update —we handle it so you don't have to.</div>
         </div>
 
       </div>
@@ -120,104 +138,104 @@
 <section id="contact">
   <div class="inner">
     <div class="diff-header reveal">
-      <span class="stag">Get Started</span>
-      <h2 class="sh">Let's see what's possible<br /><span class="gt">for your business</span></h2>
+      <span class="stag" data-i18n="contact.tag">Get Started</span>
+      <h2 class="sh"><span data-i18n="contact.h2.1">Let's see what's possible</span><br /><span class="gt" data-i18n="contact.h2.2">for your business</span></h2>
     </div>
     <div class="contact-wrap">
       <div class="contact-left reveal">
-        <p>Tell us what your team is working on — we'll show you a working demo before anything is built.</p>
+        <p data-i18n="contact.intro">Tell us what your team is working on — we'll show you a working demo before anything is built.</p>
         <div class="gs-steps-v">
           <div class="gs-step-v">
             <div class="gs-num-v">01</div>
             <div>
-              <h4>Consultation</h4>
-              <span>Share your vision and challenges</span>
+              <h4 data-i18n="contact.step1.h4">Consultation</h4>
+              <span data-i18n="contact.step1.span">Share your vision and challenges</span>
             </div>
           </div>
           <div class="gs-step-v">
             <div class="gs-num-v">02</div>
             <div>
-              <h4>Strategy</h4>
-              <span>We design your AI solution</span>
+              <h4 data-i18n="contact.step2.h4">Strategy</h4>
+              <span data-i18n="contact.step2.span">We design your AI solution</span>
             </div>
           </div>
           <div class="gs-step-v">
             <div class="gs-num-v">03</div>
             <div>
-              <h4>Launch</h4>
-              <span>Deploy and optimize your system</span>
+              <h4 data-i18n="contact.step3.h4">Launch</h4>
+              <span data-i18n="contact.step3.span">Deploy and optimize your system</span>
             </div>
           </div>
         </div>
         <div class="c-items">
           <div class="c-item"><div class="c-ico">📧</div><a href="mailto:sales@crux-agent.com" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.4);transition:border-color 0.2s;" onmouseover="this.style.borderColor='rgba(201,168,76,1)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.4)'">sales@crux-agent.com</a></div>
           <div class="c-item"><div class="c-ico">📞</div><a href="tel:+886909294788" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.4);transition:border-color 0.2s;" onmouseover="this.style.borderColor='rgba(201,168,76,1)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.4)'">+886 0909 294 788</a></div>
-          <div class="c-item"><div class="c-ico">⚡</div><span>Response within 24 hours</span></div>
+          <div class="c-item"><div class="c-ico">⚡</div><span data-i18n="contact.response">Response within 24 hours</span></div>
         </div>
       </div>
       <form id="contactForm" class="reveal" onsubmit="handleSubmit(event)">
         <div class="frow">
           <div class="fg">
-            <label for="f-name">Your Name</label>
-            <input id="f-name" name="name" type="text" placeholder="John Smith" required />
+            <label for="f-name" data-i18n="form.name.label">Your Name</label>
+            <input id="f-name" name="name" type="text" placeholder="John Smith" data-i18n-ph="form.name.ph" required />
           </div>
           <div class="fg">
-            <label for="f-email">Email Address</label>
-            <input id="f-email" name="email" type="email" placeholder="john@company.com" required />
+            <label for="f-email" data-i18n="form.email.label">Email Address</label>
+            <input id="f-email" name="email" type="email" placeholder="john@company.com" data-i18n-ph="form.email.ph" required />
           </div>
         </div>
         <div class="frow">
           <div class="fg">
-            <label for="f-phone">Phone Number</label>
-            <input id="f-phone" name="phone" type="tel" placeholder="+1 555 000 0000" />
+            <label for="f-phone" data-i18n="form.phone.label">Phone Number</label>
+            <input id="f-phone" name="phone" type="tel" placeholder="+1 555 000 0000" data-i18n-ph="form.phone.ph" />
           </div>
           <div class="fg">
-            <label for="f-company">Company Name</label>
-            <input id="f-company" name="company" type="text" placeholder="Acme Corp" />
+            <label for="f-company" data-i18n="form.company.label">Company Name</label>
+            <input id="f-company" name="company" type="text" placeholder="Acme Corp" data-i18n-ph="form.company.ph" />
           </div>
         </div>
         <div class="fg">
-          <label for="f-size">Company Size</label>
+          <label for="f-size" data-i18n="form.size.label">Company Size</label>
           <select id="f-size" name="company_size">
-            <option value="">Select size</option>
-            <option>Just me</option>
-            <option>2–10 employees</option>
-            <option>11–50 employees</option>
-            <option>51–200 employees</option>
-            <option>200+ employees</option>
+            <option value="" data-i18n="form.size.opt0">Select size</option>
+            <option data-i18n="form.size.opt1">Just me</option>
+            <option data-i18n="form.size.opt2">2–10 employees</option>
+            <option data-i18n="form.size.opt3">11–50 employees</option>
+            <option data-i18n="form.size.opt4">51–200 employees</option>
+            <option data-i18n="form.size.opt5">200+ employees</option>
           </select>
         </div>
         <div class="fg">
-          <label for="f-challenge">What's your biggest operational challenge right now?</label>
+          <label for="f-challenge" data-i18n="form.challenge.label">What's your biggest operational challenge right now?</label>
           <select id="f-challenge" name="challenge">
-            <option value="">Select the closest match</option>
-            <option>Too much manual data entry / admin work</option>
-            <option>Slow or missed customer follow-ups</option>
-            <option>Hiring &amp; screening taking too long</option>
-            <option>Customer support team overwhelmed</option>
-            <option>Reports &amp; dashboards done manually</option>
-            <option>Leads going cold before we reach them</option>
-            <option>Something else — I'll explain below</option>
+            <option value="" data-i18n="form.challenge.opt0">Select the closest match</option>
+            <option data-i18n="form.challenge.opt1">Too much manual data entry / admin work</option>
+            <option data-i18n="form.challenge.opt2">Slow or missed customer follow-ups</option>
+            <option data-i18n="form.challenge.opt3">Hiring &amp; screening taking too long</option>
+            <option data-i18n="form.challenge.opt4">Customer support team overwhelmed</option>
+            <option data-i18n="form.challenge.opt5">Reports &amp; dashboards done manually</option>
+            <option data-i18n="form.challenge.opt6">Leads going cold before we reach them</option>
+            <option data-i18n="form.challenge.opt7">Something else — I'll explain below</option>
           </select>
         </div>
         <div class="fg">
-          <label for="f-cost">Estimated monthly cost of this challenge (time + salary)</label>
+          <label for="f-cost" data-i18n="form.cost.label">Estimated monthly cost of this challenge (time + salary)</label>
           <select id="f-cost" name="monthly_cost">
-            <option value="">Select range</option>
-            <option>Under $1,000/mo</option>
-            <option>$1,000 – $5,000/mo</option>
-            <option>$5,000 – $15,000/mo</option>
-            <option>$15,000 – $50,000/mo</option>
-            <option>$50,000+/mo</option>
-            <option>Not sure — help me calculate it</option>
+            <option value="" data-i18n="form.cost.opt0">Select range</option>
+            <option data-i18n="form.cost.opt1">Under $1,000/mo</option>
+            <option data-i18n="form.cost.opt2">$1,000 – $5,000/mo</option>
+            <option data-i18n="form.cost.opt3">$5,000 – $15,000/mo</option>
+            <option data-i18n="form.cost.opt4">$15,000 – $50,000/mo</option>
+            <option data-i18n="form.cost.opt5">$50,000+/mo</option>
+            <option data-i18n="form.cost.opt6">Not sure — help me calculate it</option>
           </select>
         </div>
         <div class="fg">
-          <label for="f-desc">Describe the problem and what you'd like to achieve</label>
-          <textarea id="f-desc" name="description" placeholder="E.g. 'We have 3 people manually entering the same customer data into 3 different systems every day — takes about 4 hours total. Ideally, we'd love this to run automatically so our team can focus on higher-value work.'"></textarea>
+          <label for="f-desc" data-i18n="form.desc.label">Describe the problem and what you'd like to achieve</label>
+          <textarea id="f-desc" name="description" placeholder="E.g. 'We have 3 people manually entering the same customer data into 3 different systems every day — takes about 4 hours total. Ideally, we'd love this to run automatically so our team can focus on higher-value work.'" data-i18n-ph="form.desc.ph"></textarea>
         </div>
         <div class="h-captcha" data-captcha="true"></div>
-        <button type="submit" class="btn-sub" id="submitBtn">Send — I want a free consultation →</button>
+        <button type="submit" class="btn-sub" id="submitBtn" data-i18n="form.submit">Send — I want a free consultation →</button>
       </form>
     </div>
   </div>
@@ -225,12 +243,13 @@
 
 <!-- FOOTER -->
 <footer>
-  <p class="f-copy">© 2026 Crux Agent. All rights reserved.</p>
-  <p class="f-copy"><a href="privacy-policy.html" style="color:inherit;opacity:0.6;text-decoration:none;">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms-of-service.html" style="color:inherit;opacity:0.6;text-decoration:none;">Terms of Service</a></p>
+  <p class="f-copy" data-i18n="footer.rights">© 2026 Crux Agent. All rights reserved.</p>
+  <p class="f-copy"><a href="privacy-policy.html" style="color:inherit;opacity:0.6;text-decoration:none;" data-i18n="footer.privacy">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms-of-service.html" style="color:inherit;opacity:0.6;text-decoration:none;" data-i18n="footer.terms">Terms of Service</a></p>
 </footer>
 
-<div class="toast" id="toast">✅ Message received! Our team will be in touch within 24 hours.</div>
+<div class="toast" id="toast" data-i18n="form.toast">✅ Message received! Our team will be in touch within 24 hours.</div>
 
+<script src="i18n.js"></script>
 <script>
   // Navbar scroll
   const nav = document.getElementById('navbar');
@@ -321,6 +340,10 @@
     return true;
   }
 
+  function getStr(enStr, zhStr) {
+    return (window.CruxI18n && window.CruxI18n.get() === 'zh') ? zhStr : enStr;
+  }
+
   // Contact form submission
   async function handleSubmit(e) {
     e.preventDefault();
@@ -329,14 +352,14 @@
     const data = Object.fromEntries(formData.entries());
 
     if (!checkRateLimit(data.email || '')) {
-      btn.textContent = 'Limit reached — try again tomorrow';
+      btn.textContent = getStr('Limit reached — try again tomorrow', '已達送出上限，請明天再試');
       btn.disabled = true;
-      setTimeout(() => { btn.disabled = false; btn.textContent = 'Send — I want a free consultation →'; }, 5000);
+      setTimeout(() => { btn.disabled = false; btn.textContent = getStr('Send — I want a free consultation →', '送出——我想要免費諮詢 →'); }, 5000);
       return;
     }
 
     btn.disabled = true;
-    btn.textContent = 'Sending...';
+    btn.textContent = getStr('Sending...', '傳送中...');
     try {
       await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -348,7 +371,7 @@
     toast.classList.add('show');
     setTimeout(() => toast.classList.remove('show'), 5000);
     btn.disabled = false;
-    btn.textContent = 'Send — I want a free consultation →';
+    btn.textContent = getStr('Send — I want a free consultation →', '送出——我想要免費諮詢 →');
     e.target.reset();
   }
 </script>
