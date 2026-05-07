@@ -1265,6 +1265,7 @@
       .scroll-perspective { position: relative; top: 0; height: auto; padding: 4rem 1rem 3rem; perspective: none; }
       .scroll-card-inner { height: auto; overflow: visible; }
       .scroll-card-wrap { transform: none !important; }
+      .mockup-body { height: auto; overflow: visible; padding-bottom: 14px; }
       .mockup-stat-row { grid-template-columns: repeat(2, 1fr); }
       .mockup-flow { gap: 0; overflow-x: auto; }
       .flow-node { padding: 8px 6px; min-width: 70px; }
